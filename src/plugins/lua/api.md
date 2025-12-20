@@ -34,7 +34,7 @@ Unified, simplified function that adds a component to an actor, on UE4 and UE5 w
 
 ### `uevr.api:execute_command(command: string)`
 
-Executes the specified console command. Does not operate 1:1 with the native UE console, as it does not pass the command onto the player controller, but should work with most commands.
+Executes the specified console command. Does not operate 1:1 with the native UE console, as it does not pass the command onto the player controller, but should work with most commands.a
 
 ### `uevr.api:get_uobject_array()`
 
@@ -47,3 +47,7 @@ Returns the [FConsoleManager](types/FConsoleManager.md) instance.
 ### `uevr.api:dispatch_custom_event(event_name: string, event_data: string)`
 
 Dispatches an event that can be listened to on the C/C++ plugin side via `on_custom_event`.
+
+### `uevr.api:to_uobject(address: number)`
+
+Returns the [UEVR_UObject*](types/UObject.md) object at the specified address or nil if none is found. Address must be a full decimal or hexadecimal address including the base module address. Addresses copied from the UObjectHook GUI context menu work in this case.
