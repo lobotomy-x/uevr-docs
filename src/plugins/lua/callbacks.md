@@ -67,7 +67,7 @@ Prototype: `function(viewport: UEVR_FViewportClientHandle, viewport: UEVR_FViewp
 
 ### `uevr.sdk.callbacks.on_frame(fn)`
 
-Registers a callback to be called every frame. For ImGui functionality.
+Registers a callback to be called every frame. For ImGui functionality.  
 Prototype: `function()`
 
 ### `uevr.sdk.callbacks.on_draw_ui(fn)`
@@ -76,7 +76,7 @@ Registers a callback to be called when the UI is drawn. For ImGui functionality 
 
 ### `uevr.sdk.callbacks.on_script_reset(fn)`
 
-Registers a callback to be called when the Lua script is reset. Script cleanup should be performed here.
+Registers a callback to be called before the Lua script is reset. Script cleanup should be performed here.
 
 ### `uevr.sdk.callbacks.on_lua_event(fn)`
 
