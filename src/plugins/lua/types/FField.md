@@ -2,7 +2,7 @@
 
 ## What is FField?
 
-FField is a struct that represents a field in Unreal Engine.
+FField is a struct that represents a field in Unreal Engine. UEVR_FField is an interface representing either an FField or a UObject-derived UField. Unreal Engine version 4.25 introduced FField but older versions can still use UEVR_FField methods thanks to this abstraction.
 
 ## Functions
 
