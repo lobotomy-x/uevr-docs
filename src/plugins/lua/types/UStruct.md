@@ -30,7 +30,11 @@ Returns the [UEVR_FProperty](FProperty.md) object of the property with the speci
 
 ### `struct:get_child_properties()`
 
-Returns the first [UEVR_FProperty*](FProperty.md) object of the struct. Use `property:get_next()` to iterate through the properties.
+Returns the first [UEVR_FField*](FField.md) object of the struct's child properties. Use `property:get_next()` to iterate through the properties. 
+
+### `struct:get_children()`
+
+Similar to `struct:get_child_properties()` but only returns UField objects. See [UEVR_FField*](FField.md) for more details.
 
 ### `struct:get_properties_size()`
 
