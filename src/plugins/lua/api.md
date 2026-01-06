@@ -30,7 +30,7 @@ Attempts to spawn an object of the specified class with the specified outer obje
 
 ### `uevr.api:add_component_by_class(actor: UObject*, class: UClass*, deferred: bool = false)`
 
-Unified, simplified function that adds a component to an actor, on UE4 and UE5 with default transforms setup. Automatically calls FinishAddComponent if `deferred` is false.
+Unified, simplified function that adds a component to an actor, on UE4 and UE5 with default transforms setup. Automatically calls FinishAddComponent if `deferred` is false. Works even in older UE4 versions that lack the `AddComponentByClass` function.
 
 ### `uevr.api:execute_command(command: string)`
 
@@ -47,3 +47,7 @@ Returns the [FConsoleManager](types/FConsoleManager.md) instance.
 ### `uevr.api:dispatch_custom_event(event_name: string, event_data: string)`
 
 Dispatches an event that can be listened to on the C/C++ plugin side via `on_custom_event`.
+
+### `uevr.api:to_uobject(address: number)`
+
+Take a memory address and return the corresponding UObject or `nil` if none exists. This has limited use cases but could be helpful when using the UObject menu or external tools that can provide memory addresses of interest.
