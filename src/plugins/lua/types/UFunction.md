@@ -30,6 +30,8 @@ Return `false` to skip the original function. Not returning at all is equivalent
 
 Post Signature: `void post(fn: UFunction*, obj: UObject*, locals: StructObject*, result: void*)`
 
+## Getting parameter information
+
 ### `function:get_child_properties()`
 
 Inherited from [UEVR_UStruct](UStruct.md). Used to retrieve a list of parameters as a linked list of [UEVR_FField](FField.md) objects.
@@ -37,6 +39,8 @@ Inherited from [UEVR_UStruct](UStruct.md). Used to retrieve a list of parameters
 ### `function:find_property(name)`
 
 Inherited from [UEVR_UStruct](UStruct.md). Use this with functions to retrieve parameters as [UEVR_FProperty](FProperty.md) objects. The main use is to identify out parameters.
+
+## Function flags
 
 ### `function:get_function_flags()`
 
@@ -47,11 +51,14 @@ Individual values can be checked for by testing `function:get_function_flags() &
 
 Allows for manipulation of the bitmask. 
 
-Set a flag
-`ufunc:set_function_flags(ufunc:get_function_flags() | flag_value)`
-
-Unset a flag
-`ufunc:set_function_flags(ufunc:get_function_flags() &~ flag_value)`
+**Set a flag:**
+```lua
+ufunc:set_function_flags(ufunc:get_function_flags() | flag_value)
+```
+**Unset a flag:**
+```lua
+ufunc:set_function_flags(ufunc:get_function_flags() &~ flag_value)
+```
 
 See the table below for a list of valid flags. `is_native` is commonly used to make some functions callable. `is_static` is another useful flag as it tells you that the function can be called from the default instance of its class obtained with `get_class_default_object`.
 
