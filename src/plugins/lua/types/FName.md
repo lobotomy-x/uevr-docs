@@ -10,9 +10,11 @@ FName is a struct that represents a name in Unreal Engine. Nearly all internal n
 
 Returns a Lua string representation of the name.
 
-### `string` to FName conversion
+### `string` to `FName` conversion
 
-This is handled automatically when calling functions with FName arguments or setting Name properties of structs. You should not need to directly work with FName objects in lua, just keep in mind that for any comparisons in lua and when displaying FName values you still need to convert them to strings. 
+This is handled automatically when calling functions with FName arguments or setting Name properties of structs. You should not need to directly work with FName objects in lua, but keep in mind that for any comparisons in lua and when displaying FName values you still need to convert them to strings. 
+
+If for some reason you want to directly work with an `FName` you can use the `Conv_StringToName` function in `KismetStringLibrary`. 
 
 ### `None`
 
