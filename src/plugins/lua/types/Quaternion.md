@@ -1,6 +1,6 @@
 # Quaternion
 
-## What is Quaternion?
+## What are Quaternions?
 
 Quaternions represent rotations in 4 axes. All rotations in Unreal are internally calculated using quaternions as they avoid issues inherent to Euler angles. Look up "Gimbal Lock" for more information.
 
@@ -39,31 +39,31 @@ Constructs a new `Quaternionf`. You do need to directly set the components.
 ex:
 `local quat = Quaternionf.new(1.0, 0.0, 0.0, 1.0)`
 
-### `Quaternionf:length()
+### `Quaternionf:length()`
 
 Returns the magnitude calculated as the sum of its squared components.
 
-### `Quaternionf:normalize()
+### `Quaternionf:normalize()`
 
 Normalizes components so that length is 1.0 making it a unit quaternion. Quaternions representing rotations should always be unit quaternions. This modifies the original variable.
 
-### `Quaternionf:normalized()
+### `Quaternionf:normalized()`
 
 Normalizes components so that length is 1.0 making it a unit quaternion. This returns a new variable
 
-### `Quaternionf:conjugate()
+### `Quaternionf:conjugate()`
 
 Negates the vector (x, y, z) part of the quaternion by flipping the signs of x, y, z. Equivalent to `inverse` for unit quaternions.
 
-### `Quaternionf:inverse()
+### `Quaternionf:inverse()`
 
 Inverts the rotation by giving the conjugate divided by the magnitude squared. Since a unit quaternion has a magnitude of 1 this is equivalent to the conjugate.
 
-### `Quaternionf:dot(quat2)
+### `Quaternionf:dot(quat2)`
 
 Returns the dot product of two quaternions.
 
-### `Quaternionf.slerp(q1, q2, t)
+### `Quaternionf.slerp(q1, q2, t)`
 
 Performs SLERP (spherical linear interpolation) on two quaternions by the factor of `t`.
 
