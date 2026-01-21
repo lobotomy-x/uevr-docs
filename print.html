@@ -1,0 +1,2147 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>UEVR Documentation</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/css/custom.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Usage</li><li class="chapter-item expanded "><a href="usage/overview.html"><strong aria-hidden="true">1.</strong> Detailed overview</a></li><li class="chapter-item expanded "><a href="usage/vr_controller_bindings.html"><strong aria-hidden="true">2.</strong> VR Controller Bindings</a></li><li class="chapter-item expanded "><a href="usage/adding_6dof.html"><strong aria-hidden="true">3.</strong> Adding 6DoF with UObjectHook</a></li><li class="chapter-item expanded affix "><li class="part-title">Plugin Development</li><li class="chapter-item expanded "><a href="plugins/getting_started.html"><strong aria-hidden="true">4.</strong> C/C++ API</a></li><li class="chapter-item expanded "><a href="plugins/blueprint.html"><strong aria-hidden="true">5.</strong> Blueprint API</a></li><li class="chapter-item expanded "><a href="plugins/lua.html"><strong aria-hidden="true">6.</strong> Lua API</a></li><li class="chapter-item expanded affix "><li class="part-title">Lua Scripting Reference</li><li class="chapter-item expanded "><a href="plugins/lua/params.html"><strong aria-hidden="true">7.</strong> params</a></li><li class="chapter-item expanded "><a href="plugins/lua/api.html"><strong aria-hidden="true">8.</strong> api</a></li><li class="chapter-item expanded "><a href="plugins/lua/callbacks.html"><strong aria-hidden="true">9.</strong> callbacks</a></li><li class="chapter-item expanded "><a href="plugins/lua/lua.html"><strong aria-hidden="true">10.</strong> lua</a></li><li class="chapter-item expanded "><a href="plugins/lua/types.html"><strong aria-hidden="true">11.</strong> types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="plugins/lua/types/UObject.html"><strong aria-hidden="true">11.1.</strong> UObject</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/UStruct.html"><strong aria-hidden="true">11.2.</strong> UStruct</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/UClass.html"><strong aria-hidden="true">11.3.</strong> UClass</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/UFunction.html"><strong aria-hidden="true">11.4.</strong> UFunction</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/FName.html"><strong aria-hidden="true">11.5.</strong> FName</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/FField.html"><strong aria-hidden="true">11.6.</strong> FField</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/FFieldClass.html"><strong aria-hidden="true">11.7.</strong> FFieldClass</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/FUObjectArray.html"><strong aria-hidden="true">11.8.</strong> FUObjectArray</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/FConsoleManager.html"><strong aria-hidden="true">11.9.</strong> FConsoleManager</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/IConsoleObject.html"><strong aria-hidden="true">11.10.</strong> IConsoleObject</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/IConsoleVariable.html"><strong aria-hidden="true">11.11.</strong> IConsoleVariable</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/IConsoleCommand.html"><strong aria-hidden="true">11.12.</strong> IConsoleCommand</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/UObjectHook.html"><strong aria-hidden="true">11.13.</strong> UObjectHook</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/MotionControllerState.html"><strong aria-hidden="true">11.14.</strong> MotionControllerState</a></li><li class="chapter-item expanded "><a href="plugins/lua/types/StructObject.html"><strong aria-hidden="true">11.15.</strong> StructObject</a></li></ol></li><li class="chapter-item expanded "><a href="plugins/lua/c_wrapper_types.html"><strong aria-hidden="true">12.</strong> C Wrapper Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="plugins/lua/cwrappers/UEVR_VRData.html"><strong aria-hidden="true">12.1.</strong> UEVR_VRData</a></li><li class="chapter-item expanded "><a href="plugins/lua/cwrappers/UEVR_PluginInitializeParam.html"><strong aria-hidden="true">12.2.</strong> UEVR_PluginInitializeParam</a></li><li class="chapter-item expanded "><a href="plugins/lua/cwrappers/UEVR_PluginFunctions.html"><strong aria-hidden="true">12.3.</strong> UEVR_PluginFunctions</a></li></ol></li><li class="chapter-item expanded "><a href="plugins/lua/thirdparty.html"><strong aria-hidden="true">13.</strong> Third Party</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="plugins/lua/thirdparty/XInput.html"><strong aria-hidden="true">13.1.</strong> XInput</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="plugins/lua/thirdparty/XINPUT_STATE.html"><strong aria-hidden="true">13.1.1.</strong> XINPUT_STATE</a></li><li class="chapter-item expanded "><a href="plugins/lua/thirdparty/XINPUT_VIBRATION.html"><strong aria-hidden="true">13.1.2.</strong> XINPUT_VIBRATION</a></li><li class="chapter-item expanded "><a href="plugins/lua/thirdparty/XINPUT_GAMEPAD.html"><strong aria-hidden="true">13.1.3.</strong> XINPUT_GAMEPAD</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="plugins/lua/additional-bindings.html"><strong aria-hidden="true">14.</strong> Additional APIs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="plugins/lua/additional-bindings/imgui.html"><strong aria-hidden="true">14.1.</strong> imgui</a></li><li class="chapter-item expanded "><a href="plugins/lua/additional-bindings/json.html"><strong aria-hidden="true">14.2.</strong> json</a></li><li class="chapter-item expanded "><a href="plugins/lua/additional-bindings/fs.html"><strong aria-hidden="true">14.3.</strong> fs</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">UEVR Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/praydog/uuvr-docs" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="uevr"><a class="header" href="#uevr">UEVR</a></h1>
+<p>Welcome to <a href="https://github.com/praydog/UEVR">UEVR</a>! This powerful tool will transform your favorite Unreal Engine games into 6DOF VR experiences with minimal effort.</p>
+<p>UEVR can be downloaded from <a href="https://github.com/praydog/UEVR/releases">here</a>.</p>
+<h2 id="supported-engine-versions"><a class="header" href="#supported-engine-versions">Supported Engine Versions</a></h2>
+<ul>
+<li>Unreal Engine 4.8 - 5.4</li>
+</ul>
+<h2 id="supported-graphics-apis"><a class="header" href="#supported-graphics-apis">Supported Graphics APIs</a></h2>
+<ul>
+<li>Direct3D 11</li>
+<li>Direct3D 12</li>
+</ul>
+<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<ul>
+<li>Full 6DOF support out of the box (HMD movement)</li>
+<li>Full stereoscopic 3D out of the box</li>
+<li>Frontend GUI for easy process injection</li>
+<li>Supports OpenVR and OpenXR runtimes</li>
+<li>Native UE4/UE5 stereo rendering system for a truly immersive VR experience</li>
+<li>3 rendering modes: Native Stereo, Synchronized Sequential, and Alternating/AFR</li>
+<li>Optional 3DOF motion controls in many games, essentially emulating a semi-native VR experience</li>
+<li>Optional roomscale movement in many games, moving the player character itself in 3D space along with the headset</li>
+<li>User-authored UI-based system for adding motion controls and first person to games that don't support them</li>
+<li>Automatic handling of most in-game UI so it is projected into 3D space</li>
+<li>In-game menu with shortcuts for adjusting settings</li>
+<li>Access to various CVars for fixing broken shaders/effects</li>
+<li>Optional depth buffer integration for improved latency on some headsets</li>
+<li>Per-game configurations</li>
+<li><a href="https://praydog.github.io/uevr-docs/plugins/getting_started.html">C++ Plugin system</a> and <a href="https://praydog.github.io/uevr-docs/plugins/blueprint.html">Blueprint support</a> for modders to add additional features like motion controls</li>
+</ul>
+<h2 id="reporting-a-bug"><a class="header" href="#reporting-a-bug">Reporting a bug</a></h2>
+<p>Click &quot;Open Global Dir&quot; in the frontend. Browse to the corresponding game folder that is having an issue and zip up the folder and upload it for us. Clicking &quot;Export Config&quot; is an alternative here to do this automatically.</p>
+<p>You can then describe the issue and upload the file for us on the <a href="https://github.com/praydog/UEVR/issues">Issues</a>.</p>
+<p>You can read the full instructions when making an issue, choose the <a href="https://github.com/praydog/UEVR/blob/master/.github/ISSUE_TEMPLATE/bug_report.md">bug report template</a>.</p>
+<h2 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h2>
+<p>Before launching, ensure you have installed .NET 6.0. It should tell you where to install it upon first open, but if not, you can <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0">download it from here</a></p>
+<p>Anti-viruses may delete files required to run from UEVR at this time. You may need to whitelist the UEVR directory and un-quarantine any files the anti-virus may have deleted.</p>
+<ol>
+<li>Launch UEVRInjector.exe</li>
+<li>Launch the target game</li>
+<li>Locate the game in the process dropdown list</li>
+<li>Select your desired runtime (OpenVR/OpenXR)</li>
+<li>Configure pre-injection settings</li>
+<li>Inject</li>
+</ol>
+<h2 id="to-dos-before-injection"><a class="header" href="#to-dos-before-injection">To-dos before injection</a></h2>
+<h3 id="double-check-that-the-game-you-are-injecting-into-has-no-anti-cheat-mechanisms-if-you-are-not-sure-assume-that-all-multiplayer-games-have-anti-cheat-and-do-not-attempt-to-inject-into-them-the-exception-here-is-if-it-can-be-disabled-in-some-way-to-play-offline"><a class="header" href="#double-check-that-the-game-you-are-injecting-into-has-no-anti-cheat-mechanisms-if-you-are-not-sure-assume-that-all-multiplayer-games-have-anti-cheat-and-do-not-attempt-to-inject-into-them-the-exception-here-is-if-it-can-be-disabled-in-some-way-to-play-offline">Double check that the game you are injecting into has no Anti-Cheat mechanisms. If you are not sure, assume that all multiplayer games have Anti-Cheat, and do not attempt to inject into them. The exception here is if it can be disabled in some way to play offline.</a></h3>
+<ol>
+<li>Disable HDR (it will still work without it, but the game will be darker than usual if it is)</li>
+<li>Start as administrator if the game is not visible in the list</li>
+<li>Pass <code>-nohmd</code> to the game's command line and/or delete VR plugins from the game directory if the game contains any existing VR plugins</li>
+<li>Disable any overlays that may conflict and cause crashes (Rivatuner, ASUS software, Razer software, Overwolf, etc...)</li>
+<li>Disable graphical options in-game that may cause crashes or severe issues like DLSS Frame Generation</li>
+<li>Consider disabling <code>Hardware Accelerated GPU Scheduling</code> in your Windows <code>Graphics settings</code></li>
+</ol>
+<h2 id="quick-troubleshooting"><a class="header" href="#quick-troubleshooting">Quick troubleshooting</a></h2>
+<p>There are some games that work pretty much perfectly out of the box, and others will need tinkering.</p>
+<ul>
+<li>If there are major graphical bugs or crashing, change the rendering method to Synced Sequential and check if the issue goes away</li>
+<li>If there is still crashing, there are various Compatibility options that can be enabled (Advanced View shows them, or can be seen in the frontend)
+<ul>
+<li>Do not enable Extreme Compatibility Mode, only as a last resort</li>
+</ul>
+</li>
+<li>If there are still graphical bugs present, enable Advanced View and tweak the CVars
+<ul>
+<li>INI tweaks can work here as well</li>
+</ul>
+</li>
+<li>If the game is locked to 60 FPS (even in flat), disable ASW/motion smoothing so the game doesn't slow down due to the runtime halving the framerate</li>
+<li>If the game is running poorly, lower the in-game settings, lower the resolution in the UEVR interface or SteamVR</li>
+<li>If there is rapid flickering or extreme lag, this likely indicates that DLSS Frame Generation is enabled, turn it off or disable <code>Hardware Accelerated GPU Scheduling</code> in your Windows <code>Graphics settings</code>.</li>
+<li>OpenXR Toolkit may also need to be disabled if there is even more crashing or lag</li>
+</ul>
+<p>If all fails, someone may have came up with a config for the game or can help you on the <a href="http://flat2vr.com">Flat2VR Discord</a>.</p>
+<h2 id="if-there-is-rotational-judderlag"><a class="header" href="#if-there-is-rotational-judderlag">If there is rotational judder/lag</a></h2>
+<p>There's a few reasons for this and fixes for it:</p>
+<ul>
+<li>If using Virtual Desktop, you must use OpenXR to prevent lag when rotating your head, OpenVR simply does not work correctly right now with Virtual Desktop
+<ul>
+<li>The <code>Virtual Desktop fix</code> must be enabled if it isn't getting enabled (under Runtime)</li>
+</ul>
+</li>
+<li>You can also disable <code>r.OneFrameThreadLag</code> under <code>Console/CVars</code> (advanced view must be enabled)</li>
+<li>You can also modify the <code>Frame Delay Compensation</code> under Debug (advanced view must be enabled) </li>
+</ul>
+<h2 id="in-game-menu"><a class="header" href="#in-game-menu">In-Game Menu</a></h2>
+<p>Press the <strong>Insert</strong> key or <strong>L3+R3</strong> on a controller to access the in-game menu, which opens by default at startup. With the menu open, hold <strong>RT</strong> for various shortcuts:</p>
+<ul>
+<li>RT + Left Stick: Move the camera left/right/forward/back</li>
+<li>RT + Right Stick: Move the camera up/down</li>
+<li>RT + B: Reset camera offset</li>
+<li>RT + Y: Recenter view</li>
+<li>RT + X: Reset standing origin</li>
+</ul>
+<h2 id="help-what-games-are-unreal-engine"><a class="header" href="#help-what-games-are-unreal-engine">Help! What games are Unreal Engine?</a></h2>
+<p>Use tools like <a href="https://github.com/Raicuparta/rai-pal/">Rai Pal</a>. </p>
+<p>Rai Pal is a tool by <a href="https://github.com/Raicuparta">Raicuparta</a> that can go through your entire library of games and attempt to tell you what engine, and what version of that engine they are using. </p>
+<p>It also has some level of support for UEVR for automatic launching, as well as displaying user scores given to the VR compatibility of a given game.</p>
+<p>Alex also has made a <a href="https://docs.google.com/spreadsheets/d/1ZcjCQwzPOltaRZnpYU5_HPihEDareZq_0Ww1DZQ4USw/edit#gid=0">spreadsheet of supported games</a> and how well they function, and various other metrics.</p>
+<h2 id="quick-overview-of-rendering-methods"><a class="header" href="#quick-overview-of-rendering-methods">Quick overview of rendering methods</a></h2>
+<h3 id="native-stereo"><a class="header" href="#native-stereo">Native Stereo</a></h3>
+<p>When it works, it looks the best, performs the best (usually). Can cause crashes or graphical bugs if the game does not play well with it.</p>
+<p>Temporal effects like TAA are fully intact. DLSS/FSR2 usually work completely fine with no ghosting in this mode.</p>
+<p>Fully synchronized eye rendering. Works with the majority of games. Uses the actual stereo rendering pipeline in the Unreal Engine to achieve a stereoscopic image.</p>
+<h3 id="synchronized-sequential"><a class="header" href="#synchronized-sequential">Synchronized Sequential</a></h3>
+<p>This is the first alternative option that should be used if Native Stereo is not working as expected or you are encountering graphical bugs. It should be noted that this mode gives worse performance than Native Stereo.</p>
+<p>A form of AFR. Can fix many rendering bugs that are introduced with Native Stereo. Renders two frames <strong>sequentially</strong> in a <strong>synchronized</strong> fashion on the same engine tick.</p>
+<p>Fully synchronized eye rendering. Game world does not advance time between frames.</p>
+<p>Looks normal but temporal effects like TAA will have ghosting/doubling effect. Motion blur will need to be turned off.</p>
+<p><strong>Skip Draw</strong> skips the viewport draw on the next engine tick. Usually works the best but sometimes particle effects may not play at the correct speed.</p>
+<p><strong>Skip Tick</strong> skips the next engine tick entirely. Usually buggy but does fix particle effects and sometimes brings higher performance.</p>
+<h3 id="afr"><a class="header" href="#afr">AFR</a></h3>
+<p>Alternated Frame Rendering. Renders each eye on separate frames in an alternating fashion, with the game world advancing time in between frames. Causes eye desyncs and usually nausea along with it.</p>
+<p>Not synchronized. Generally should not be used unless the other two are unusable in some way.</p>
+<h2 id="overview-of-uevr-usage-by-alex"><a class="header" href="#overview-of-uevr-usage-by-alex">Overview of UEVR usage by Alex</a></h2>
+<p><a href="https://www.youtube.com/watch?v=CW60zLLo2fw&amp;list=PLyE0aREJRIBLMQREfAFXKSQydoI-h4Vfh"><img src="https://i.ytimg.com/vi/G8HHjTjbQFE/hqdefault.jpg" alt="video" /></a></p>
+<p><a href="https://docs.google.com/spreadsheets/d/1ZcjCQwzPOltaRZnpYU5_HPihEDareZq_0Ww1DZQ4USw/edit#gid=0">Getting started spreadsheet by Alex</a></p>
+<h2 id="additional-information"><a class="header" href="#additional-information">Additional information</a></h2>
+<p>Read the <a href="usage/overview.html">Detailed overview</a> for a comprehensive guide on how to fine-tune your VR experience.</p>
+<p>Head over to the <a href="http://flat2vr.com">Flat2VR Discord</a>.</p>
+<h2 id="special-thanks"><a class="header" href="#special-thanks">Special thanks</a></h2>
+<ul>
+<li><a href="https://github.com/TheNewJavaman">TheNewJavaman</a> - Developer of the previous Unreal VR project.</li>
+</ul>
+<p>To all the testers. These include:</p>
+<ul>
+<li>
+<p><a href="https://twitter.com/Flat2VR">Brian Tate</a> - Founder of the Flat2VR community. He is the catalyst that kicked off this project. He was digging around and found out that most of the stereo pipeline is left in the engine.</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/c/VirtualInsider">Alex G/Virtual Insider</a> - A tester from the start. Has helped find many bugs and issues. Has also provided many helpful suggestions and ideas.</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/@waifu_enjoyer">Alex/Waifu Enjoyer</a> - One of the most prolific testers. Has tested hundreds of games and has helped find many bugs and issues. Has also provided many helpful suggestions and ideas. Has provided helpful statistics on game compatibility.</p>
+</li>
+<li>
+<p><a href="https://github.com/NicolasAubinet/">Alchemist</a> - DRG VR developer.</p>
+</li>
+<li>
+<p>Ashok - Has helped find many bugs and issues. Has also provided many helpful suggestions and ideas. Has poked around various specific games making mods to fix issues with them and add things like Oculus controller prompts. Experimented a lot with UObjectHook to fix games and find issues/pain points with this feature.</p>
+</li>
+<li>
+<p>Igoreso</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/@jayfullerton6981">Jay Fullerton</a> - Has tested many games, and stands out as one of the testers with a lower end system. This has helped get an idea of how the tool performs on lower end hardware.</p>
+</li>
+<li>
+<p>Kitt - Mechwarrior 5 VR developer.</p>
+</li>
+<li>
+<p>Lance McCary - Has helped find many bugs and issues. Has also provided many helpful suggestions and ideas. Helped coordinate with Matthieu Bucchianeri to get eye tracked foveated rendering working in OpenXR Toolkit.</p>
+</li>
+<li>
+<p>Kalth Streil - Has helped find many bugs and issues.</p>
+</li>
+<li>
+<p><a href="https://github.com/mbucchia">Matthieu Bucchianeri</a> - Creator of OpenXR Toolkit. Has helped figure out what needed to be changed to get eye tracked foveated rendering working. Has also provided many helpful technical insights into the OpenXR API and VR development in general.</p>
+</li>
+<li>
+<p><a href="https://github.com/narknon">Narknon</a> - UE4SS developer. Provided a lot of helpful information about the Unreal Engine in general.</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/@PanterACFH">PanterA</a> - Joined late into development, but tested a good amount of games and provided good feedback. Located games that were causing crashes after code changes. Helped find issues with AMD GPUs.</p>
+</li>
+<li>
+<p><a href="https://github.com/PinkMilkProductions">PinkMilkProductions</a> - DRG VR developer.</p>
+</li>
+<li>
+<p>pvncher</p>
+</li>
+<li>
+<p><a href="https://www.reddit.com/user/webheadVR">webhead</a></p>
+</li>
+</ul>
+<h2 id="disclaimer"><a class="header" href="#disclaimer">Disclaimer</a></h2>
+<p>UEVR is not affiliated with, endorsed by, or connected to Epic Games, Unreal Engine, or any of their affiliates. All trademarks are the property of their respective owners.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr-in-depth-guide"><a class="header" href="#uevr-in-depth-guide">UEVR: In-Depth Guide</a></h1>
+<p>Dive deeper into the UEVR and learn how to fine-tune your VR experience with this comprehensive guide. We'll explore various settings, configurations, and troubleshooting tips to help you get the most out of your favorite Unreal Engine games in VR.</p>
+<h2 id="frontend-gui"><a class="header" href="#frontend-gui">Frontend GUI</a></h2>
+<p>The frontend GUI provides an intuitive interface for injecting VR functionality into your chosen game. Here, you can:</p>
+<ol>
+<li>Select a process to inject into</li>
+<li>Choose your desired runtime (OpenVR/OpenXR)</li>
+<li>Toggle VR plugins (if necessary)</li>
+<li>Configure pre-injection settings</li>
+</ol>
+<p><img src="usage/images/frontend-gui.png" alt="Frontend GUI Screenshot Placeholder" /></p>
+<h2 id="openvr-or-openxr"><a class="header" href="#openvr-or-openxr">OpenVR or OpenXR?</a></h2>
+<p>OpenVR usually has the highest compatibility, but OpenXR usually gives higher performance when it works, especially if the headset has a native OpenXR runtime.</p>
+<p>OpenVR requires SteamVR to be installed. OpenXR requires a valid OpenXR runtime for the headset, but can also run through SteamVR if SteamVR is set as the active runtime.</p>
+<p>When using Virtual Desktop, you must use OpenXR to avoid rotation lag when moving your head.</p>
+<h2 id="pre-injection-settings"><a class="header" href="#pre-injection-settings">Pre-Injection Settings</a></h2>
+<p>Before injecting, you can customize the following settings:</p>
+<ul>
+<li><code>VR_RenderingMethod</code>: Choose from Native Stereo, Synchronized Sequential, or Alternating/AFR</li>
+<li><code>VR_SyncedSequentialMethod</code>: Configure the behavior of the Synced Sequential rendering method</li>
+<li><code>VR_UncapFramerate</code>: Enable or disable framerate uncapping</li>
+</ul>
+<p>After injection, the rest of the options will populate automatically. You can modify these settings in the in-game menu or through the <code>config.txt</code> file.</p>
+<p><img src="usage/images/pre-injection-settings.png" alt="Pre-Injection Settings Screenshot" /></p>
+<h2 id="in-game-menu-1"><a class="header" href="#in-game-menu-1">In-Game Menu</a></h2>
+<p>The in-game menu offers additional configuration options and shortcuts for adjusting settings on the fly. Access the menu by pressing the <strong>Insert</strong> key or <strong>L3+R3</strong> on a controller.</p>
+<p>The in-game menu can be accessed either inside the VR headset, or you can use the desktop view to adjust settings without having to put on a headset.</p>
+<p>As of recent updates, the menu can be controlled as well by pointing your motion controller at it to emulate a mouse.</p>
+<p><img src="usage/images/in-game-menu-1.png" alt="In-Game Menu Screenshot 1" /></p>
+<p><img src="usage/images/in-game-menu-2.png" alt="In-Game Menu Screenshot 2" /></p>
+<h3 id="in-game-shortcuts"><a class="header" href="#in-game-shortcuts">In-Game Shortcuts</a></h3>
+<p>While holding <strong>RT</strong>:</p>
+<ul>
+<li>RT + Left Stick: Move the camera left/right/forward/back</li>
+<li>RT + Right Stick: Move the camera up/down</li>
+<li>RT + B: Reset camera offset</li>
+<li>RT + Y: Recenter view</li>
+<li>RT + X: Reset standing origin</li>
+</ul>
+<h2 id="cvars-and-fixes"><a class="header" href="#cvars-and-fixes">CVars and Fixes</a></h2>
+<p><img src="usage/images/cvars.png" alt="CVars Screenshot" /></p>
+<p>Use the in-game menu to access and modify various CVars for fixing broken shaders and effects. The tool offers a range of options for addressing common rendering issues.</p>
+<h2 id="depth-buffer-integration"><a class="header" href="#depth-buffer-integration">Depth Buffer Integration</a></h2>
+<p>While depth buffer integration is disabled by default, enabling it can greatly improve latency on Oculus headsets when using OpenXR with the native Oculus OpenXR runtime. To enable depth buffer integration, adjust the <code>VR_EnableDepth</code> setting.</p>
+<p><img src="usage/images/depth-buffer-integration.png" alt="Depth Buffer Integration Screenshot" /></p>
+<h2 id="configurations"><a class="header" href="#configurations">Configurations</a></h2>
+<p>All configurations are stored on a per-game basis in the <code>%APPDATA%/UnrealVRMod</code> directory. You can modify settings directly in the UI or through the <code>config.txt</code> file. This directory can be accessed in the frontend GUI by clicking the &quot;Open Global Dir&quot; button.</p>
+<p><img src="usage/images/configurations.png" alt="Configurations Screenshot" /></p>
+<h3 id="console-commands"><a class="header" href="#console-commands">Console commands</a></h3>
+<p>Configurations can have console commands that are executed at startup within the <code>user_script.txt</code> file. It must be created manually.</p>
+<p>Example <code>user_script.txt</code> file:</p>
+<pre><code>stat fps
+r.DefaultFeature.AntiAliasing 0
+</code></pre>
+<h3 id="plugins"><a class="header" href="#plugins">Plugins</a></h3>
+<p>Plugins can be installed in the <code>plugins</code> folder in the game's configuration directory. Simply drop the plugin dll into it.</p>
+<h2 id="troubleshooting--optimization"><a class="header" href="#troubleshooting--optimization">Troubleshooting &amp; Optimization</a></h2>
+<h3 id="optimal-performance-and-compatibility"><a class="header" href="#optimal-performance-and-compatibility">Optimal performance and compatibility</a></h3>
+<ul>
+<li>Tweak graphical settings in-game to reduce load</li>
+<li>Experiment with different rendering methods if you encounter rendering bugs or crashes</li>
+<li>Use the in-game menu and CVars to address shader and effect issues</li>
+<li>Enable depth buffer integration for improved latency on Oculus headsets (OpenXR only)</li>
+<li>Consider upgrading your system for the best experience with high-end AAA titles</li>
+</ul>
+<p>Further tweaks can be done by modifying the game's INI files, using UUU, UE4SS, or other external tools. Various tweaks that have been made for the normal version of the games can be applied to the VR version as well.</p>
+<h3 id="for-those-with-motion-sickness"><a class="header" href="#for-those-with-motion-sickness">For those with motion sickness</a></h3>
+<p>Enable &quot;Decoupled Pitch&quot; under the VR options. This will stop the camera from rolling or moving vertically.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr-default-vr-controller-bindings"><a class="header" href="#uevr-default-vr-controller-bindings">UEVR: Default VR Controller Bindings</a></h1>
+<p>UEVR implements (or attempts to implement) 1:1 mappings from a default Xbox controller to a VR controller.</p>
+<p>These can be rebound in a few ways:</p>
+<ol>
+<li>If using OpenXR, you can modify the bindings under Runtime</li>
+<li>If using SteamVR/OpenVR, they can be remapped like a normal VR game</li>
+<li>If using Steam with any runtime, Steam Input can be used to remap the buttons as well</li>
+</ol>
+<h2 id="default-bindings"><a class="header" href="#default-bindings">Default Bindings</a></h2>
+<ul>
+<li>
+<p>Left thumbstick: Move</p>
+</li>
+<li>
+<p>Right thumbstick: Rotate</p>
+</li>
+<li>
+<p>Left Grip: LB</p>
+</li>
+<li>
+<p>Right Grip: RB</p>
+</li>
+<li>
+<p>Left Trigger: LT</p>
+</li>
+<li>
+<p>Right Trigger: RT</p>
+</li>
+<li>
+<p>Left Thumbstick Click: L3</p>
+</li>
+<li>
+<p>Right Thumbstick Click: R3</p>
+</li>
+<li>
+<p>Left System Button: Start/Pause</p>
+</li>
+<li>
+<p>Left A Button: B/Circle</p>
+</li>
+<li>
+<p>Left B Button: Y/Triangle</p>
+</li>
+<li>
+<p>Right A Button: A/X</p>
+</li>
+<li>
+<p>Right B Button: X/Square</p>
+</li>
+</ul>
+<h2 id="special-default-bindings"><a class="header" href="#special-default-bindings">Special Default Bindings</a></h2>
+<ul>
+<li>Left System Button (Long Press): Select/View</li>
+</ul>
+<h2 id="oculus-special-bindings"><a class="header" href="#oculus-special-bindings">Oculus Special Bindings</a></h2>
+<ul>
+<li>Right Thumbrest + Left thumbstick: DPad
+<ul>
+<li>This can be disabled if you want to use the thumbrest for something else or the thumbrest has issues</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr-uobjecthook"><a class="header" href="#uevr-uobjecthook">UEVR: UObjectHook</a></h1>
+<h2 id="what-is-uobjecthook"><a class="header" href="#what-is-uobjecthook">What is UObjectHook?</a></h2>
+<p>UObjectHook is an extra part of UEVR that can be used to do many things, such as:</p>
+<ul>
+<li>Attach the camera to any object or component in the game</li>
+<li>Add 6DoF motion controls by attaching any components to the motion controllers
+<ul>
+<li>This is usually contingent on the 3DoF motion controls working in the first place</li>
+</ul>
+</li>
+<li>Modify and view any property of any active UObject in the game
+<ul>
+<li>This can be saved by right clicking the property</li>
+</ul>
+</li>
+<li>Toggle the visibility of any component in the game</li>
+<li>Save the state of all of the above for persistence across sessions</li>
+</ul>
+<h2 id="important-information"><a class="header" href="#important-information">Important information</a></h2>
+<p>UObjectHook is not enabled by default. When giving out profiles, ensure you have &quot;Enabled at Startup&quot; enabled under UObjectHook's config tab.</p>
+<p>If a profile received does not work, it is likely because of the above. UObjectHook is not enabled by default, so you need to manually open the UObjectHook menu to enable it if this is the case.</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<p>In the following examples, we'll be using the &quot;First Person Template&quot; from the Unreal Engine.</p>
+<p>These are just the simplest examples possible. There are games that will have differently named components. Sometimes you'll need to go through multiple component lists, children, or properties. You'll usually want to be on the lookout for SkeletalMeshComponent components for attachments.</p>
+<h2 id="attaching-the-camera-to-an-object"><a class="header" href="#attaching-the-camera-to-an-object">Attaching the camera to an object</a></h2>
+<video width="640" height="480" controls>
+<source src="videos/camera_attach.mp4" type="video/mp4">
+</video>
+<p>In this example, we'll attach the camera to the local player/pawn.</p>
+<ol>
+<li>Open the in-game menu and enable advanced options if not already enabled</li>
+<li>Navigate to UObjectHook on the left side</li>
+<li>Go to &quot;Common Objects&quot;</li>
+<li>Go to &quot;Acknowledged Pawn&quot;</li>
+<li>Click &quot;Attach Camera to&quot; (click &quot;Attach Camera to (Relative)&quot; if the game is already first-person)</li>
+<li>Click &quot;Save State&quot;</li>
+</ol>
+<p>Doing this allows you to turn third person games into first person games. If done in a first person game, this removes unwanted camera movement that should not be there in VR.</p>
+<h2 id="attaching-components-to-motion-controllers"><a class="header" href="#attaching-components-to-motion-controllers">Attaching components to motion controllers</a></h2>
+<video width="640" height="480" controls>
+<source src="videos/component_attach.mp4" type="video/mp4">
+</video>
+<p>In this example, we'll attach a component(s) to the motion controllers.</p>
+<ol>
+<li>Open the in-game menu and enable advanced options if not already enabled</li>
+<li>Navigate to UObjectHook on the left side</li>
+<li>Go to &quot;Common Objects&quot;</li>
+<li>Go to &quot;Acknowledged Pawn&quot;</li>
+<li>Go to &quot;Components&quot;</li>
+<li>Click &quot;SkeletalMeshComponent Mesh2P&quot; and uncheck &quot;Visible&quot;</li>
+<li>Click &quot;SkeletalMeshComponent FP_Gun&quot;</li>
+<li>Click &quot;Attach right&quot; or &quot;Attach left&quot; depending on which controller you want to attach to</li>
+<li>Click &quot;Adjust&quot;</li>
+<li>The menu will close, move your controller so that it lines up with the gun in-game</li>
+<li>Open the menu again, and the weapon should be attached to the controller with the correct offset</li>
+<li>Now click &quot;Permanent Change&quot;, this will allow the projectiles to fire from the correct location</li>
+<li>Click &quot;Save State&quot;</li>
+<li>Navigate to &quot;Input&quot; on the left side</li>
+<li>Change the &quot;Aim Method&quot; to &quot;Left Controller&quot; or &quot;Right Controller&quot; depending on which controller you attached the weapon to</li>
+<li>You should now have full 6DoF motion controls for the weapon</li>
+</ol>
+<h2 id="glossary"><a class="header" href="#glossary">Glossary</a></h2>
+<h3 id="permanent-change"><a class="header" href="#permanent-change">Permanent Change</a></h3>
+<p>This means that UEVR will no longer reset the object back to its original position and rotation after rendering is over. This can make projectiles come out of the correct spot with weapons, and make things like colliders work with melee weapons (if they have them).</p>
+<p>It is not enabled by default because the user can inadvertently set this option on something that dictates their player position, launching them out of the map.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr-plugin-development"><a class="header" href="#uevr-plugin-development">UEVR: Plugin Development</a></h1>
+<p>This section covers the basics of developing plugins for UEVR. If you're looking for information on how to use UEVR, check out the <a href="plugins/../usage/overview.html">Usage</a> section.</p>
+<p>If you are unfamiliar with C/C++, you can try the <a href="plugins/blueprint.html">Blueprint API</a>.</p>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Plugins in UEVR are developed primarily in C++. However, the API header is written in C. This means it's possible to bind it to other languages, or even just write them in C. </p>
+<p>The API header is located in <code>include/uevr/API.h</code>. </p>
+<p>The C++ API header is in <code>include/uevr/API.hpp</code>.</p>
+<p>The base C++ plugin header is in <code>include/uevr/Plugin.hpp</code>.</p>
+<h2 id="plugin-installation"><a class="header" href="#plugin-installation">Plugin Installation</a></h2>
+<p>In the frontend, click the &quot;Open Global Dir&quot; button. Locate the corresponding game directory, and place the DLL in the <code>plugins</code> folder.</p>
+<p>During plugin development, you many want to create a symbolic link from the <code>plugins</code> dir to your project's DLL output directory. This way, you can build the plugin and have it automatically load into UEVR.</p>
+<h2 id="plugin-lifecycle"><a class="header" href="#plugin-lifecycle">Plugin Lifecycle</a></h2>
+<p>Plugins are loaded and unloaded at runtime. The plugin lifecycle is as follows:</p>
+<ol>
+<li>UEVR starts its initialization process</li>
+<li>UEVR initially loads all plugins, and calls their <code>DLLMain</code> functions
+<ul>
+<li>If the plugin is a C++ plugin, the DLLMain function will call the <code>on_dllmain</code> function of the plugin</li>
+</ul>
+</li>
+<li>UEVR begins initializing the rest of its own components</li>
+<li>After initialization, UEVR calls the <code>on_initialize</code> function of each plugin</li>
+<li>During its execution loop, UEVR will call the various <code>on_*</code> functions of each plugin</li>
+<li>The user can choose to unload all plugins, and reload them at will at runtime</li>
+</ol>
+<h2 id="the-easy-way"><a class="header" href="#the-easy-way">The easy way</a></h2>
+<p><code>Plugin.hpp</code> provides a class that can be inherited from to create a plugin. This class provides a number of virtual functions that can be overridden to implement the plugin's functionality.</p>
+<p>The way it is structured is also how you would use the API in C++ using the API.h and API.hpp headers.</p>
+<p><code>Plugin.hpp</code> also implements a DLLMain for you, so you don't have to worry about that. All you need to worry about is overriding the virtual functions.</p>
+<p>The project must be compiled as a DLL.</p>
+<h3 id="a-simple-example"><a class="header" href="#a-simple-example">A simple example</a></h3>
+<pre><code class="language-cpp">#include &lt;memory&gt;
+
+#include &quot;uevr/Plugin.hpp&quot;
+
+using namespace uevr;
+
+#define PLUGIN_LOG_ONCE(...) {\
+    static bool _logged_ = false; \
+    if (!_logged_) { \
+        _logged_ = true; \
+        API::get()-&gt;log_info(__VA_ARGS__); \
+    }}
+
+class ExamplePlugin : public uevr::Plugin {
+public:
+    ExamplePlugin() = default;
+
+    void on_dllmain() override {}
+
+    void on_initialize() override {
+        // Logs to the appdata UnrealVRMod log.txt file
+        API::get()-&gt;log_error(&quot;%s %s&quot;, &quot;Hello&quot;, &quot;error&quot;);
+        API::get()-&gt;log_warn(&quot;%s %s&quot;, &quot;Hello&quot;, &quot;warning&quot;);
+        API::get()-&gt;log_info(&quot;%s %s&quot;, &quot;Hello&quot;, &quot;info&quot;);
+    }
+
+    void on_pre_engine_tick(UEVR_UGameEngineHandle engine, float delta) override {
+        PLUGIN_LOG_ONCE(&quot;Pre Engine Tick: %f&quot;, delta);
+    }
+
+    void on_post_engine_tick(UEVR_UGameEngineHandle engine, float delta) override {
+        PLUGIN_LOG_ONCE(&quot;Post Engine Tick: %f&quot;, delta);
+    }
+
+    void on_pre_slate_draw_window(UEVR_FSlateRHIRendererHandle renderer, UEVR_FViewportInfoHandle viewport_info) override {
+        PLUGIN_LOG_ONCE(&quot;Pre Slate Draw Window&quot;);
+    }
+
+    void on_post_slate_draw_window(UEVR_FSlateRHIRendererHandle renderer, UEVR_FViewportInfoHandle viewport_info) override {
+        PLUGIN_LOG_ONCE(&quot;Post Slate Draw Window&quot;);
+    }
+};
+
+// Actually creates the plugin. Very important that this global is created.
+// The fact that it's using std::unique_ptr is not important, as long as the constructor is called in some way.
+std::unique_ptr&lt;ExamplePlugin&gt; g_plugin{new ExamplePlugin()};
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr-blueprint-api"><a class="header" href="#uevr-blueprint-api">UEVR: Blueprint API</a></h1>
+<p>UEVR implements some functions within the Unreal Engine's existing VR Blueprint API. These functions would usually do nothing because the VR plugins are not present. UEVR implements these functions so modders can easily access HMD and controller data without having to write a C++ plugin.</p>
+<p>This should be more familiar to modders, and easier to use than the C++ API. Normal game developers should feel right at home as well.</p>
+<p>It should be noted that generating the uproject for interacting with these games is out of UEVR's scope. There are other tools to assist in this, and others may have already generated one somewhere. </p>
+<p>UE4SS can assist in generating projects for blueprints.</p>
+<p>Official modding tools by the game developers can work here too, if they provide a working uproject.</p>
+<p><a href="https://discord.com/invite/eP72x2Hm">Unreal Engine Modding Discord</a></p>
+<p><a href="https://discord.gg/MFvUysppTS">UE4SS Discord</a></p>
+<h2 id="automatically-handled-components"><a class="header" href="#automatically-handled-components">Automatically handled components</a></h2>
+<h3 id="motion-controller-components"><a class="header" href="#motion-controller-components">Motion Controller components</a></h3>
+<h3 id="when-uobjecthook-is-activated"><a class="header" href="#when-uobjecthook-is-activated">When UObjectHook is activated</a></h3>
+<p>All <code>UMotionControllerComponent</code> (&quot;<code>Motion Controller</code>&quot;) components will have their location and rotation set correctly to the world transform of the user's motion controllers.</p>
+<p>This means you can make <code>Motion Controller</code> components in Blueprint and UEVR will handle it for you, as long as you enable UObjectHook. You can then do any logic you wish with the Motion Controller transforms, like parenting a weapon mesh to one of them.</p>
+<p>You must correctly set the <code>Motion Source</code> name to either <code>Left</code> or <code>Right</code>. Case sensitive. Or modify the <code>Hand</code> property on older UE versions.</p>
+<p><code>Motion Source</code> can be set to <code>Head</code> or <code>HMD</code> to track the HMD transform.</p>
+<h2 id="implemented-functions"><a class="header" href="#implemented-functions">Implemented functions</a></h2>
+<p>Tested and confirmed working on 4.27 and 5.0.3</p>
+<p><code>Load Blueprint Code</code> in the UEVR menu must be turned on or one of the head/controller aiming options must be enabled for these to work.</p>
+<p>Some functions explicitly require <code>Load Blueprint Code</code> to be enabled, not just the aiming options.</p>
+<p>For more information on these functions, visit the <a href="https://docs.unrealengine.com/4.27/en-US/BlueprintAPI/Input/HeadMountedDisplay/">Unreal Engine documentation</a></p>
+<h3 id="head-mounted-display-is-head-mounted-display-enabled"><a class="header" href="#head-mounted-display-is-head-mounted-display-enabled">Head Mounted Display: Is Head Mounted Display Enabled</a></h3>
+<p>Always works on &lt; 4.18. &gt;= 4.18, <code>Load Blueprint Code</code> must be explicitly enabled for this to work.</p>
+<h3 id="head-mounted-display-get-device-pose"><a class="header" href="#head-mounted-display-get-device-pose">Head Mounted Display: Get Device Pose</a></h3>
+<p>This one only works for the HMD for now. Bit of a hacky implementation, but it works.</p>
+<h3 id="head-mounted-display-get-orientation-and-position"><a class="header" href="#head-mounted-display-get-orientation-and-position">Head Mounted Display: Get Orientation And Position</a></h3>
+<p>Gets data about the HMD transform. <code>Load Blueprint Code</code> must be explicitly enabled for this to work on &gt;= 4.18.</p>
+<h3 id="head-mounted-display-get-motion-controller-data"><a class="header" href="#head-mounted-display-get-motion-controller-data">Head Mounted Display: Get Motion Controller Data</a></h3>
+<p>Only works for left and right controller. </p>
+<p><code>Valid</code>, <code>Aim Position</code>, <code>Aim Rotation</code>, <code>Grip Position</code>, <code>Grip Rotation</code> are implemented.</p>
+<h3 id="head-mounted-display-get-xrsystem-flags"><a class="header" href="#head-mounted-display-get-xrsystem-flags">Head Mounted Display: Get XRSystem Flags</a></h3>
+<p>Metadata used to inform blueprint about certain things.</p>
+<pre><code class="language-cpp">enum ECustomSystemFlags : int32_t {
+    SYSTEMFLAG_NONE = 0,
+    SYSTEMFLAG_HMD_ACTIVE = 1 &lt;&lt; 0,
+    SYSTEMFLAG_DECOUPLED_PITCH = 1 &lt;&lt; 1,
+    SYSTEMFLAG_OPENXR = 1 &lt;&lt; 2,
+    SYSTEMFLAG_OPENVR = 1 &lt;&lt; 3,
+    SYSTEMFLAG_MOTION_CONTROLLERS_ACTIVE = 1 &lt;&lt; 4,
+    SYSTEMFLAG_LEFT_THUMBREST_ACTIVE = 1 &lt;&lt; 5,
+    SYSTEMFLAG_RIGHT_THUMBREST_ACTIVE = 1 &lt;&lt; 6,
+    SYSTEMFLAG_GAME_AIMING_MODE = 1 &lt;&lt; 7,
+    SYSTEMFLAG_HEAD_AIMING_MODE = 1 &lt;&lt; 8,
+    SYSTEMFLAG_LEFT_CONTROLLER_AIMING_MODE = 1 &lt;&lt; 9,
+    SYSTEMFLAG_RIGHT_CONTROLLER_AIMING_MODE = 1 &lt;&lt; 10,
+    SYSTEMFLAG_TWO_HANDED_LEFT_AIMING_MODE = 1 &lt;&lt; 11,
+    SYSTEMFLAG_TWO_HANDED_RIGHT_AIMING_MODE = 1 &lt;&lt; 12,
+};
+</code></pre>
+<h3 id="head-mounted-display-get-hmddata"><a class="header" href="#head-mounted-display-get-hmddata">Head Mounted Display: Get HMDData</a></h3>
+<p>Untested.</p>
+<h3 id="head-mounted-display-reset-orientation"><a class="header" href="#head-mounted-display-reset-orientation">Head Mounted Display: Reset Orientation</a></h3>
+<h3 id="head-mounted-display-reset-position"><a class="header" href="#head-mounted-display-reset-position">Head Mounted Display: Reset Position</a></h3>
+<h3 id="head-mounted-display-reset-orientation-and-position"><a class="header" href="#head-mounted-display-reset-orientation-and-position">Head Mounted Display: Reset Orientation and Position</a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr-lua-api"><a class="header" href="#uevr-lua-api">UEVR: Lua API</a></h1>
+<p>UEVR provides a Lua API that can be used to create plugins.</p>
+<p>Scripts can be loaded under LuaLoader, and are automatically loaded from <code>&lt;game config folder&gt;/scripts/*.lua</code>.</p>
+<p>The Lua API can also be loaded in different environments, like UE4SS. UEVR comes with a LuaVR.dll for this purpose.</p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<pre><code class="language-lua">print(&quot;Initializing hello_world.lua&quot;)
+
+UEVR_UObjectHook.activate()
+
+local api = uevr.api;
+local uobjects = uevr.types.FUObjectArray.get()
+
+print(&quot;Printing first 5 UObjects&quot;)
+for i=0, 5 do
+    local uobject = uobjects:get_object(i)
+
+    if uobject ~= nil then
+        print(uobject:get_full_name())
+    end
+end
+
+local once = true
+local last_world = nil
+local last_level = nil
+
+uevr.sdk.callbacks.on_post_engine_tick(function(engine, delta)
+
+end)
+
+local spawn_once = true
+
+uevr.sdk.callbacks.on_pre_engine_tick(function(engine, delta)
+    --[[if spawn_once then
+        local cheat_manager_c = api:find_uobject(&quot;Class /Script/Engine.CheatManager&quot;)
+        local cheat_manager = UEVR_UObjectHook.get_first_object_by_class(cheat_manager_c)
+
+        print(tostring(cheat_manager_c))
+
+        cheat_manager:Summon(&quot;Something_C&quot;)
+
+        spawn_once = false
+    end]]
+
+    local game_engine_class = api:find_uobject(&quot;Class /Script/Engine.GameEngine&quot;)
+    local game_engine = UEVR_UObjectHook.get_first_object_by_class(game_engine_class)
+
+    local viewport = game_engine.GameViewport
+    if viewport == nil then
+        print(&quot;Viewport is nil&quot;)
+        return
+    end
+    local world = viewport.World
+
+    if world == nil then
+        print(&quot;World is nil&quot;)
+        return
+    end
+
+    if world ~= last_world then
+        print(&quot;World changed&quot;)
+    end
+
+    last_world = world
+
+    local level = world.PersistentLevel
+
+    if level == nil then
+        print(&quot;Level is nil&quot;)
+        return
+    end
+
+    if level ~= last_level then
+        print(&quot;Level changed&quot;)
+        print(&quot;Level name: &quot; .. level:get_full_name())
+
+        local game_instance = game_engine.GameInstance
+
+        if game_instance == nil then
+            print(&quot;GameInstance is nil&quot;)
+            return
+        end
+
+        local local_players = game_instance.LocalPlayers
+
+        for i in ipairs(local_players) do
+            local player = local_players[i]
+            local player_controller = player.PlayerController
+            local pawn = player_controller.Pawn
+    
+            if pawn ~= nil then
+                print(&quot;Pawn: &quot; .. pawn:get_full_name())
+                --pawn.BaseEyeHeight = 0.0
+                --pawn.bActorEnableCollision = not pawn.bActorEnableCollision
+
+                local actor_component_c = api:find_uobject(&quot;Class /Script/Engine.ActorComponent&quot;);
+                print(&quot;actor_component_c class: &quot; .. tostring(actor_component_c))
+                local test_component = pawn:GetComponentByClass(actor_component_c)
+
+                print(&quot;TestComponent: &quot; .. tostring(test_component))
+
+                local controller = pawn.Controller
+
+                if controller ~= nil then
+                    print(&quot;Controller: &quot; .. controller:get_full_name())
+
+                    local velocity = controller:GetVelocity()
+                    print(&quot;Velocity: &quot; .. tostring(velocity.x) .. &quot;, &quot; .. tostring(velocity.y) .. &quot;, &quot; .. tostring(velocity.z))
+
+                    local test = Vector3d.new(1.337, 1.0, 1.0)
+                    print(&quot;Test: &quot; .. tostring(test.x) .. &quot;, &quot; .. tostring(test.y) .. &quot;, &quot; .. tostring(test.z))
+
+                    controller:SetActorScale3D(Vector3d.new(1.337, 1.0, 1.0))
+
+                    local actor_scale_3d = controller:GetActorScale3D()
+                    print(&quot;ActorScale3D: &quot; .. tostring(actor_scale_3d.x) .. &quot;, &quot; .. tostring(actor_scale_3d.y) .. &quot;, &quot; .. tostring(actor_scale_3d.z))
+
+                    
+                    local control_rotation = controller:GetControlRotation()
+
+                    print(&quot;ControlRotation: &quot; .. tostring(control_rotation.Pitch) .. &quot;, &quot; .. tostring(control_rotation.Yaw) .. &quot;, &quot; .. tostring(control_rotation.Roll))
+                    control_rotation.Pitch = 1.337
+
+                    controller:SetControlRotation(control_rotation)
+                    control_rotation = controller:GetControlRotation()
+
+                    print(&quot;New ControlRotation: &quot; .. tostring(control_rotation.Pitch) .. &quot;, &quot; .. tostring(control_rotation.Yaw) .. &quot;, &quot; .. tostring(control_rotation.Roll))
+                end
+
+                local primary_actor_tick = pawn.PrimaryActorTick
+
+                if primary_actor_tick ~= nil then
+                    print(&quot;PrimaryActorTick: &quot; .. tostring(primary_actor_tick))
+
+                    -- Print various properties, this is testing of StructProperty as PrimaryActorTick is a struct
+                    local tick_interval = primary_actor_tick.TickInterval
+                    print(&quot;TickInterval: &quot; .. tostring(tick_interval))
+
+                    print(&quot;bAllowTickOnDedicatedServer: &quot; .. tostring(primary_actor_tick.bAllowTickOnDedicatedServer))
+                    print(&quot;bCanEverTick: &quot; .. tostring(primary_actor_tick.bCanEverTick))
+                    print(&quot;bStartWithTickEnabled: &quot; .. tostring(primary_actor_tick.bStartWithTickEnabled))
+                    print(&quot;bTickEvenWhenPaused: &quot; .. tostring(primary_actor_tick.bTickEvenWhenPaused))
+                else
+                    print(&quot;PrimaryActorTick is nil&quot;)
+                end
+
+                local control_input_vector = pawn.ControlInputVector
+                pawn.ControlInputVector.x = 1.337
+
+                print(&quot;ControlInputVector: &quot; .. tostring(control_input_vector.x) .. &quot;, &quot; .. tostring(control_input_vector.y) .. &quot;, &quot; .. tostring(control_input_vector.z))
+
+                local is_actor_tick_enabled = pawn:IsActorTickEnabled()
+                print(&quot;IsActorTickEnabled: &quot; .. tostring(is_actor_tick_enabled))
+
+                pawn:SetActorTickEnabled(not is_actor_tick_enabled)
+                is_actor_tick_enabled = pawn:IsActorTickEnabled()
+                print(&quot;New IsActorTickEnabled: &quot; .. tostring(is_actor_tick_enabled))
+
+                pawn:SetActorTickEnabled(not is_actor_tick_enabled) -- resets it back to default
+
+                local life_span = pawn:GetLifeSpan()
+                local og_life_span = life_span
+                print(&quot;LifeSpan: &quot; .. tostring(life_span))
+
+                pawn:SetLifeSpan(10.0)
+                life_span = pawn:GetLifeSpan()
+
+                print(&quot;New LifeSpan: &quot; .. tostring(life_span))
+                pawn:SetLifeSpan(og_life_span) -- resets it back to default
+
+                local net_driver_name = pawn.NetDriverName:to_string()
+
+                print(&quot;NetDriverName: &quot; .. net_driver_name)
+            end
+    
+            if player_controller ~= nil then
+                print(&quot;PlayerController: &quot; .. player_controller:get_full_name())
+            end
+        end
+
+        print(&quot;Local players: &quot; .. tostring(local_players))
+    end
+
+    last_level = level
+
+    if once then
+        print(&quot;executing stat fps&quot;)
+        uevr.api:execute_command(&quot;stat fps&quot;)
+        once = false
+
+        print(&quot;executing stat unit&quot;)
+        uevr.api:execute_command(&quot;stat unit&quot;)
+
+        print(&quot;GameEngine class: &quot; .. game_engine_class:get_full_name())
+        print(&quot;GameEngine object: &quot; .. game_engine:get_full_name())
+    end
+end)
+
+uevr.sdk.callbacks.on_script_reset(function()
+    print(&quot;Resetting hello_world.lua&quot;)
+end)
+</code></pre>
+<h2 id="example-when-integrated-into-an-environment-like-ue4ss"><a class="header" href="#example-when-integrated-into-an-environment-like-ue4ss">Example (when integrated into an environment like UE4SS)</a></h2>
+<pre><code class="language-lua">local LuaVR = require(&quot;LuaVR&quot;)
+
+local function vr_print(text)
+    print(&quot;[LuaVR Script] &quot; .. text .. &quot;\n&quot;)
+end
+
+local params = LuaVR.params
+local callbacks = params.sdk.callbacks
+
+local total_t = 0.0
+
+-- Example usage of callbacks
+callbacks.on_pre_engine_tick(function(engine, delta)
+    total_t = total_t + delta
+end)
+
+-- Modifies the camera position
+callbacks.on_post_calculate_stereo_view_offset(function(device, view_index, world_to_meters, position, rotation, is_double)
+    position.z = position.z + 100.0
+    position.y = position.y - 100.0
+end)
+
+
+
+-- UEVR_PluginInitializeParam
+
+-- UEVR_PluginVersion
+vr_print(&quot;Major: &quot; .. tostring(params.version.major))
+vr_print(&quot;Minor: &quot; .. tostring(params.version.minor))
+vr_print(&quot;Patch: &quot; .. tostring(params.version.patch))
+
+-- UEVR_PluginFunctions
+vr_print(&quot;Is drawing ui: &quot; .. tostring(params.functions.is_drawing_ui()))
+params.functions.log_info(&quot;Hello from LuaVR!&quot;)
+params.functions.log_warn(&quot;Hello from LuaVR!&quot;)
+params.functions.log_error(&quot;Hello from LuaVR!&quot;)
+
+-- UEVR_VRData
+vr_print(&quot;Runtime ready state: &quot; .. tostring(params.vr.is_runtime_ready()))
+vr_print(&quot;Is OpenVR: &quot; .. tostring(params.vr.is_openvr()))
+vr_print(&quot;Is OpenXR: &quot; .. tostring(params.vr.is_openxr()))
+vr_print(&quot;Is HMD Active: &quot; .. tostring(params.vr.is_hmd_active()))
+
+local standing_origin = UEVR_Vector3f.new()
+params.vr.get_standing_origin(standing_origin)
+vr_print(&quot;Standing Origin: &quot; .. tostring(standing_origin.x) .. &quot;, &quot; .. tostring(standing_origin.y) .. &quot;, &quot; .. tostring(standing_origin.z))
+
+local rotation_offset = UEVR_Vector3f.new()
+params.vr.get_rotation_offset(rotation_offset)
+vr_print(&quot;Rotation Offset: &quot; .. tostring(rotation_offset.x) .. &quot;, &quot; .. tostring(rotation_offset.y) .. &quot;, &quot; .. tostring(rotation_offset.z))
+
+local hmd_index = params.vr.get_hmd_index()
+vr_print(&quot;HMD Index: &quot; .. tostring(hmd_index))
+
+local left_controller_index = params.vr.get_left_controller_index()
+vr_print(&quot;Left Controller Index: &quot; .. tostring(left_controller_index))
+
+local right_controller_index = params.vr.get_right_controller_index()
+vr_print(&quot;Right Controller Index: &quot; .. tostring(right_controller_index))
+
+local hmd_position = UEVR_Vector3f.new()
+local hmd_rotation = UEVR_Quaternionf.new()
+params.vr.get_pose(hmd_index, hmd_position, hmd_rotation)
+
+vr_print(&quot;HMD Position: &quot; .. tostring(hmd_position.x) .. &quot;, &quot; .. tostring(hmd_position.y) .. &quot;, &quot; .. tostring(hmd_position.z))
+vr_print(&quot;HMD Rotation: &quot; .. tostring(hmd_rotation.x) .. &quot;, &quot; .. tostring(hmd_rotation.y) .. &quot;, &quot; .. tostring(hmd_rotation.z) .. &quot;, &quot; .. tostring(hmd_rotation.w))
+
+if left_controller_index ~= -1 then
+    local left_controller_position = UEVR_Vector3f.new()
+    local left_controller_rotation = UEVR_Quaternionf.new()
+    params.vr.get_pose(left_controller_index, left_controller_position, left_controller_rotation)
+
+    vr_print(&quot;Left Controller Position: &quot; .. tostring(left_controller_position.x) .. &quot;, &quot; .. tostring(left_controller_position.y) .. &quot;, &quot; .. tostring(left_controller_position.z))
+    vr_print(&quot;Left Controller Rotation: &quot; .. tostring(left_controller_rotation.x) .. &quot;, &quot; .. tostring(left_controller_rotation.y) .. &quot;, &quot; .. tostring(left_controller_rotation.z) .. &quot;, &quot; .. tostring(left_controller_rotation.w))        
+end
+
+if right_controller_index ~= -1 then
+    local right_controller_position = UEVR_Vector3f.new()
+    local right_controller_rotation = UEVR_Quaternionf.new()
+    params.vr.get_pose(right_controller_index, right_controller_position, right_controller_rotation)
+
+    vr_print(&quot;Right Controller Position: &quot; .. tostring(right_controller_position.x) .. &quot;, &quot; .. tostring(right_controller_position.y) .. &quot;, &quot; .. tostring(right_controller_position.z))
+    vr_print(&quot;Right Controller Rotation: &quot; .. tostring(right_controller_rotation.x) .. &quot;, &quot; .. tostring(right_controller_rotation.y) .. &quot;, &quot; .. tostring(right_controller_rotation.z) .. &quot;, &quot; .. tostring(right_controller_rotation.w))        
+end
+
+local left_eye_offset = UEVR_Vector3f.new()
+local right_eye_offset = UEVR_Vector3f.new()
+
+params.vr.get_eye_offset(0, left_eye_offset)
+params.vr.get_eye_offset(1, right_eye_offset)
+
+vr_print(&quot;Left Eye Offset: &quot; .. tostring(left_eye_offset.x) .. &quot;, &quot; .. tostring(left_eye_offset.y) .. &quot;, &quot; .. tostring(left_eye_offset.z))
+vr_print(&quot;Right Eye Offset: &quot; .. tostring(right_eye_offset.x) .. &quot;, &quot; .. tostring(right_eye_offset.y) .. &quot;, &quot; .. tostring(right_eye_offset.z))
+
+local is_using_controllers = params.vr.is_using_controllers()
+vr_print(&quot;Is Using Controllers: &quot; .. tostring(is_using_controllers))
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevrparams"><a class="header" href="#uevrparams">uevr.params</a></h1>
+<p>Points to <a href="plugins/lua/cwrappers/UEVR_PluginInitializeParam.html">UEVR_PluginInitializeParam</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevrapi"><a class="header" href="#uevrapi">uevr.api</a></h1>
+<h2 id="members"><a class="header" href="#members">Members</a></h2>
+<h3 id="uevrapisdk"><a class="header" href="#uevrapisdk"><code>uevr.api.sdk</code></a></h3>
+<h2 id="functions"><a class="header" href="#functions">Functions</a></h2>
+<h3 id="uevrapifind_uobjectname-string"><a class="header" href="#uevrapifind_uobjectname-string"><code>uevr.api:find_uobject(name: string)</code></a></h3>
+<p>Searches the <a href="plugins/lua/types/FUObjectArray.html">UEVR_FUObjectArray</a> for an object with the specified name. Returns the object as a <a href="plugins/lua/types/UObject.html">UEVR_UObject*</a> object, or nil if not found.</p>
+<p>Should not be constantly used, unless it is for class objects, or objects that are only created once. Otherwise, use <a href="plugins/lua/types/UClass.html#get_objects_matching">UClass:get_objects_matching</a> instead or the equivalent <a href="plugins/lua/types/UObjectHook.html">UEVR_UObjectHook</a> functions.</p>
+<h3 id="uevrapiget_engine"><a class="header" href="#uevrapiget_engine"><code>uevr.api:get_engine()</code></a></h3>
+<p>Returns the global <code>UGameEngine</code> object.</p>
+<h3 id="uevrapiget_player_controllerindex-number"><a class="header" href="#uevrapiget_player_controllerindex-number"><code>uevr.api:get_player_controller(index: number)</code></a></h3>
+<p>Returns the player controller at the specified index, which is a <a href="plugins/lua/types/UObject.html">UEVR_UObject*</a> object.</p>
+<h3 id="uevrapiget_local_pawnindex-number"><a class="header" href="#uevrapiget_local_pawnindex-number"><code>uevr.api:get_local_pawn(index: number)</code></a></h3>
+<p>Returns the local pawn at the specified index, which is a <a href="plugins/lua/types/UObject.html">UEVR_UObject*</a> object.</p>
+<h3 id="uevrapispawn_objectclass-uclass-outer-uobject"><a class="header" href="#uevrapispawn_objectclass-uclass-outer-uobject"><code>uevr.api:spawn_object(class: UClass*, outer: UObject*)</code></a></h3>
+<p>Attempts to spawn an object of the specified class with the specified outer object. Returns the spawned object as a <a href="plugins/lua/types/UObject.html">UEVR_UObject*</a> object.</p>
+<h3 id="uevrapiadd_component_by_classactor-uobject-class-uclass-deferred-bool--false"><a class="header" href="#uevrapiadd_component_by_classactor-uobject-class-uclass-deferred-bool--false"><code>uevr.api:add_component_by_class(actor: UObject*, class: UClass*, deferred: bool = false)</code></a></h3>
+<p>Unified, simplified function that adds a component to an actor, on UE4 and UE5 with default transforms setup. Automatically calls FinishAddComponent if <code>deferred</code> is false. Works even in older UE4 versions that lack the <code>AddComponentByClass</code> function.</p>
+<h3 id="uevrapiexecute_commandcommand-string"><a class="header" href="#uevrapiexecute_commandcommand-string"><code>uevr.api:execute_command(command: string)</code></a></h3>
+<p>Executes the specified console command. Does not operate 1:1 with the native UE console, as it does not pass the command onto the player controller, but should work with most commands.</p>
+<h3 id="uevrapiget_uobject_array"><a class="header" href="#uevrapiget_uobject_array"><code>uevr.api:get_uobject_array()</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/FUObjectArray.html">UEVR_FUObjectArray</a> instance.</p>
+<h3 id="uevrapiget_console_manager"><a class="header" href="#uevrapiget_console_manager"><code>uevr.api:get_console_manager()</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/FConsoleManager.html">FConsoleManager</a> instance.</p>
+<h3 id="uevrapidispatch_custom_eventevent_name-string-event_data-string"><a class="header" href="#uevrapidispatch_custom_eventevent_name-string-event_data-string"><code>uevr.api:dispatch_custom_event(event_name: string, event_data: string)</code></a></h3>
+<p>Dispatches an event that can be listened to on the C/C++ plugin side via <code>on_custom_event</code>.</p>
+<h3 id="uevrapito_uobjectaddress-number"><a class="header" href="#uevrapito_uobjectaddress-number"><code>uevr.api:to_uobject(address: number)</code></a></h3>
+<p>Take a memory address and return the corresponding UObject or <code>nil</code> if none exists. This has limited use cases but could be helpful when using the UObject menu or external tools that can provide memory addresses of interest.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevrsdkcallbacks"><a class="header" href="#uevrsdkcallbacks">uevr.sdk.callbacks</a></h1>
+<h2 id="functions-1"><a class="header" href="#functions-1">Functions</a></h2>
+<h3 id="uevrsdkcallbackson_xinput_get_statefn"><a class="header" href="#uevrsdkcallbackson_xinput_get_statefn"><code>uevr.sdk.callbacks.on_xinput_get_state(fn)</code></a></h3>
+<p>Registers a callback to be called when XInput state is requested.</p>
+<p>Prototype: <code>function(retval: uint32, user_index: uint32, state: XINPUT_STATE*)</code></p>
+<p><a href="plugins/lua/thirdparty/XINPUT_STATE.html">XINPUT_STATE</a></p>
+<h3 id="uevrsdkcallbackson_xinput_set_statefn"><a class="header" href="#uevrsdkcallbackson_xinput_set_statefn"><code>uevr.sdk.callbacks.on_xinput_set_state(fn)</code></a></h3>
+<p>Registers a callback to be called when XInput state is set.</p>
+<p>Prototype: <code>function(retval: uint32, user_index: uint32, state: XINPUT_VIBRATION*)</code></p>
+<p><a href="plugins/lua/thirdparty/XINPUT_VIBRATION.html">XINPUT_VIBRATION</a></p>
+<h3 id="uevrsdkcallbackson_pre_engine_tickfn"><a class="header" href="#uevrsdkcallbackson_pre_engine_tickfn"><code>uevr.sdk.callbacks.on_pre_engine_tick(fn)</code></a></h3>
+<p>Registers a callback to be called before the engine tick.</p>
+<p>Prototype: <code>function(engine: void*, delta_time: float)</code></p>
+<h3 id="uevrsdkcallbackson_post_engine_tickfn"><a class="header" href="#uevrsdkcallbackson_post_engine_tickfn"><code>uevr.sdk.callbacks.on_post_engine_tick(fn)</code></a></h3>
+<p>Registers a callback to be called after the engine tick.</p>
+<p>Prototype: <code>function(engine: void*, delta_time: float)</code></p>
+<h3 id="uevrsdkcallbackson_pre_slate_draw_window_render_threadfn"><a class="header" href="#uevrsdkcallbackson_pre_slate_draw_window_render_threadfn"><code>uevr.sdk.callbacks.on_pre_slate_draw_window_render_thread(fn)</code></a></h3>
+<p>Registers a callback to be called before the slate window is drawn on the render thread.</p>
+<p>Prototype: <code>function(renderer: UEVR_FSlateRHIRendererHandle, viewport_info: UEVR_FViewportInfoHandle)</code></p>
+<h3 id="uevrsdkcallbackson_post_slate_draw_window_render_threadfn"><a class="header" href="#uevrsdkcallbackson_post_slate_draw_window_render_threadfn"><code>uevr.sdk.callbacks.on_post_slate_draw_window_render_thread(fn)</code></a></h3>
+<p>Registers a callback to be called after the slate window is drawn on the render thread.</p>
+<p>Prototype: <code>function(renderer: UEVR_FSlateRHIRendererHandle, viewport_info: UEVR_FViewportInfoHandle)</code></p>
+<h3 id="uevrsdkcallbackson_pre_calculate_stereo_view_offsetfn"><a class="header" href="#uevrsdkcallbackson_pre_calculate_stereo_view_offsetfn"><code>uevr.sdk.callbacks.on_pre_calculate_stereo_view_offset(fn)</code></a></h3>
+<p>Registers a callback to be called before VR transformations are applied to the view.</p>
+<p>Prototype: <code>function(device: UEVR_StereoRenderingDeviceHandle, view_index: int, world_to_meters: float, position: Vector3f* or Vector3d*, rotation: Quaternionf* or Quaterniond*, is_double: bool)</code></p>
+<h3 id="uevrsdkcallbackson_post_calculate_stereo_view_offsetfn"><a class="header" href="#uevrsdkcallbackson_post_calculate_stereo_view_offsetfn"><code>uevr.sdk.callbacks.on_post_calculate_stereo_view_offset(fn)</code></a></h3>
+<p>Registers a callback to be called after VR transformations are applied to the view.</p>
+<p>Prototype: <code>function(device: UEVR_StereoRenderingDeviceHandle, view_index: int, world_to_meters: float, position: Vector3f* or Vector3d*, rotation: Quaternionf* or Quaterniond*, is_double: bool)</code></p>
+<h3 id="uevrsdkcallbackson_pre_viewport_client_drawfn"><a class="header" href="#uevrsdkcallbackson_pre_viewport_client_drawfn"><code>uevr.sdk.callbacks.on_pre_viewport_client_draw(fn)</code></a></h3>
+<p>Registers a callback to be called before the viewport is drawn on the game thread.</p>
+<p>Prototype: <code>function(viewport: UEVR_FViewportClientHandle, viewport: UEVR_FViewportHandle canvas: UEVR_FCanvasHandle)</code></p>
+<h3 id="uevrsdkcallbackson_post_viewport_client_drawfn"><a class="header" href="#uevrsdkcallbackson_post_viewport_client_drawfn"><code>uevr.sdk.callbacks.on_post_viewport_client_draw(fn)</code></a></h3>
+<p>Registers a callback to be called after the viewport is drawn on the game thread.</p>
+<p>Prototype: <code>function(viewport: UEVR_FViewportClientHandle, viewport: UEVR_FViewportHandle canvas: UEVR_FCanvasHandle)</code></p>
+<h3 id="uevrsdkcallbackson_framefn"><a class="header" href="#uevrsdkcallbackson_framefn"><code>uevr.sdk.callbacks.on_frame(fn)</code></a></h3>
+<p>Registers a callback to be called every frame. For ImGui functionality.<br />
+Prototype: <code>function()</code></p>
+<h3 id="uevrsdkcallbackson_draw_uifn"><a class="header" href="#uevrsdkcallbackson_draw_uifn"><code>uevr.sdk.callbacks.on_draw_ui(fn)</code></a></h3>
+<p>Registers a callback to be called when the UI is drawn. For ImGui functionality that should be constrained to the UEVR window.</p>
+<h3 id="uevrsdkcallbackson_script_resetfn"><a class="header" href="#uevrsdkcallbackson_script_resetfn"><code>uevr.sdk.callbacks.on_script_reset(fn)</code></a></h3>
+<p>Registers a callback to be called before the Lua script is reset. Script cleanup should be performed here.</p>
+<h3 id="uevrsdkcallbackson_lua_eventfn"><a class="header" href="#uevrsdkcallbackson_lua_eventfn"><code>uevr.sdk.callbacks.on_lua_event(fn)</code></a></h3>
+<p>Registers a callback that can be triggered when a C plugin dispatches an event for Lua.</p>
+<p>Prototype: <code>function(event_name: string, event_data: string)</code></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lua"><a class="header" href="#lua">lua</a></h1>
+<p>Can be accessed with <code>uevr.lua</code>.</p>
+<p>Not accessible via <code>LuaVR.dll</code> (e.g. from UE4SS Lua). UEVR only.</p>
+<h2 id="methods"><a class="header" href="#methods">Methods</a></h2>
+<h3 id="uevrluaadd_script_panelname-fn"><a class="header" href="#uevrluaadd_script_panelname-fn"><code>uevr.lua.add_script_panel(name, fn)</code></a></h3>
+<p>Adds a script panel/sidebar that can be used to run <a href="plugins/lua/additional-bindings/imgui.html">imgui</a> code.</p>
+<h3 id="example-1"><a class="header" href="#example-1">Example</a></h3>
+<pre><code class="language-lua">uevr.lua.add_script_panel(&quot;TEST!!!&quot;, function()
+    imgui.text(&quot;test&quot;)
+end)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevrtypes"><a class="header" href="#uevrtypes">uevr.types</a></h1>
+<h2 id="members-1"><a class="header" href="#members-1">Members</a></h2>
+<h3 id="uevrtypesuobject"><a class="header" href="#uevrtypesuobject"><code>uevr.types.UObject</code></a></h3>
+<h3 id="uevrtypesustruct"><a class="header" href="#uevrtypesustruct"><code>uevr.types.UStruct</code></a></h3>
+<h3 id="uevrtypesuclass"><a class="header" href="#uevrtypesuclass"><code>uevr.types.UClass</code></a></h3>
+<h3 id="uevrtypesufunction"><a class="header" href="#uevrtypesufunction"><code>uevr.types.UFunction</code></a></h3>
+<h3 id="uevrtypesffield"><a class="header" href="#uevrtypesffield"><code>uevr.types.FField</code></a></h3>
+<h3 id="uevrtypesffieldclass"><a class="header" href="#uevrtypesffieldclass"><code>uevr.types.FFieldClass</code></a></h3>
+<h3 id="uevrtypesfconsolemanager"><a class="header" href="#uevrtypesfconsolemanager"><code>uevr.types.FConsoleManager</code></a></h3>
+<h3 id="uevrtypesiconsoleobject"><a class="header" href="#uevrtypesiconsoleobject"><code>uevr.types.IConsoleObject</code></a></h3>
+<h3 id="uevrtypesiconsolevariable"><a class="header" href="#uevrtypesiconsolevariable"><code>uevr.types.IConsoleVariable</code></a></h3>
+<h3 id="uevrtypesiconsolecommand"><a class="header" href="#uevrtypesiconsolecommand"><code>uevr.types.IConsoleCommand</code></a></h3>
+<h3 id="uevrtypesfname"><a class="header" href="#uevrtypesfname"><code>uevr.types.FName</code></a></h3>
+<h3 id="uevrtypesfuobjectarray"><a class="header" href="#uevrtypesfuobjectarray"><code>uevr.types.FUObjectArray</code></a></h3>
+<h3 id="uevrtypesuobjecthook"><a class="header" href="#uevrtypesuobjecthook"><code>uevr.types.UObjectHook</code></a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_uobject"><a class="header" href="#uevr_uobject">UEVR_UObject</a></h1>
+<h2 id="what-is-uobject"><a class="header" href="#what-is-uobject">What is UObject?</a></h2>
+<p>UObject are objects that are part of the Unreal Engine's object system. They are backed by a UClass and can be used to represent anything in the game, such as actors, components, and more.</p>
+<h2 id="meta-functions"><a class="header" href="#meta-functions">Meta Functions</a></h2>
+<h3 id="object__indexkey-string"><a class="header" href="#object__indexkey-string"><code>object:__index(key: string)</code></a></h3>
+<p>Wrapper for <code>object:get_property(key)</code>. Can be used to call functions on the UObject.</p>
+<p>ex:</p>
+<pre><code class="language-lua">obj:SomeFunction()
+local asdf = obj.SomeProperty
+</code></pre>
+<p>StructProperty arguments can be passed via table:</p>
+<pre><code class="language-lua">local color = {R = 0.0, G = 0.0, B = 1.0, A = 1.0}
+obj:SomeColorFn(color)
+</code></pre>
+<p>Or via <code>StructObject.new(class)</code>.</p>
+<p>Out arguments can be retrieved by passing an empty table:</p>
+<pre><code class="language-lua">local out = {}
+obj:SomeOutFunction(out)
+
+local result = out.result
+</code></pre>
+<h3 id="object__newindexkey-string-value-any"><a class="header" href="#object__newindexkey-string-value-any"><code>object:__newindex(key: string, value: any)</code></a></h3>
+<p>Wrapper for <code>object:set_property(key, value)</code></p>
+<p>ex:</p>
+<pre><code class="language-lua">obj.SomeProperty = 123
+</code></pre>
+<h2 id="functions-2"><a class="header" href="#functions-2">Functions</a></h2>
+<h3 id="uevr_uobjectstatic_class"><a class="header" href="#uevr_uobjectstatic_class"><code>UEVR_UObject.static_class()</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/UClass.html">UEVR_UClass*</a> descriptor for UObject.</p>
+<h3 id="objget_address"><a class="header" href="#objget_address"><code>obj:get_address()</code></a></h3>
+<p>Returns the base address of the UObject.</p>
+<h3 id="objget_fname"><a class="header" href="#objget_fname"><code>obj:get_fname()</code></a></h3>
+<p>Returns a <a href="plugins/lua/types/FName.html">UEVR_FName</a> object.</p>
+<h3 id="objget_full_name"><a class="header" href="#objget_full_name"><code>obj:get_full_name()</code></a></h3>
+<p>Returns the full name of the UObject as a Lua string.</p>
+<h3 id="objis_aclass-uclass"><a class="header" href="#objis_aclass-uclass"><code>obj:is_a(class: UClass*)</code></a></h3>
+<p>Returns true if the UObject is an instance of the specified class.</p>
+<h3 id="objas_class"><a class="header" href="#objas_class"><code>obj:as_class()</code></a></h3>
+<p>Returns the UObject as an instance of <a href="plugins/lua/types/UClass.html">UEVR_UClass</a>, or nil if it is not a class.</p>
+<h3 id="objas_struct"><a class="header" href="#objas_struct"><code>obj:as_struct()</code></a></h3>
+<p>Returns the UObject as an instance of <a href="plugins/lua/types/UStruct.html">UEVR_UStruct</a>, or nil if it is not a struct.</p>
+<h3 id="objas_function"><a class="header" href="#objas_function"><code>obj:as_function()</code></a></h3>
+<p>Returns the UObject as an instance of <a href="plugins/lua/types/UFunction.html">UEVR_UFunction</a>, or nil if it is not a function.</p>
+<h3 id="objget_class"><a class="header" href="#objget_class"><code>obj:get_class()</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/UClass.html">UEVR_UClass*</a> object of the UObject.</p>
+<h3 id="objget_outer"><a class="header" href="#objget_outer"><code>obj:get_outer()</code></a></h3>
+<p>Returns the outer <a href="plugins/lua/types/UObject.html">UEVR_UObject*</a> of the UObject.</p>
+<h3 id="objget_propertyname-string"><a class="header" href="#objget_propertyname-string"><code>obj:get_property(name: string)</code></a></h3>
+<p>Returns the value of the specified property of the UObject.</p>
+<h3 id="objset_propertyname-string-value-any"><a class="header" href="#objset_propertyname-string-value-any"><code>obj:set_property(name: string, value: any)</code></a></h3>
+<p>Sets the value of the specified property of the UObject. Not all properties are supported.</p>
+<h3 id="objcallname-string-args"><a class="header" href="#objcallname-string-args"><code>obj:call(name: string, args...)</code></a></h3>
+<p>Calls the specified function of the UObject with the specified arguments.</p>
+<h3 id="objdangerous_call_member_virtualindex-int-rdx-r8-r9"><a class="header" href="#objdangerous_call_member_virtualindex-int-rdx-r8-r9"><code>obj:DANGEROUS_call_member_virtual(index: int, rdx, r8, r9)</code></a></h3>
+<p>Calls a virtual function at the specified index with the MSVC x64 calling convention.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_ustruct"><a class="header" href="#uevr_ustruct">UEVR_UStruct</a></h1>
+<h2 id="what-is-ustruct"><a class="header" href="#what-is-ustruct">What is UStruct?</a></h2>
+<p>UStruct is a type that represents a descriptor for a struct in Unreal Engine. Objects that can be described by a UStruct (but not a UClass) are usually POD types or simple data structures like FVector.</p>
+<p>UStruct inherits all the functions from <a href="plugins/lua/types/UObject.html">UEVR_UObject</a>.</p>
+<h2 id="functions-3"><a class="header" href="#functions-3">Functions</a></h2>
+<h3 id="uevr_ustructstatic_class"><a class="header" href="#uevr_ustructstatic_class"><code>UEVR_UStruct.static_class()</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/UClass.html">UEVR_UClass*</a> descriptor for UStruct.</p>
+<h3 id="structget_super_struct"><a class="header" href="#structget_super_struct"><code>struct:get_super_struct()</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/UStruct.html">UEVR_UStruct*</a> object of the super struct.</p>
+<h3 id="structget_super"><a class="header" href="#structget_super"><code>struct:get_super()</code></a></h3>
+<p>Same as <code>struct:get_super_struct()</code>.</p>
+<h3 id="structfind_functionname-string"><a class="header" href="#structfind_functionname-string"><code>struct:find_function(name: string)</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/UFunction.html">UEVR_UFunction*</a> object of the function with the specified name.</p>
+<h3 id="structfind_propertyname-string"><a class="header" href="#structfind_propertyname-string"><code>struct:find_property(name: string)</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/FProperty.html">UEVR_FProperty</a> object of the property with the specified name.</p>
+<h3 id="structget_child_properties"><a class="header" href="#structget_child_properties"><code>struct:get_child_properties()</code></a></h3>
+<p>Returns the first <a href="plugins/lua/types/FField.html">UEVR_FField*</a> object of the struct's child properties. Use <code>property:get_next()</code> to iterate through the properties. </p>
+<h3 id="structget_children"><a class="header" href="#structget_children"><code>struct:get_children()</code></a></h3>
+<p>Similar to <code>struct:get_child_properties()</code> but only returns UField objects. See <a href="plugins/lua/types/FField.html">UEVR_FField*</a> for more details.</p>
+<h3 id="structget_properties_size"><a class="header" href="#structget_properties_size"><code>struct:get_properties_size()</code></a></h3>
+<p>Returns the total byte size of the properties of the struct.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_uclass"><a class="header" href="#uevr_uclass">UEVR_UClass</a></h1>
+<h2 id="what-is-uclass"><a class="header" href="#what-is-uclass">What is UClass?</a></h2>
+<p>UClass acts as a descriptor for a class in Unreal Engine. It contains reflected information about the class, such as its name, properties, and functions.</p>
+<p>UClass inherits all the functions from <a href="plugins/lua/types/UStruct.html">UEVR_UStruct</a>.</p>
+<h2 id="functions-4"><a class="header" href="#functions-4">Functions</a></h2>
+<h3 id="uevr_uclassstatic_class"><a class="header" href="#uevr_uclassstatic_class"><code>UEVR_UClass.static_class()</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/UClass.html">UEVR_UClass*</a> descriptor for UClass.</p>
+<h3 id="classget_class_default_object"><a class="header" href="#classget_class_default_object"><code>class:get_class_default_object()</code></a></h3>
+<p>Returns the default <a href="plugins/lua/types/UObject.html">UEVR_UObject*</a> object for the class.</p>
+<h3 id="classget_objects_matchingallow_default-bool"><a class="header" href="#classget_objects_matchingallow_default-bool"><code>class:get_objects_matching(allow_default: bool)</code></a></h3>
+<p>Returns an array of <a href="plugins/lua/types/UObject.html">UEVR_UObject*</a> objects that are instances of the class. If <code>allow_default</code> is true, default objects are included in the array.</p>
+<h3 id="classget_first_object_matchingallow_default-bool"><a class="header" href="#classget_first_object_matchingallow_default-bool"><code>class:get_first_object_matching(allow_default: bool)</code></a></h3>
+<p>Returns the first <a href="plugins/lua/types/UObject.html">UEVR_UObject*</a> object that is an instance of the class. If <code>allow_default</code> is true, default objects are included in the search.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_ufunction"><a class="header" href="#uevr_ufunction">UEVR_UFunction</a></h1>
+<h2 id="what-is-ufunction"><a class="header" href="#what-is-ufunction">What is UFunction?</a></h2>
+<p>UFunction is a type that represents a function in Unreal Engine. Functions are usually associated with a UClass and can be called on instances of that class.</p>
+<p>UFunction inherits all the functions from <a href="plugins/lua/types/UStruct.html">UEVR_UStruct</a>.</p>
+<h2 id="functions-5"><a class="header" href="#functions-5">Functions</a></h2>
+<h3 id="uevr_ufunctionstatic_class"><a class="header" href="#uevr_ufunctionstatic_class"><code>UEVR_UFunction.static_class()</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/UClass.html">UEVR_UClass*</a> descriptor for UFunction.</p>
+<h3 id="functioncallobj-args_ptr"><a class="header" href="#functioncallobj-args_ptr"><code>function:call(obj, args_ptr)</code></a></h3>
+<p>Not implemented correctly. Do not use. Use <code>obj:FuncName(args...)</code> instead.</p>
+<h3 id="functionget_native_function"><a class="header" href="#functionget_native_function"><code>function:get_native_function()</code></a></h3>
+<p>Returns the native function pointer of the UFunction as a <code>void*</code>.</p>
+<h3 id="functionhook_ptrpre-post"><a class="header" href="#functionhook_ptrpre-post"><code>function:hook_ptr(pre, post)</code></a></h3>
+<p>Hooks the UFunction with the specified pre and post function pointers. Functions can be <code>nil</code> if you only want to use one but not the other. Functions are only hooked per class, i.e. hooking a function does not affect child classes with the same function. You can set multiple hooks per function.</p>
+<p>Pre Signature: <code>bool pre(fn: UFunction*, obj: UObject*, locals: StructObject*, result: void*)</code></p>
+<p>Return <code>false</code> to skip the original function. Not returning at all is equivalent to returning <code>true</code>.</p>
+<p>Post Signature: <code>void post(fn: UFunction*, obj: UObject*, locals: StructObject*, result: void*)</code></p>
+<h2 id="getting-parameter-information"><a class="header" href="#getting-parameter-information">Getting parameter information</a></h2>
+<h3 id="functionget_child_properties"><a class="header" href="#functionget_child_properties"><code>function:get_child_properties()</code></a></h3>
+<p>Inherited from <a href="plugins/lua/types/UStruct.html">UEVR_UStruct</a>. Used to retrieve a list of parameters as a linked list of <a href="plugins/lua/types/FField.html">UEVR_FField</a> objects.</p>
+<h3 id="functionfind_propertyname"><a class="header" href="#functionfind_propertyname"><code>function:find_property(name)</code></a></h3>
+<p>Inherited from <a href="plugins/lua/types/UStruct.html">UEVR_UStruct</a>. Use this with functions to retrieve parameters as <a href="plugins/lua/types/FProperty.html">UEVR_FProperty</a> objects. The main use is to identify out parameters.</p>
+<h2 id="function-flags"><a class="header" href="#function-flags">Function flags</a></h2>
+<h3 id="functionget_function_flags"><a class="header" href="#functionget_function_flags"><code>function:get_function_flags()</code></a></h3>
+<p>Returns the bitmask of the <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/ufunctions?application_version=4.27">UFunction Specifiers</a> applied to the function.
+Individual values can be checked for by testing <code>function:get_function_flags() &amp; flag_value ~= 0</code></p>
+<h3 id="functionset_function_flags"><a class="header" href="#functionset_function_flags"><code>function:set_function_flags()</code></a></h3>
+<p>Allows for manipulation of the bitmask. </p>
+<p><strong>Set a flag:</strong></p>
+<pre><code class="language-lua">ufunc:set_function_flags(ufunc:get_function_flags() | flag_value)
+</code></pre>
+<p><strong>Unset a flag:</strong></p>
+<pre><code class="language-lua">ufunc:set_function_flags(ufunc:get_function_flags() &amp;~ flag_value)
+</code></pre>
+<p>See the table below for a list of valid flags. <code>is_native</code> is commonly used to make some functions callable. <code>is_static</code> is another useful flag as it tells you that the function can be called from the default instance of its class obtained with <code>get_class_default_object</code>.</p>
+<table><thead><tr><th style="text-align: left">Name</th><th style="text-align: right">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">is_final</td><td style="text-align: right">0x1</td></tr>
+<tr><td style="text-align: left">is_required_api</td><td style="text-align: right">0x2</td></tr>
+<tr><td style="text-align: left">is_blueprint_authority_only</td><td style="text-align: right">0x4</td></tr>
+<tr><td style="text-align: left">is_blueprint_cosmetic</td><td style="text-align: right">0x8</td></tr>
+<tr><td style="text-align: left">is_net</td><td style="text-align: right">0x40</td></tr>
+<tr><td style="text-align: left">is_net_reliable</td><td style="text-align: right">0x80</td></tr>
+<tr><td style="text-align: left">is_net_request</td><td style="text-align: right">0x100</td></tr>
+<tr><td style="text-align: left">is_exec</td><td style="text-align: right">0x200</td></tr>
+<tr><td style="text-align: left">is_native</td><td style="text-align: right">0x400</td></tr>
+<tr><td style="text-align: left">is_event</td><td style="text-align: right">0x800</td></tr>
+<tr><td style="text-align: left">is_net_response</td><td style="text-align: right">0x1000</td></tr>
+<tr><td style="text-align: left">is_static</td><td style="text-align: right">0x2000</td></tr>
+<tr><td style="text-align: left">is_net_multicast</td><td style="text-align: right">0x4000</td></tr>
+<tr><td style="text-align: left">is_ubergraph_function</td><td style="text-align: right">0x8000</td></tr>
+<tr><td style="text-align: left">is_multicast_delegate</td><td style="text-align: right">0x10000</td></tr>
+<tr><td style="text-align: left">is_public</td><td style="text-align: right">0x20000</td></tr>
+<tr><td style="text-align: left">is_private</td><td style="text-align: right">0x40000</td></tr>
+<tr><td style="text-align: left">is_protected</td><td style="text-align: right">0x80000</td></tr>
+<tr><td style="text-align: left">is_delegate</td><td style="text-align: right">0x100000</td></tr>
+<tr><td style="text-align: left">is_net_server</td><td style="text-align: right">0x200000</td></tr>
+<tr><td style="text-align: left">has_out_params</td><td style="text-align: right">0x400000</td></tr>
+<tr><td style="text-align: left">has_defaults</td><td style="text-align: right">0x800000</td></tr>
+<tr><td style="text-align: left">is_net_client</td><td style="text-align: right">0x1000000</td></tr>
+<tr><td style="text-align: left">is_dll_import</td><td style="text-align: right">0x2000000</td></tr>
+<tr><td style="text-align: left">is_blueprint_callable</td><td style="text-align: right">0x4000000</td></tr>
+<tr><td style="text-align: left">is_blueprint_event</td><td style="text-align: right">0x8000000</td></tr>
+<tr><td style="text-align: left">is_blueprint_pure</td><td style="text-align: right">0x10000000</td></tr>
+<tr><td style="text-align: left">is_editor_only</td><td style="text-align: right">0x20000000</td></tr>
+<tr><td style="text-align: left">is_const</td><td style="text-align: right">0x40000000</td></tr>
+<tr><td style="text-align: left">is_net_validate</td><td style="text-align: right">0x80000000</td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_fname"><a class="header" href="#uevr_fname">UEVR_FName</a></h1>
+<h2 id="what-is-fname"><a class="header" href="#what-is-fname">What is FName?</a></h2>
+<p>FName is a struct that represents a name in Unreal Engine. Nearly all internal naming uses FName rather than strings. </p>
+<h2 id="functions-6"><a class="header" href="#functions-6">Functions</a></h2>
+<h3 id="nameto_string"><a class="header" href="#nameto_string"><code>name:to_string()</code></a></h3>
+<p>Returns a Lua string representation of the name.</p>
+<h3 id="string-to-fname-conversion"><a class="header" href="#string-to-fname-conversion"><code>string</code> to <code>FName</code> conversion</a></h3>
+<p>This is handled automatically when calling functions with FName arguments or setting Name properties of structs. You should not need to directly work with FName objects in lua, but keep in mind that for any comparisons in lua and when displaying FName values you still need to convert them to strings. </p>
+<p>If for some reason you want to directly work with an <code>FName</code> you can use the <code>Conv_StringToName</code> function in <code>KismetStringLibrary</code>. </p>
+<h3 id="none"><a class="header" href="#none"><code>None</code></a></h3>
+<p>Many functions require FName arguments, e.g. attaching components requires a Socket or Bone reference by name. For objects that don't have any sockets or bones you would need to provide an FName value of &quot;None&quot; which is a special zero value in the game engine. To pass a &quot;None&quot; value you can provide &quot;None&quot; as a string, provide an empty string <code>&quot;&quot;</code> or pass <code>UEVR_FName.new()</code>. <code>nil</code> will not work although the use cases are similar. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_ffield"><a class="header" href="#uevr_ffield">UEVR_FField</a></h1>
+<h2 id="what-is-ffield"><a class="header" href="#what-is-ffield">What is FField?</a></h2>
+<p>FField is a struct that represents a field in Unreal Engine. UEVR_FField is an interface representing either an FField or a UObject-derived UField. Unreal Engine version 4.25 introduced FField but older versions can still use UEVR_FField methods thanks to this abstraction.</p>
+<h2 id="functions-7"><a class="header" href="#functions-7">Functions</a></h2>
+<h3 id="fieldget_next"><a class="header" href="#fieldget_next"><code>field:get_next()</code></a></h3>
+<p>Returns the next <a href="plugins/lua/types/FField.html">UEVR_FField*</a> object in the linked list of fields.</p>
+<h3 id="fieldget_fname"><a class="header" href="#fieldget_fname"><code>field:get_fname()</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/FName.html">UEVR_FName</a> object of the field name.</p>
+<h3 id="fieldget_class"><a class="header" href="#fieldget_class"><code>field:get_class()</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/FFieldClass.html">UEVR_FFieldClass</a> object of the field.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_ffieldclass"><a class="header" href="#uevr_ffieldclass">UEVR_FFieldClass</a></h1>
+<h2 id="what-is-ffieldclass"><a class="header" href="#what-is-ffieldclass">What is FFieldClass?</a></h2>
+<p>FFieldClass is a struct that represents a class of a field in Unreal Engine.</p>
+<h2 id="functions-8"><a class="header" href="#functions-8">Functions</a></h2>
+<h3 id="classget_fname"><a class="header" href="#classget_fname"><code>class:get_fname()</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/FName.html">UEVR_FName</a> object of the class.</p>
+<h3 id="classget_name"><a class="header" href="#classget_name"><code>class:get_name()</code></a></h3>
+<p>Returns the name of the class as a Lua string.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_fuobjectarray"><a class="header" href="#uevr_fuobjectarray">UEVR_FUObjectArray</a></h1>
+<h2 id="what-is-fuobjectarray"><a class="header" href="#what-is-fuobjectarray">What is FUObjectArray?</a></h2>
+<p>FUObjectArray is a struct that contains a list of all UObject instances in Unreal Engine.</p>
+<h2 id="functions-9"><a class="header" href="#functions-9">Functions</a></h2>
+<h3 id="uevr_fuobjectarrayget"><a class="header" href="#uevr_fuobjectarrayget"><code>UEVR_FUObjectArray.get()</code></a></h3>
+<p>Returns the instance of the FUObjectArray.</p>
+<h3 id="arris_chunked"><a class="header" href="#arris_chunked"><code>arr:is_chunked()</code></a></h3>
+<p>Returns true if the array is chunked.</p>
+<h3 id="arris_inlined"><a class="header" href="#arris_inlined"><code>arr:is_inlined()</code></a></h3>
+<p>Returns true if the array is inlined.</p>
+<h3 id="arrget_objects_offset"><a class="header" href="#arrget_objects_offset"><code>arr:get_objects_offset()</code></a></h3>
+<p>Returns the offset of the objects in the array.</p>
+<h3 id="arrget_item_distance"><a class="header" href="#arrget_item_distance"><code>arr:get_item_distance()</code></a></h3>
+<p>Returns the distance between items in the array.</p>
+<h3 id="arrget_object_count"><a class="header" href="#arrget_object_count"><code>arr:get_object_count()</code></a></h3>
+<p>Returns the number of objects in the array.</p>
+<h3 id="arrget_objects_ptr"><a class="header" href="#arrget_objects_ptr"><code>arr:get_objects_ptr()</code></a></h3>
+<h3 id="arrget_objectindex-number"><a class="header" href="#arrget_objectindex-number"><code>arr:get_object(index: number)</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/UObject.html">UEVR_UObject*</a> object at the specified index.</p>
+<h3 id="arrget_itemindex-number"><a class="header" href="#arrget_itemindex-number"><code>arr:get_item(index: number)</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/FUObjectItem.html">UEVR_FUObjectItem*</a> object at the specified index.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_fconsolemanager"><a class="header" href="#uevr_fconsolemanager">UEVR_FConsoleManager</a></h1>
+<p>Instance can be obtained with <code>uevr.api:get_console_manager()</code>.</p>
+<h2 id="functions-10"><a class="header" href="#functions-10">Functions</a></h2>
+<h3 id="consoleget_console_objects"><a class="header" href="#consoleget_console_objects"><code>console:get_console_objects()</code></a></h3>
+<p>Returns a <code>TArray&lt;ConsoleObjectElement&gt;</code> of console objects.</p>
+<h3 id="consolefind_objectname-string"><a class="header" href="#consolefind_objectname-string"><code>console:find_object(name: string)</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/IConsoleObject.html">IConsoleObject</a> object with the specified name.</p>
+<h3 id="consolefind_variablename-string"><a class="header" href="#consolefind_variablename-string"><code>console:find_variable(name: string)</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/IConsoleVariable.html">IConsoleVariable</a> object with the specified name.</p>
+<h3 id="consolefind_commandname-string"><a class="header" href="#consolefind_commandname-string"><code>console:find_command(name: string)</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/IConsoleCommand.html">IConsoleCommand</a> object with the specified name.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_iconsoleobject"><a class="header" href="#uevr_iconsoleobject">UEVR_IConsoleObject</a></h1>
+<p><code>IConsoleObject</code> is a base class for console objects.</p>
+<h2 id="functions-11"><a class="header" href="#functions-11">Functions</a></h2>
+<h3 id="objas_command"><a class="header" href="#objas_command"><code>obj:as_command()</code></a></h3>
+<p>Returns the <a href="plugins/lua/types/IConsoleCommand.html">IConsoleCommand</a> object if the console object is a command, or nil if it is not.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_iconsolevariable"><a class="header" href="#uevr_iconsolevariable">UEVR_IConsoleVariable</a></h1>
+<p><code>IConsoleVariable</code> is a class representing a console variable.</p>
+<p>Inherits from <a href="plugins/lua/types/IConsoleObject.html">IConsoleObject</a>.</p>
+<h2 id="functions-12"><a class="header" href="#functions-12">Functions</a></h2>
+<h3 id="varsetvalue-any"><a class="header" href="#varsetvalue-any"><code>var:set(value: any)</code></a></h3>
+<p>Sets the value of the console variable.</p>
+<p><code>value</code> can be a number or a string.</p>
+<h3 id="varset_floatvalue-number"><a class="header" href="#varset_floatvalue-number"><code>var:set_float(value: number)</code></a></h3>
+<h3 id="varset_intvalue-number"><a class="header" href="#varset_intvalue-number"><code>var:set_int(value: number)</code></a></h3>
+<h3 id="varset_exvalue-any-flags-number"><a class="header" href="#varset_exvalue-any-flags-number"><code>var:set_ex(value: any, flags: number)</code></a></h3>
+<h3 id="varget_int"><a class="header" href="#varget_int"><code>var:get_int()</code></a></h3>
+<p>Returns the value of the console variable as an integer.</p>
+<h3 id="varget_float"><a class="header" href="#varget_float"><code>var:get_float()</code></a></h3>
+<p>Returns the value of the console variable as a float.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_iconsolecommand"><a class="header" href="#uevr_iconsolecommand">UEVR_IConsoleCommand</a></h1>
+<p><code>IConsoleCommand</code> is a class representing a console command.</p>
+<p>Inherits from <a href="plugins/lua/types/IConsoleObject.html">IConsoleObject</a>.</p>
+<h2 id="functions-13"><a class="header" href="#functions-13">Functions</a></h2>
+<h3 id="cmdexecuteargs-string"><a class="header" href="#cmdexecuteargs-string"><code>cmd:execute(args: string)</code></a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_uobjecthook"><a class="header" href="#uevr_uobjecthook">UEVR_UObjectHook</a></h1>
+<h2 id="what-is-uobjecthook-1"><a class="header" href="#what-is-uobjecthook-1">What is UObjectHook?</a></h2>
+<p>UObjectHook is a UEVR defined class that hooks into the UObject creation and destruction process. It is used to track UObject instances with minimal performance overhead.</p>
+<p>It is also used to add motion controls.</p>
+<p>UObjectHook uses all static functions.</p>
+<h2 id="functions-14"><a class="header" href="#functions-14">Functions</a></h2>
+<h3 id="uevr_uobjecthookactivate"><a class="header" href="#uevr_uobjecthookactivate"><code><span class="function-name">UEVR_UObjectHook.activate</span></code></a></h3>
+<p>Activates the UObjectHook. Some of the below functions automatically activate the UObjectHook if it is not already active.</p>
+<h3 id="uevr_uobjecthookexistsobj-uobject"><a class="header" href="#uevr_uobjecthookexistsobj-uobject"><code><span class="function-name">UEVR_UObjectHook.exists</span><span class="function-args">(obj: UObject*)</span></code></a></h3>
+<p>Returns true if the specified UObject currently exists.</p>
+<h3 id="uevr_uobjecthookis_disabled"><a class="header" href="#uevr_uobjecthookis_disabled"><code><span class="function-name">UEVR_UObjectHook.is_disabled</span></code></a></h3>
+<p>Returns true if the UObjectHook is disabled.</p>
+<h3 id="uevr_uobjecthookset_disableddisabled-bool"><a class="header" href="#uevr_uobjecthookset_disableddisabled-bool"><code><span class="function-name">UEVR_UObjectHook.set_disabled</span><span class="function-args">(disabled: bool)</span></code></a></h3>
+<p>Sets the disabled state of the UObjectHook.</p>
+<h3 id="uevr_uobjecthookget_first_object_by_classclass-uclass-allow_default-bool"><a class="header" href="#uevr_uobjecthookget_first_object_by_classclass-uclass-allow_default-bool"><code><span class="function-name">UEVR_UObjectHook.get_first_object_by_class</span><span class="function-args">(class: UClass*, allow_default: bool)</span></code></a></h3>
+<p>Returns the first UObject instance of the specified class. If <code>allow_default</code> is true, default objects are included in the search.</p>
+<h3 id="uevr_uobjecthookget_objects_by_classclass-uclass-allow_default-bool"><a class="header" href="#uevr_uobjecthookget_objects_by_classclass-uclass-allow_default-bool"><code><span class="function-name">UEVR_UObjectHook.get_objects_by_class</span><span class="function-args">(class: UClass*, allow_default: bool)</span></code></a></h3>
+<p>Returns an array of UObject instances of the specified class. If <code>allow_default</code> is true, default objects are included in the array.</p>
+<h3 id="uevr_uobjecthookget_or_add_motion_controller_stateobj-uobject"><a class="header" href="#uevr_uobjecthookget_or_add_motion_controller_stateobj-uobject"><code><span class="function-name">UEVR_UObjectHook.get_or_add_motion_controller_state</span><span class="function-args">(obj: UObject*)</span></code></a></h3>
+<p>Returns the motion controller state for the specified UObject. If the state does not exist, it is created.</p>
+<h3 id="uevr_uobjecthookget_motion_controller_stateobj-uobject"><a class="header" href="#uevr_uobjecthookget_motion_controller_stateobj-uobject"><code><span class="function-name">UEVR_UObjectHook.get_motion_controller_state</span><span class="function-args">(obj: UObject*)</span></code></a></h3>
+<p>Returns the motion controller state for the specified UObject. If the state does not exist, returns nil.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_motioncontrollerstate"><a class="header" href="#uevr_motioncontrollerstate">UEVR_MotionControllerState</a></h1>
+<h2 id="functions-15"><a class="header" href="#functions-15">Functions</a></h2>
+<h3 id="stateset_rotation_offsetoffset-variant"><a class="header" href="#stateset_rotation_offsetoffset-variant"><code><span class="function-name">state:set_rotation_offset</span><span class="function-args">(offset: variant)</span></code></a></h3>
+<p>Sets the rotation offset of the motion controller state.<br><code>offset</code> can be a <code>UEVR_Quaternionf</code>, a <code>Vector4f</code>, or a <code>Vector3d</code>.</p>
+<h3 id="stateset_location_offsetoffset-variant"><a class="header" href="#stateset_location_offsetoffset-variant"><code><span class="function-name">state:set_location_offset</span><span class="function-args">(offset: variant)</span></code></a></h3>
+<p>Sets the location offset of the motion controller state.<br><code>offset</code> can be a <code>UEVR_Vector3f</code>, a <code>Vector3f</code>, or a <code>Vector3d</code>.</p>
+<h3 id="stateset_handhand-int"><a class="header" href="#stateset_handhand-int"><code><span class="function-name">state:set_hand</span><span class="function-args">(hand: int)</span></code></a></h3>
+<p>Sets the hand of the motion controller state.<br><code>hand</code> can be <code>0</code> for left hand or <code>1</code> for right hand, or <code>2</code> for the HMD.</p>
+<h3 id="stateset_permanantpermanent-bool"><a class="header" href="#stateset_permanantpermanent-bool"><code><span class="function-name">state:set_permanant</span><span class="function-args">(permanent: bool)</span></code></a></h3>
+<p>Sets the permanant flag of the motion controller state. Permanent meaning UObjectHook will not reset the rotation or location at the end of the tick.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="structobject"><a class="header" href="#structobject">StructObject</a></h1>
+<p>StructObject is a custom UEVR Lua type that represents a struct in Unreal Engine. It's for non-UObject based structs which support reflection. However it is almost always better to use a table to represent ScriptStructs.</p>
+<h2 id="functions-16"><a class="header" href="#functions-16">Functions</a></h2>
+<h3 id="structobjectnewstruct-uevr_ustruct"><a class="header" href="#structobjectnewstruct-uevr_ustruct"><code>StructObject.new(struct: UEVR_UStruct*)</code></a></h3>
+<p>Constructs a new StructObject from a <a href="plugins/lua/types/UStruct.html">UEVR_UStruct</a> pointer.
+ex:</p>
+<pre><code class="language-lua">local hitresult_c = uevr.api:find_uobject(&quot;ScriptStruct /Script/Engine.HitResult&quot;)
+local hit = StructObject.new(hitresult_c)
+</code></pre>
+<h3 id="structobjectnewobject-uevr_uobject"><a class="header" href="#structobjectnewobject-uevr_uobject"><code>StructObject.new(object: UEVR_UObject*)</code></a></h3>
+<p>Constructs a new StructObject from a <a href="plugins/lua/types/UObject.html">UEVR_UObject</a> pointer, if the object inherits from UStruct.</p>
+<h2 id="constructing-scriptstructs-from-lua-tables"><a class="header" href="#constructing-scriptstructs-from-lua-tables">Constructing ScriptStructs from Lua Tables</a></h2>
+<p>Alternatively you can create a table with named keys matching the expected struct properties. 
+ex:</p>
+<pre><code class="language-lua">-- Simple inline style ScriptStruct creation
+object.capsule_component.ShapeColor = {R = 255, G = 0, B = 0, A = 255}
+
+-- Factory style functions to create Enums and ScriptStructs
+local EViewTargetBlendFunction = {
+   VTBlend_Linear    = 0,
+   VTBlend_Cubic     = 1,
+   VTBlend_EaseIn    = 2,
+   VTBlend_EaseOut   = 3,
+   VTBlend_EaseInOut = 4,
+}
+
+local function FViewTargetTransitionParams(blendTime, blendFunc, blendExponent, bLockOutGoing)
+   return {
+      -- use &quot;or&quot; to provide default values
+      BlendTime = blendTime or 1.0,
+      BlendFunction = blendFunc or 1,
+      BlendExp = blendExponent or 1.1,
+      bLockOutgoing = bLockOutGoing or false
+   }
+end
+
+player_controller:ClientSetViewTarget(temp, FViewTargetTransitionParams(1.0, EViewTargetBlendFunction[&quot;VTBlend_EaseOut&quot;], 1.1, false))
+</code></pre>
+<p>This allows you to handle most data directly in lua and only pass it to the game when calling functions or setting properties, giving you more control over your data and reducing the need for synchronization. There are also a few a known games, usually on custom engine versions, where StructObject creation does not work but tables are fine. In fact even in games where ScriptStruct creation works for some cases there are others such as PostProcessSettings that the API cannot retrieve, even when a memory address is supplied, but using a table works. </p>
+<p>Table to struct conversion should work for almost all cases taking a StructProperty which includes setting properties on objects and calling functions with StructProperty parameters.</p>
+<h2 id="common-table-to-scriptstruct-uses"><a class="header" href="#common-table-to-scriptstruct-uses">Common Table to ScriptStruct Uses</a></h2>
+<p><strong>LinearColor</strong>:</p>
+<pre><code class="language-lua">   local sphere = api:add_component_by_class(pawn, &quot;Class /Script/Engine.DrawSphereComponent&quot;, false)
+   sphere:SetShapeColor({R = 255, G = 0, B = 0, A = 255})
+
+  
+   
+    -- take an imgui Vector4f e.g. an output from imgui.color_edit4 and create a LinearColor struct
+   local function vec4_to_linear_color(color)
+       return {
+           R = math.floor(color.x * 255.0),
+           G = math.floor(color.y * 255.0),
+           B = math.floor(color.z * 255.0),
+           A = math.floor(color.w * 255.0),
+       }
+   end
+
+</code></pre>
+<p><strong>FKey</strong></p>
+<pre><code class="language-lua">-- rest of key names omitted here
+fkey = {&quot;AnyKey&quot;,&quot;MouseX&quot;,&quot;MouseY&quot;,&quot;Mouse2D&quot;,&quot;MouseScrollUp&quot;,&quot;MouseScrollDown&quot;,&quot;MouseWheelAxis&quot;,
+    &quot;LeftMouseButton&quot;,&quot;RightMouseButton&quot;,&quot;MiddleMouseButton&quot;,&quot;ThumbMouseButton&quot;,&quot;ThumbMouseButton2&quot;, ...}
+
+
+-- Poll all keys once per tick (can only be read in engine or on_frame callbacks, imgui also steals gamepad inputs)
+local current_pressed_keys = {}   
+uevr.sdk.callbacks.on_pre_engine_tick(function(engine, delta)
+    for i, key in ipairs(fkey) do
+        if pc:IsInputKeyDown({KeyName = key}) then
+            current_pressed_keys[key] = true
+        else
+            current_pressed_keys[key] = false
+        end
+    end
+end)
+
+</code></pre>
+<p>Note that you do not need to fill out all properties of a struct when supplying a table although certain properties may be required by the engine. 
+ex:
+<strong>PostProcessSetitngs</strong></p>
+<pre><code class="language-lua">pc = api:get_player_controller(0)
+local vt = pc:GetViewTarget()
+camera_component_c = camera_component_c or api:find_uobject(&quot;Class /Script/Engine.CameraComponent&quot;)
+local CameraComp = vt.GetComponentByClass and vt:GetComponentByClass(camera_component_c)
+if UEVR_UObjectHook.exists(CameraComp) and CameraComp.bIsActive then
+   CameraComp.PostProcessSettings = {
+       bOverride_GrainJitter = 1,
+       GrainJitter = 1,
+       bOverride_GrainIntensity = 1,
+       GrainIntensity = 1,
+   }
+end
+
+</code></pre>
+<h2 id="transformations"><a class="header" href="#transformations">Transformations</a></h2>
+<p>All relevant struct types for transformations support table-based creation. However in the case of Vectors and Rotators you should opt for the corresponding <a href="plugins/lua/types/Vector.html">Vector</a>. </p>
+<p>FHitResult is a common ScriptStruct object present in many function signatures, but its almost always an out parameter meaning you don't even need to fill in the properties in most cases.
+ex:</p>
+<pre><code class="language-lua">local sweep = true
+local sweep_hits = {}
+component:K2_SetWorldLocation(new_location, sweep, sweep_hits, false)
+-- do something with the result 
+local sweep_results = sweep.result
+
+-- Not using sweep so the results can be ignored 
+component:K2_SetWorldLocation(new_location, false, {}, false)
+</code></pre>
+<h2 id="how-to-make-structs-yourself"><a class="header" href="#how-to-make-structs-yourself">How to make structs yourself</a></h2>
+<p>You will not be able to view the definitions for many ScriptStructs in the UEVR GUI as you can with UObject Classes so you will be limited to the cases where ScriptStructs are properties of an object or function results if using the process event hook viewer. Generally you should be able to find the necessary data by dumping the SDK with UEVR or using an alternative dumper.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="c-wrapper-types"><a class="header" href="#c-wrapper-types">C Wrapper Types</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_vrdata"><a class="header" href="#uevr_vrdata">UEVR_VRData</a></h1>
+<p>Accessed with <code>uevr.params.vr</code></p>
+<p>Static functions. Use <code>.</code> operator. Exception is <code>vr:get_mod_value</code></p>
+<h2 id="functions-17"><a class="header" href="#functions-17">Functions</a></h2>
+<h3 id="vris_runtime_ready"><a class="header" href="#vris_runtime_ready"><code>vr.is_runtime_ready()</code></a></h3>
+<p>Returns true if the VR runtime is ready.</p>
+<h3 id="vris_openvr"><a class="header" href="#vris_openvr"><code>vr.is_openvr()</code></a></h3>
+<p>Returns true if the VR runtime is OpenVR.</p>
+<h3 id="vris_openxr"><a class="header" href="#vris_openxr"><code>vr.is_openxr()</code></a></h3>
+<p>Returns true if the VR runtime is OpenXR.</p>
+<h3 id="vris_hmd_active"><a class="header" href="#vris_hmd_active"><code>vr.is_hmd_active()</code></a></h3>
+<p>Returns true if the HMD is active. Usually meaning the headset is on and tracking.</p>
+<h3 id="vrget_standing_originout-standing_origin-uevr_vector3f"><a class="header" href="#vrget_standing_originout-standing_origin-uevr_vector3f"><code>vr.get_standing_origin(out standing_origin: UEVR_Vector3f)</code></a></h3>
+<p>Returns the standing origin of the HMD.</p>
+<h3 id="vrget_rotation_offsetout-rotation_offset-uevr_quaternionf"><a class="header" href="#vrget_rotation_offsetout-rotation_offset-uevr_quaternionf"><code>vr.get_rotation_offset(out rotation_offset: UEVR_Quaternionf)</code></a></h3>
+<p>Returns the rotation offset of the HMD.</p>
+<h3 id="vrset_standing_originstanding_origin-uevr_vector3f"><a class="header" href="#vrset_standing_originstanding_origin-uevr_vector3f"><code>vr.set_standing_origin(standing_origin: UEVR_Vector3f)</code></a></h3>
+<p>Sets the standing origin of the HMD.</p>
+<h3 id="vrset_rotation_offsetrotation_offset-uevr_quaternionf"><a class="header" href="#vrset_rotation_offsetrotation_offset-uevr_quaternionf"><code>vr.set_rotation_offset(rotation_offset: UEVR_Quaternionf)</code></a></h3>
+<p>Sets the rotation offset of the HMD.</p>
+<h3 id="vrget_hmd_index"><a class="header" href="#vrget_hmd_index"><code>vr.get_hmd_index()</code></a></h3>
+<p>Returns the index of the HMD.</p>
+<h3 id="vrget_left_controller_index"><a class="header" href="#vrget_left_controller_index"><code>vr.get_left_controller_index()</code></a></h3>
+<p>Returns the index of the left controller.</p>
+<h3 id="vrget_right_controller_index"><a class="header" href="#vrget_right_controller_index"><code>vr.get_right_controller_index()</code></a></h3>
+<p>Returns the index of the right controller.</p>
+<h3 id="vrget_poseindex-number-out-position-uevr_vector3f-out-rotation-uevr_quaternionf"><a class="header" href="#vrget_poseindex-number-out-position-uevr_vector3f-out-rotation-uevr_quaternionf"><code>vr.get_pose(index: number, out position: UEVR_Vector3f, out rotation: UEVR_Quaternionf)</code></a></h3>
+<p>Returns the pose of the specified device.</p>
+<h3 id="vrget_transformindex-number-out-transform-uevr_transform"><a class="header" href="#vrget_transformindex-number-out-transform-uevr_transform"><code>vr.get_transform(index: number, out transform: UEVR_Transform)</code></a></h3>
+<p>Returns the transform of the specified device.</p>
+<h3 id="vrget_eye_offsetindex-number-out-eye_offset-uevr_vector3f"><a class="header" href="#vrget_eye_offsetindex-number-out-eye_offset-uevr_vector3f"><code>vr.get_eye_offset(index: number, out eye_offset: UEVR_Vector3f)</code></a></h3>
+<p>Returns the eye offset of the specified eye.</p>
+<h3 id="vrget_ue_projection_matrixindex-number-out-projection_matrix-uevr_matrix4f"><a class="header" href="#vrget_ue_projection_matrixindex-number-out-projection_matrix-uevr_matrix4f"><code>vr.get_ue_projection_matrix(index: number, out projection_matrix: UEVR_Matrix4f)</code></a></h3>
+<p>Returns the projection matrix of the specified eye.</p>
+<h3 id="vrget_left_joystick_source"><a class="header" href="#vrget_left_joystick_source"><code>vr.get_left_joystick_source()</code></a></h3>
+<p>Returns the source handle of the left joystick.</p>
+<h3 id="vrget_right_joystick_source"><a class="header" href="#vrget_right_joystick_source"><code>vr.get_right_joystick_source()</code></a></h3>
+<p>Returns the source handle of the right joystick.</p>
+<h3 id="vrget_action_handleaction_name-string"><a class="header" href="#vrget_action_handleaction_name-string"><code>vr.get_action_handle(action_name: string)</code></a></h3>
+<p>Returns the handle of the specified action.</p>
+<h3 id="vris_action_activeaction_handle-uevr_actionhandle-source-uevr_inputsourcehandle"><a class="header" href="#vris_action_activeaction_handle-uevr_actionhandle-source-uevr_inputsourcehandle"><code>vr.is_action_active(action_handle: UEVR_ActionHandle, source: UEVR_InputSourceHandle)</code></a></h3>
+<p>Returns true if the specified action is active.</p>
+<h3 id="vris_action_active_any_joystickaction_handle-uevr_actionhandle"><a class="header" href="#vris_action_active_any_joystickaction_handle-uevr_actionhandle"><code>vr.is_action_active_any_joystick(action_handle: UEVR_ActionHandle)</code></a></h3>
+<p>Returns true if the specified action is active.</p>
+<h3 id="vrget_joystick_axisindex-number-out-axis-uevr_vector2f"><a class="header" href="#vrget_joystick_axisindex-number-out-axis-uevr_vector2f"><code>vr.get_joystick_axis(index: number, out axis: UEVR_Vector2f)</code></a></h3>
+<p>Returns the axis of the specified joystick.</p>
+<h3 id="vrtrigger_haptic_vibrationseconds_from_now-number-duration-number-frequency-number-amplitude-number-source_handle-number"><a class="header" href="#vrtrigger_haptic_vibrationseconds_from_now-number-duration-number-frequency-number-amplitude-number-source_handle-number"><code>vr.trigger_haptic_vibration(seconds_from_now: number, duration: number, frequency: number, amplitude: number, source_handle: number)</code></a></h3>
+<p>Triggers haptic vibration on the specified device.</p>
+<h3 id="vris_using_controllers"><a class="header" href="#vris_using_controllers"><code>vr.is_using_controllers()</code></a></h3>
+<p>Returns true if the VR system is using controllers within the past 30 seconds.</p>
+<h3 id="vrget_lowest_xinput_index"><a class="header" href="#vrget_lowest_xinput_index"><code>vr.get_lowest_xinput_index()</code></a></h3>
+<h3 id="vrrecenter_view"><a class="header" href="#vrrecenter_view"><code>vr.recenter_view()</code></a></h3>
+<p>Recenters the view.</p>
+<h3 id="vrrecenter_horizon"><a class="header" href="#vrrecenter_horizon"><code>vr.recenter_horizon()</code></a></h3>
+<p>Recenters the horizon.</p>
+<h3 id="vrget_aim_method"><a class="header" href="#vrget_aim_method"><code>vr.get_aim_method()</code></a></h3>
+<p>Returns the aim method as an integer.</p>
+<h3 id="vrset_aim_methodaim_method-number"><a class="header" href="#vrset_aim_methodaim_method-number"><code>vr.set_aim_method(aim_method: number)</code></a></h3>
+<p>Sets the aim method.</p>
+<h3 id="vris_aim_allowed"><a class="header" href="#vris_aim_allowed"><code>vr.is_aim_allowed()</code></a></h3>
+<p>Returns true if aiming is allowed.</p>
+<h3 id="vrset_aim_allowedaim_allowed-bool"><a class="header" href="#vrset_aim_allowedaim_allowed-bool"><code>vr.set_aim_allowed(aim_allowed: bool)</code></a></h3>
+<p>Sets whether aiming is allowed.</p>
+<h3 id="vrget_hmd_width"><a class="header" href="#vrget_hmd_width"><code>vr.get_hmd_width()</code></a></h3>
+<p>Returns the render width of the HMD.</p>
+<h3 id="vrget_hmd_height"><a class="header" href="#vrget_hmd_height"><code>vr.get_hmd_height()</code></a></h3>
+<p>Returns the render height of the HMD.</p>
+<h3 id="vrget_ui_width"><a class="header" href="#vrget_ui_width"><code>vr.get_ui_width()</code></a></h3>
+<p>Returns the render width of the UI.</p>
+<h3 id="vrget_ui_height"><a class="header" href="#vrget_ui_height"><code>vr.get_ui_height()</code></a></h3>
+<p>Returns the render height of the UI.</p>
+<h3 id="vris_snap_turn_enabled"><a class="header" href="#vris_snap_turn_enabled"><code>vr.is_snap_turn_enabled()</code></a></h3>
+<p>Returns true if snap turning is enabled.</p>
+<h3 id="vrset_snap_turn_enabledsnap_turn_enabled-bool"><a class="header" href="#vrset_snap_turn_enabledsnap_turn_enabled-bool"><code>vr.set_snap_turn_enabled(snap_turn_enabled: bool)</code></a></h3>
+<p>Sets whether snap turning is enabled.</p>
+<h3 id="vrset_decoupled_pitch_enableddecoupled_pitch_enabled-bool"><a class="header" href="#vrset_decoupled_pitch_enableddecoupled_pitch_enabled-bool"><code>vr.set_decoupled_pitch_enabled(decoupled_pitch_enabled: bool)</code></a></h3>
+<p>Sets whether decoupled pitch is enabled.</p>
+<h3 id="vrset_mod_valuename-string-value-string"><a class="header" href="#vrset_mod_valuename-string-value-string"><code>vr.set_mod_value(name: string, value: string)</code></a></h3>
+<p>Sets the value of the specified mod.</p>
+<h3 id="vrget_mod_valuename-string"><a class="header" href="#vrget_mod_valuename-string"><code>vr:get_mod_value(name: string)</code></a></h3>
+<p>Returns the value of the specified mod as a Lua string.</p>
+<p>This is a special function that requires use of <code>:</code> instead of <code>.</code> because it uses a custom function, not the original function.</p>
+<h3 id="vrsave_config"><a class="header" href="#vrsave_config"><code>vr.save_config()</code></a></h3>
+<p>Saves the configuration.</p>
+<h3 id="vrreload_config"><a class="header" href="#vrreload_config"><code>vr.reload_config()</code></a></h3>
+<p>Reloads the configuration.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_plugininitializeparam"><a class="header" href="#uevr_plugininitializeparam">UEVR_PluginInitializeParam</a></h1>
+<p>Accessed with <code>uevr.params</code>.</p>
+<h2 id="members-2"><a class="header" href="#members-2">Members</a></h2>
+<h3 id="paramsuevr_module"><a class="header" href="#paramsuevr_module"><code>params.uevr_module</code></a></h3>
+<p>The HMODULE of UEVR.</p>
+<h3 id="paramsversion"><a class="header" href="#paramsversion"><code>params.version</code></a></h3>
+<p>The version of UEVR's plugin API.</p>
+<p>Returns:</p>
+<pre><code class="language-c">typedef struct {
+    int major;
+    int minor;
+    int patch;
+} UEVR_PluginVersion;
+</code></pre>
+<h3 id="paramsfunctions"><a class="header" href="#paramsfunctions"><code>params.functions</code></a></h3>
+<p>Returns <a href="plugins/lua/cwrappers/UEVR_PluginFunctions.html">UEVR_PluginFunctions</a>.</p>
+<h3 id="paramscallbacks"><a class="header" href="#paramscallbacks"><code>params.callbacks</code></a></h3>
+<p>Returns <a href="plugins/lua/cwrappers/UEVR_PluginCallbacks.html">UEVR_PluginCallbacks</a>.</p>
+<h3 id="paramsrenderer"><a class="header" href="#paramsrenderer"><code>params.renderer</code></a></h3>
+<p>Returns <a href="plugins/lua/cwrappers/UEVR_RendererData.html">UEVR_RendererData</a>.</p>
+<h3 id="paramsvr"><a class="header" href="#paramsvr"><code>params.vr</code></a></h3>
+<p>Returns <a href="plugins/lua/cwrappers/UEVR_VRData.html">UEVR_VRData</a>.</p>
+<h3 id="paramsopenvr"><a class="header" href="#paramsopenvr"><code>params.openvr</code></a></h3>
+<p>Returns <a href="plugins/lua/cwrappers/UEVR_OpenVRData.html">UEVR_OpenVRData</a>.</p>
+<h3 id="paramsopenxr"><a class="header" href="#paramsopenxr"><code>params.openxr</code></a></h3>
+<p>Returns <a href="plugins/lua/cwrappers/UEVR_OpenXRData.html">UEVR_OpenXRData</a>.</p>
+<h3 id="paramssdk"><a class="header" href="#paramssdk"><code>params.sdk</code></a></h3>
+<p>Returns <a href="plugins/lua/cwrappers/UEVR_SDKData.html">UEVR_SDKData</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_plugininitializeparam-1"><a class="header" href="#uevr_plugininitializeparam-1">UEVR_PluginInitializeParam</a></h1>
+<p>Accessed with <code>uevr.params.functions</code></p>
+<h2 id="members-3"><a class="header" href="#members-3">Members</a></h2>
+<h3 id="functionslog_errormsg"><a class="header" href="#functionslog_errormsg"><code>functions.log_error(msg)</code></a></h3>
+<p>Logs an error message.</p>
+<h3 id="functionslog_warningmsg"><a class="header" href="#functionslog_warningmsg"><code>functions.log_warning(msg)</code></a></h3>
+<p>Logs a warning message.</p>
+<h3 id="functionslog_infomsg"><a class="header" href="#functionslog_infomsg"><code>functions.log_info(msg)</code></a></h3>
+<p>Logs an info message.</p>
+<h3 id="functionsis_drawing_ui"><a class="header" href="#functionsis_drawing_ui"><code>functions.is_drawing_ui()</code></a></h3>
+<p>Returns <code>true</code> if UEVR is drawing its menu.</p>
+<h3 id="functionsget_commit_hash"><a class="header" href="#functionsget_commit_hash"><code>functions.get_commit_hash()</code></a></h3>
+<p>Returns the commit hash of UEVR.</p>
+<h3 id="functionsget_tag"><a class="header" href="#functionsget_tag"><code>functions.get_tag()</code></a></h3>
+<p>Returns the tag of UEVR.</p>
+<h3 id="functionsget_tag_long"><a class="header" href="#functionsget_tag_long"><code>functions.get_tag_long()</code></a></h3>
+<p>Returns the long tag of UEVR.</p>
+<h3 id="functionsget_branch"><a class="header" href="#functionsget_branch"><code>functions.get_branch()</code></a></h3>
+<p>Returns the branch of UEVR.</p>
+<h3 id="functionsget_build_date"><a class="header" href="#functionsget_build_date"><code>functions.get_build_date()</code></a></h3>
+<p>Returns the build date of UEVR.</p>
+<h3 id="functionsget_build_time"><a class="header" href="#functionsget_build_time"><code>functions.get_build_time()</code></a></h3>
+<p>Returns the build time of UEVR.</p>
+<h3 id="functionsget_commits_past_tag"><a class="header" href="#functionsget_commits_past_tag"><code>functions.get_commits_past_tag()</code></a></h3>
+<p>Returns the number of commits past the last tag.</p>
+<h3 id="functionsget_total_commits"><a class="header" href="#functionsget_total_commits"><code>functions.get_total_commits()</code></a></h3>
+<p>Returns the total number of commits to UEVR.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="third-party"><a class="header" href="#third-party">Third Party</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="xinput"><a class="header" href="#xinput">XInput</a></h1>
+<h2 id="globals"><a class="header" href="#globals">Globals</a></h2>
+<h3 id="xinput_gamepad_dpad_up"><a class="header" href="#xinput_gamepad_dpad_up"><code>XINPUT_GAMEPAD_DPAD_UP</code></a></h3>
+<p>The D-Pad up button.</p>
+<h3 id="xinput_gamepad_dpad_down"><a class="header" href="#xinput_gamepad_dpad_down"><code>XINPUT_GAMEPAD_DPAD_DOWN</code></a></h3>
+<p>The D-Pad down button.</p>
+<h3 id="xinput_gamepad_dpad_left"><a class="header" href="#xinput_gamepad_dpad_left"><code>XINPUT_GAMEPAD_DPAD_LEFT</code></a></h3>
+<p>The D-Pad left button.</p>
+<h3 id="xinput_gamepad_dpad_right"><a class="header" href="#xinput_gamepad_dpad_right"><code>XINPUT_GAMEPAD_DPAD_RIGHT</code></a></h3>
+<p>The D-Pad right button.</p>
+<h3 id="xinput_gamepad_start"><a class="header" href="#xinput_gamepad_start"><code>XINPUT_GAMEPAD_START</code></a></h3>
+<p>The Start button.</p>
+<h3 id="xinput_gamepad_back"><a class="header" href="#xinput_gamepad_back"><code>XINPUT_GAMEPAD_BACK</code></a></h3>
+<p>The Back button.</p>
+<h3 id="xinput_gamepad_left_thumb"><a class="header" href="#xinput_gamepad_left_thumb"><code>XINPUT_GAMEPAD_LEFT_THUMB</code></a></h3>
+<p>The left thumbstick button.</p>
+<h3 id="xinput_gamepad_right_thumb"><a class="header" href="#xinput_gamepad_right_thumb"><code>XINPUT_GAMEPAD_RIGHT_THUMB</code></a></h3>
+<p>The right thumbstick button.</p>
+<h3 id="xinput_gamepad_left_shoulder"><a class="header" href="#xinput_gamepad_left_shoulder"><code>XINPUT_GAMEPAD_LEFT_SHOULDER</code></a></h3>
+<p>The left shoulder button.</p>
+<h3 id="xinput_gamepad_right_shoulder"><a class="header" href="#xinput_gamepad_right_shoulder"><code>XINPUT_GAMEPAD_RIGHT_SHOULDER</code></a></h3>
+<p>The right shoulder button.</p>
+<h3 id="xinput_gamepad_a"><a class="header" href="#xinput_gamepad_a"><code>XINPUT_GAMEPAD_A</code></a></h3>
+<p>The A button.</p>
+<h3 id="xinput_gamepad_b"><a class="header" href="#xinput_gamepad_b"><code>XINPUT_GAMEPAD_B</code></a></h3>
+<p>The B button.</p>
+<h3 id="xinput_gamepad_x"><a class="header" href="#xinput_gamepad_x"><code>XINPUT_GAMEPAD_X</code></a></h3>
+<p>The X button.</p>
+<h3 id="xinput_gamepad_y"><a class="header" href="#xinput_gamepad_y"><code>XINPUT_GAMEPAD_Y</code></a></h3>
+<p>The Y button.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="xinput_state"><a class="header" href="#xinput_state">XINPUT_STATE</a></h1>
+<h2 id="fields"><a class="header" href="#fields">Fields</a></h2>
+<h3 id="dwpacketnumber"><a class="header" href="#dwpacketnumber"><code>dwPacketNumber</code></a></h3>
+<p>The packet number of the state. <code>uint32</code></p>
+<h3 id="gamepad"><a class="header" href="#gamepad"><code>Gamepad</code></a></h3>
+<p>The gamepad state. <a href="plugins/lua/thirdparty/XINPUT_GAMEPAD.html">XINPUT_GAMEPAD</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="xinput_vibration"><a class="header" href="#xinput_vibration">XINPUT_VIBRATION</a></h1>
+<h2 id="fields-1"><a class="header" href="#fields-1">Fields</a></h2>
+<h3 id="wleftmotorspeed"><a class="header" href="#wleftmotorspeed"><code>wLeftMotorSpeed</code></a></h3>
+<p>The speed of the left motor. <code>uint16</code></p>
+<h3 id="wrightmotorspeed"><a class="header" href="#wrightmotorspeed"><code>wRightMotorSpeed</code></a></h3>
+<p>The speed of the right mightor. <code>uint16</code></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="xinput_gamepad"><a class="header" href="#xinput_gamepad">XINPUT_GAMEPAD</a></h1>
+<h2 id="fields-2"><a class="header" href="#fields-2">Fields</a></h2>
+<h3 id="wbuttons"><a class="header" href="#wbuttons"><code>wButtons</code></a></h3>
+<p>The current state of the controller buttons. <code>uint16</code></p>
+<h3 id="blefttrigger"><a class="header" href="#blefttrigger"><code>bLeftTrigger</code></a></h3>
+<p>The current state of the left trigger. <code>uint8</code></p>
+<h3 id="brighttrigger"><a class="header" href="#brighttrigger"><code>bRightTrigger</code></a></h3>
+<p>The current state of the right trigger. <code>uint8</code></p>
+<h3 id="sthumblx"><a class="header" href="#sthumblx"><code>sThumbLX</code></a></h3>
+<p>The current state of the left thumbstick X axis. <code>int16</code></p>
+<h3 id="sthumbly"><a class="header" href="#sthumbly"><code>sThumbLY</code></a></h3>
+<p>The current state of the left thumbstick Y axis. <code>int16</code></p>
+<h3 id="sthumbrx"><a class="header" href="#sthumbrx"><code>sThumbRX</code></a></h3>
+<p>The current state of the right thumbstick X axis. <code>int16</code></p>
+<h3 id="sthumbry"><a class="header" href="#sthumbry"><code>sThumbRY</code></a></h3>
+<p>The current state of the right thumbstick Y axis. <code>int16</code></p>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="imgui"><a class="header" href="#imgui">imgui</a></h1>
+<p>Bindings for ImGui. Can be used in the <code>uevr.sdk.callbacks.on_draw_ui</code> and <code>uevr.sdk.callbacks.on_frame</code> callbacks or within a <a href="plugins/lua/additional-bindings/../lua.html">Script Panel</a>.
+Calling ImGui functions outside of these situations will likely cause a crash but it is safe to call game functions from ImGui. Calls made during <code>on_frame</code> without creating a new window manually will automatically draw to a new window labeled &quot;Debug&quot;. </p>
+<p>Example:</p>
+<pre><code>local thing = 1
+local things = { &quot;hi&quot;, &quot;hello&quot;, &quot;howdy&quot;, &quot;hola&quot;, &quot;aloha&quot; }
+
+uevr.sdk.callbacks.on_draw_ui(function()
+    if imgui.button(&quot;Whats up&quot;) then 
+        thing = 1
+    end
+
+    local changed, new_thing = imgui.combo(&quot;Greeting&quot;, thing, things) 
+    if changed then thing = new_thing end
+end)
+</code></pre>
+<h2 id="enums"><a class="header" href="#enums">Enums</a></h2>
+<h3 id="imguitablesortspecs"><a class="header" href="#imguitablesortspecs"><code>imgui.TableSortSpecs</code></a></h3>
+<h3 id="imguitablecolumnsortspecs"><a class="header" href="#imguitablecolumnsortspecs"><code>imgui.TableColumnSortSpecs</code></a></h3>
+<h3 id="imguitableflags"><a class="header" href="#imguitableflags"><code>imgui.TableFlags</code></a></h3>
+<h3 id="imguicolumnflags"><a class="header" href="#imguicolumnflags"><code>imgui.ColumnFlags</code></a></h3>
+<h3 id="imguiimguikey"><a class="header" href="#imguiimguikey"><code>imgui.ImGuiKey</code></a></h3>
+<h3 id="imguiimguistylevar"><a class="header" href="#imguiimguistylevar"><code>imgui.ImGuiStyleVar</code></a></h3>
+<h3 id="id-methods"><a class="header" href="#id-methods">ID Methods</a></h3>
+<p>Correct usage of ImGui's ID system is crucial to success and can alleviate many common errors. IDs are automatically generated based on window context but this is generally not sufficient when multiple widgets of the same type are present and it prevents use of features like appending to windows. Context for any widget can manually be set by preceding the calls with <code>push_id</code> and following with <code>pop_id</code>. Many widgets with labels will use the provided label as their ID. In those cases it is possible to hide the label and still specify an ID without using <code>push_id</code> by prefixing your desired ID with <code>&quot;###&quot;</code>. The actual effect is that anything before the <code>&quot;###&quot;</code> is ignored by the ID system therefore allowing different display names without affecting ID.
+ex:</p>
+<pre><code class="language-lua">-- this will create a window without any visible label
+imgui.begin_window(&quot;###test_window&quot;)
+imgui.text(&quot;test1&quot;)
+imgui.end_window()
+
+-- this will append to the above window. Since its called afterwards the title cannot be changed 
+imgui.begin_window(&quot;TEST###test_window&quot;)
+imgui.text(&quot;test2&quot;)
+imgui.end_window()
+
+-- this will create the window with the visible name TEST
+imgui.begin_window(&quot;TEST###test_window2&quot;)
+imgui.text(&quot;test3&quot;)
+imgui.end_window()
+
+-- this will append to the second window without changing the name 
+imgui.begin_window(&quot;DIFFERENT NAME###test_window2&quot;)
+imgui.text(&quot;test2&quot;)
+imgui.end_window()
+
+
+</code></pre>
+<h3 id="imguiget_idid"><a class="header" href="#imguiget_idid"><code>imgui.get_id(id)</code></a></h3>
+<p><code>id</code> - can be a <code>string</code>, <code>number</code>, or <code>userdata</code> e.g. a UObject.
+Calculates a valid numeric ID from the provided input. While other lua types are not supported directly, any non-nil value can be passed with <code>tostring</code>, e.g <code>local mytable_id = imgui.get_id(tostring(mytable))</code></p>
+<h3 id="imguipush_idid"><a class="header" href="#imguipush_idid"><code>imgui.push_id(id)</code></a></h3>
+<p>Assign the ID or context for all imgui calls until <code>pop_id</code> is called</p>
+<h3 id="imguipop_id"><a class="header" href="#imguipop_id"><code>imgui.pop_id()</code></a></h3>
+<h2 id="methods-1"><a class="header" href="#methods-1">Methods</a></h2>
+<h3 id="imguibegin_windowname-open-flags"><a class="header" href="#imguibegin_windowname-open-flags"><code>imgui.begin_window(name, open, flags)</code></a></h3>
+<p>Creates a new window with the title of <code>name</code>.</p>
+<p><code>open</code> is a bool. Can be <code>nil</code>. If not <code>nil</code>, a close button will be shown in the top right of the window.</p>
+<p><code>flags</code> - ImGuiWindowFlags. Can be <code>nil</code> or 0. </p>
+<p><code>begin_window</code> must have a corresponding <code>end_window</code> call.</p>
+<p>Returns a bool. Returns <code>false</code> if the user wants to close the window. The return value is optional, 
+ex:</p>
+<pre><code class="language-lua">imgui.begin_window(&quot;My Window&quot;)
+imgui.text(&quot;text in a window&quot;)
+imgui.end_window()
+</code></pre>
+<p>Windows can be appended to by calling <code>begin_window</code> again with the same label.</p>
+<h3 id="imguiend_window"><a class="header" href="#imguiend_window"><code>imgui.end_window()</code></a></h3>
+<p>Ends the last <code>begin_window</code> call. Required.</p>
+<h3 id="imguibegin_child_windowname-size-border-flags"><a class="header" href="#imguibegin_child_windowname-size-border-flags"><code>imgui.begin_child_window(name, size, border, flags)</code></a></h3>
+<p><code>name</code> - string</p>
+<p><code>size</code> - Vector2f</p>
+<p><code>border</code> - bool</p>
+<p><code>flags</code> - ImGuiWindowFlags</p>
+<p>Child windows are ideal for organizing widgets within a window or script panel. Child windows can also be appended to but only in the context of the same window.</p>
+<h3 id="imguiend_child_window"><a class="header" href="#imguiend_child_window"><code>imgui.end_child_window()</code></a></h3>
+<h3 id="imguibegin_group"><a class="header" href="#imguibegin_group"><code>imgui.begin_group()</code></a></h3>
+<h3 id="imguiend_group"><a class="header" href="#imguiend_group"><code>imgui.end_group()</code></a></h3>
+<p>Organize a set of widgets together. You can but do not have to call <code>push_id</code> before calling this. Allows for <code>is_item_active</code>, <code>is_item_hovered</code> and <code>is_item_focused</code> to work on the entire group.</p>
+<h3 id="imguibegin_rect"><a class="header" href="#imguibegin_rect"><code>imgui.begin_rect()</code></a></h3>
+<h3 id="imguiend_rectadditional_size-rounding"><a class="header" href="#imguiend_rectadditional_size-rounding"><code>imgui.end_rect(additional_size, rounding)</code></a></h3>
+<p>These two methods draw a rectangle around the elements between <code>begin_rect</code> and <code>end_rect</code></p>
+<h3 id="imguibegin_disableddisabledtrue"><a class="header" href="#imguibegin_disableddisabledtrue"><code>imgui.begin_disabled(disabled=true)</code></a></h3>
+<h3 id="imguiend_disabled"><a class="header" href="#imguiend_disabled"><code>imgui.end_disabled()</code></a></h3>
+<p>These two methods will disable and darken elements in between it.</p>
+<h3 id="imguibuttonlabel-size"><a class="header" href="#imguibuttonlabel-size"><code>imgui.button(label, size)</code></a></h3>
+<p>Draws a button with <code>label</code> text, and optional <code>size</code>.</p>
+<p><code>size</code> is a Vector2f or a size 2 array.</p>
+<p>Returns <code>true</code> when the user presses the button.</p>
+<h3 id="imguismall_buttonlabel"><a class="header" href="#imguismall_buttonlabel"><code>imgui.small_button(label)</code></a></h3>
+<h3 id="imguiinvisible_buttonid-size-flags"><a class="header" href="#imguiinvisible_buttonid-size-flags"><code>imgui.invisible_button(id, size, flags)</code></a></h3>
+<p><code>size</code> is a Vector2f or a size 2 array.
+<code>flags</code> is an int representing a set of ImGuiButtonFlags_ enum values. </p>
+<p>Can be used to create some advanced custom widgets with the right flags, ex:</p>
+<pre><code class="language-lua">-- use `4096 + 1024` to specify the `AllowsOverlap` and `Repeat` flags
+ local text = &quot;You can click and hold me&quot;
+ imgui.begin_rect()
+ local pos = imgui.get_cursor_screen_pos()
+ local clicked = imgui.invisible_button(imgui.get_id(label), imgui.calc_text_size(text), 4096 + 1024)
+ imgui.set_cursor_screen_pos(pos)
+ imgui.text(text)
+ imgui.end_rect() 
+</code></pre>
+<h3 id="imguiarrow_buttonid-dir"><a class="header" href="#imguiarrow_buttonid-dir"><code>imgui.arrow_button(id, dir)</code></a></h3>
+<p><code>dir</code> is an <code>ImguiDir</code></p>
+<h3 id="imguitexttext"><a class="header" href="#imguitexttext"><code>imgui.text(text)</code></a></h3>
+<p>Draws text.</p>
+<h3 id="imguitext_coloredtext-color"><a class="header" href="#imguitext_coloredtext-color"><code>imgui.text_colored(text, color)</code></a></h3>
+<p>Draws text with color.</p>
+<p><code>color</code> is an integer color in the form ARGB.</p>
+<h3 id="imguicheckboxlabel-value"><a class="header" href="#imguicheckboxlabel-value"><code>imgui.checkbox(label, value)</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code></p>
+<h3 id="imguidrag_floatlabel-value-speed-min-max-display_format-optional"><a class="header" href="#imguidrag_floatlabel-value-speed-min-max-display_format-optional"><code>imgui.drag_float(label, value, speed, min, max, display_format (optional))</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code></p>
+<h3 id="imguidrag_float2label-value-vector2f-speed-min-max-display_format-optional"><a class="header" href="#imguidrag_float2label-value-vector2f-speed-min-max-display_format-optional"><code>imgui.drag_float2(label, value (Vector2f), speed, min, max, display_format (optional))</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code></p>
+<h3 id="imguidrag_float3label-value-vector3f-speed-min-max-display_format-optional"><a class="header" href="#imguidrag_float3label-value-vector3f-speed-min-max-display_format-optional"><code>imgui.drag_float3(label, value (Vector3f), speed, min, max, display_format (optional))</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code></p>
+<h3 id="imguidrag_float4label-value-vector4f-speed-min-max-display_format-optional"><a class="header" href="#imguidrag_float4label-value-vector4f-speed-min-max-display_format-optional"><code>imgui.drag_float4(label, value (Vector4f), speed, min, max, display_format (optional))</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code></p>
+<h3 id="imguidrag_intlabel-value-speed-min-max-display_format-optional"><a class="header" href="#imguidrag_intlabel-value-speed-min-max-display_format-optional"><code>imgui.drag_int(label, value, speed, min, max, display_format (optional))</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code></p>
+<h3 id="imguislider_floatlabel-value-min-max-display_format-optional"><a class="header" href="#imguislider_floatlabel-value-min-max-display_format-optional"><code>imgui.slider_float(label, value, min, max, display_format (optional))</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code></p>
+<h3 id="imguislider_intlabel-value-min-max-display_format-optional"><a class="header" href="#imguislider_intlabel-value-min-max-display_format-optional"><code>imgui.slider_int(label, value, min, max, display_format (optional))</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code></p>
+<h3 id="imguiinput_textlabel-value-flags-optional"><a class="header" href="#imguiinput_textlabel-value-flags-optional"><code>imgui.input_text(label, value, flags (optional))</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code>, <code>selection_start</code>, <code>selection_end</code></p>
+<h3 id="imguiinput_text_multilinelabel-value-size-flags-optional"><a class="header" href="#imguiinput_text_multilinelabel-value-size-flags-optional"><code>imgui.input_text_multiline(label, value, size, flags (optional))</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code>, <code>selection_start</code>, <code>selection_end</code></p>
+<h3 id="imguicombolabel-selection-values"><a class="header" href="#imguicombolabel-selection-values"><code>imgui.combo(label, selection, values)</code></a></h3>
+<p>Returns a tuple of <code>changed, value</code>. </p>
+<p><code>changed</code> = true when selection changes. </p>
+<p><code>value</code> is the selection index within <code>values</code> (a table)</p>
+<p><code>values</code> can be a table with any type of keys, as long as the values are strings.</p>
+<h3 id="imguicolor_pickerlabel-color-flags"><a class="header" href="#imguicolor_pickerlabel-color-flags"><code>imgui.color_picker(label, color, flags)</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code>. <code>color</code> is an integer color in the form ABGR which <code>imgui</code> and <code>draw</code> APIs expect.</p>
+<h3 id="imguicolor_picker_argblabel-color-flags"><a class="header" href="#imguicolor_picker_argblabel-color-flags"><code>imgui.color_picker_argb(label, color, flags)</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code>. <code>color</code> is an integer color in the form ARGB.</p>
+<h3 id="imguicolor_picker3label-color-vector3f-flags"><a class="header" href="#imguicolor_picker3label-color-vector3f-flags"><code>imgui.color_picker3(label, color (Vector3f), flags)</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code></p>
+<h3 id="imguicolor_picker4label-color-vector4f-flags"><a class="header" href="#imguicolor_picker4label-color-vector4f-flags"><code>imgui.color_picker4(label, color (Vector4f), flags)</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code></p>
+<h3 id="imguicolor_editlabel-color-flags"><a class="header" href="#imguicolor_editlabel-color-flags"><code>imgui.color_edit(label, color, flags)</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code>. <code>color</code> is an integer color in the form ABGR which <code>imgui</code> and <code>draw</code> APIs expect.</p>
+<h3 id="imguicolor_edit_argblabel-color-flags"><a class="header" href="#imguicolor_edit_argblabel-color-flags"><code>imgui.color_edit_argb(label, color, flags)</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code>. <code>color</code> is an integer color in the form ARGB.</p>
+<h3 id="imguicolor_edit3label-color-vector3f-flags"><a class="header" href="#imguicolor_edit3label-color-vector3f-flags"><code>imgui.color_edit3(label, color (Vector3f), flags)</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code></p>
+<h3 id="imguicolor_edit4label-color-vector4f-flags"><a class="header" href="#imguicolor_edit4label-color-vector4f-flags"><code>imgui.color_edit4(label, color (Vector4f), flags)</code></a></h3>
+<p>Returns a tuple of <code>changed</code>, <code>value</code></p>
+<p><code>flags</code> for <code>color_picker/edit</code> APIs: <code>ImGuiColorEditFlags</code></p>
+<h3 id="imguitree_nodelabel"><a class="header" href="#imguitree_nodelabel"><code>imgui.tree_node(label)</code></a></h3>
+<h3 id="imguitree_node_ptr_idid-label"><a class="header" href="#imguitree_node_ptr_idid-label"><code>imgui.tree_node_ptr_id(id, label)</code></a></h3>
+<h3 id="imguitree_node_str_idid-label"><a class="header" href="#imguitree_node_str_idid-label"><code>imgui.tree_node_str_id(id, label)</code></a></h3>
+<h3 id="imguitree_pop"><a class="header" href="#imguitree_pop"><code>imgui.tree_pop()</code></a></h3>
+<p>All of the above <code>tree</code> functions must have a corresponding <code>tree_pop</code>!
+Note that tree_nodes are especially prone to ID conflicts, but these are easily resolvable especially when building from a table. In many cases using the <code>ptr_id</code> version with the iterator variable will suffice.</p>
+<h3 id="imguisame_line"><a class="header" href="#imguisame_line"><code>imgui.same_line()</code></a></h3>
+<h3 id="imguispacing"><a class="header" href="#imguispacing"><code>imgui.spacing()</code></a></h3>
+<h3 id="imguinew_line"><a class="header" href="#imguinew_line"><code>imgui.new_line()</code></a></h3>
+<h3 id="imguiis_item_hoveredflags"><a class="header" href="#imguiis_item_hoveredflags"><code>imgui.is_item_hovered(flags)</code></a></h3>
+<h3 id="imguiis_item_active"><a class="header" href="#imguiis_item_active"><code>imgui.is_item_active()</code></a></h3>
+<h3 id="imguiis_item_focused"><a class="header" href="#imguiis_item_focused"><code>imgui.is_item_focused()</code></a></h3>
+<h3 id="imguicollapsing_headername"><a class="header" href="#imguicollapsing_headername"><code>imgui.collapsing_header(name)</code></a></h3>
+<h3 id="imguiload_fontfilepath-size-ranges"><a class="header" href="#imguiload_fontfilepath-size-ranges"><code>imgui.load_font(filepath, size, [ranges])</code></a></h3>
+<p>Loads a font file from the <code>UnrealVRMod/[GAMENAME]/fonts</code> subdirectory at the specified <code>size</code> with optional Unicode <code>ranges</code> (an array of start, end pairs ending with 0). Returns a handle for use with <code>imgui.push_font()</code>. If <code>filepath</code> is nil, it will load the default font at the specified size. Most default Windows fonts should be compatible.</p>
+<h3 id="imguipush_fontfont"><a class="header" href="#imguipush_fontfont"><code>imgui.push_font(font)</code></a></h3>
+<p>Sets the font to be used for the next set of ImGui widgets/draw commands until <code>imgui.pop_font</code> is called.</p>
+<h3 id="imguipop_font"><a class="header" href="#imguipop_font"><code>imgui.pop_font()</code></a></h3>
+<p>Unsets the previously pushed font.</p>
+<h3 id="imguiget_default_font_size"><a class="header" href="#imguiget_default_font_size"><code>imgui.get_default_font_size()</code></a></h3>
+<p>Returns size of the default font for REFramework's UI.</p>
+<h3 id="imguiset_next_window_pospos-vector2f-or-table-condition-pivot-vector2f-or-table"><a class="header" href="#imguiset_next_window_pospos-vector2f-or-table-condition-pivot-vector2f-or-table"><code>imgui.set_next_window_pos(pos (Vector2f or table), condition, pivot (Vector2f or table))</code></a></h3>
+<p><code>condition</code> is the <code>ImGuiCond</code> enum.</p>
+<pre><code class="language-cpp">enum ImGuiCond_
+{
+    ImGuiCond_None          = 0,        // No condition (always set the variable), same as _Always
+    ImGuiCond_Always        = 1 &lt;&lt; 0,   // No condition (always set the variable)
+    ImGuiCond_Once          = 1 &lt;&lt; 1,   // Set the variable once per runtime session (only the first call will succeed)
+    ImGuiCond_FirstUseEver  = 1 &lt;&lt; 2,   // Set the variable if the object/window has no persistently saved data (no entry in .ini file)
+    ImGuiCond_Appearing     = 1 &lt;&lt; 3    // Set the variable if the object/window is appearing after being hidden/inactive (or the first time)
+};
+</code></pre>
+<h3 id="imguiset_next_window_sizesize-vector2f-or-table-condition"><a class="header" href="#imguiset_next_window_sizesize-vector2f-or-table-condition"><code>imgui.set_next_window_size(size (Vector2f or table), condition)</code></a></h3>
+<p><code>condition</code> is the <code>ImGuiCond</code> enum.</p>
+<h3 id="imguiget_mouse"><a class="header" href="#imguiget_mouse"><code>imgui.get_mouse()</code></a></h3>
+<p>Returns a <code>Vector2f</code> corresponding to the user's actual mouse position.</p>
+<h3 id="imguiprogress_barprogress-size-overlay"><a class="header" href="#imguiprogress_barprogress-size-overlay"><code>imgui.progress_bar(progress, size, overlay)</code></a></h3>
+<p><code>progress</code> is a float between 0 and 1.</p>
+<p><code>size</code> is a <code>Vector2f</code> or a size 2 array.</p>
+<p><code>overlay</code> is a string on top of the progress bar.</p>
+<pre><code class="language-lua">local progress = 0.0
+
+uevr.sdk.callbacks.on_frame(function()
+    progress = progress + 0.001
+    if progress &gt; 1.0 then 
+        progress = 0.0
+    end
+end)
+
+uevr.sdk.callbacks.on_draw_ui(function()
+    imgui.progress_bar(progress, Vector2f.new(200, 20), string.format(&quot;Progress: %.1f%%&quot;, progress * 100))
+end)
+</code></pre>
+<h3 id="imguiitem_sizepos-size"><a class="header" href="#imguiitem_sizepos-size"><code>imgui.item_size(pos, size)</code></a></h3>
+<h3 id="imguiitem_addpos-size"><a class="header" href="#imguiitem_addpos-size"><code>imgui.item_add(pos, size)</code></a></h3>
+<p>Adds an item with the specified position and size to the current window.</p>
+<h3 id="imguidraw_list_path_clear"><a class="header" href="#imguidraw_list_path_clear"><code>imgui.draw_list_path_clear()</code></a></h3>
+<p>Clears the current window's draw list path.</p>
+<h3 id="imguidraw_list_path_line_topos"><a class="header" href="#imguidraw_list_path_line_topos"><code>imgui.draw_list_path_line_to(pos)</code></a></h3>
+<p>Adds a line to the current window's draw list path given the specified <code>pos</code></p>
+<ul>
+<li><code>pos</code> is a <code>Vector2f</code> or a size 2 array.</li>
+</ul>
+<p>To draw on the main screen you can create a new window scaled to cover the entire screen and set the background style color to have 0 alpha and use appropriate Window flags to prevent stealing inputs or moving the window. This will not align correctly in VR.</p>
+<h3 id="imguidraw_list_path_strokecolor-closed-thickness"><a class="header" href="#imguidraw_list_path_strokecolor-closed-thickness"><code>imgui.draw_list_path_stroke(color, closed, thickness)</code></a></h3>
+<p>Strokes the current window's background draw list path with the specified <code>color</code>, <code>closed</code> state, and <code>thickness</code>. This can be called to add thickness to the lines and outlines of calls from the <a href="plugins/lua/additional-bindings/draw.html">draw</a> API.</p>
+<ul>
+<li><code>color</code> is an integer color in the form ARGB.</li>
+<li><code>closed</code> is a bool.</li>
+<li><code>thickness</code> is a float.</li>
+</ul>
+<h3 id="imguiget_key_indeximgui_key"><a class="header" href="#imguiget_key_indeximgui_key"><code>imgui.get_key_index(imgui_key)</code></a></h3>
+<p>Returns the index of the specified <code>imgui_key</code>.</p>
+<h3 id="imguiis_key_downkey"><a class="header" href="#imguiis_key_downkey"><code>imgui.is_key_down(key)</code></a></h3>
+<p>Returns true if the specified <code>key</code> is currently being held down.</p>
+<h3 id="imguiis_key_pressedkey"><a class="header" href="#imguiis_key_pressedkey"><code>imgui.is_key_pressed(key)</code></a></h3>
+<p>Returns true if the specified <code>key</code> was pressed during the current frame.</p>
+<h3 id="imguiis_key_releasedkey"><a class="header" href="#imguiis_key_releasedkey"><code>imgui.is_key_released(key)</code></a></h3>
+<p>Returns true if the specified <code>key</code> was released during the current frame.</p>
+<h3 id="imguiis_mouse_downbutton"><a class="header" href="#imguiis_mouse_downbutton"><code>imgui.is_mouse_down(button)</code></a></h3>
+<p>Returns true if the specified mouse <code>button</code> is currently being held down.</p>
+<h3 id="imguiis_mouse_clickedbutton"><a class="header" href="#imguiis_mouse_clickedbutton"><code>imgui.is_mouse_clicked(button)</code></a></h3>
+<p>Returns true if the specified mouse <code>button</code> was clicked during the current frame.</p>
+<h3 id="imguiis_mouse_releasedbutton"><a class="header" href="#imguiis_mouse_releasedbutton"><code>imgui.is_mouse_released(button)</code></a></h3>
+<p>Returns true if the specified mouse <code>button</code> was released during the current frame.</p>
+<h3 id="imguiis_mouse_double_clickedbutton"><a class="header" href="#imguiis_mouse_double_clickedbutton"><code>imgui.is_mouse_double_clicked(button)</code></a></h3>
+<p>Returns true if the specified mouse <code>button</code> was double-clicked during the current frame.</p>
+<h3 id="imguiindentindent_width"><a class="header" href="#imguiindentindent_width"><code>imgui.indent(indent_width)</code></a></h3>
+<p>Indents the current line by <code>indent_width</code> pixels.</p>
+<h3 id="imguiunindentindent_width"><a class="header" href="#imguiunindentindent_width"><code>imgui.unindent(indent_width)</code></a></h3>
+<p>Unindents the current line by <code>indent_width</code> pixels.</p>
+<h3 id="imguibegin_tooltip"><a class="header" href="#imguibegin_tooltip"><code>imgui.begin_tooltip()</code></a></h3>
+<p>Starts a tooltip window that will be drawn at the current cursor position.</p>
+<h3 id="imguiend_tooltip"><a class="header" href="#imguiend_tooltip"><code>imgui.end_tooltip()</code></a></h3>
+<p>Ends the current tooltip window.</p>
+<h3 id="imguiset_tooltiptext"><a class="header" href="#imguiset_tooltiptext"><code>imgui.set_tooltip(text)</code></a></h3>
+<p>Sets the text for the current tooltip window.</p>
+<h3 id="imguiopen_popupstr_id-flags"><a class="header" href="#imguiopen_popupstr_id-flags"><code>imgui.open_popup(str_id, flags)</code></a></h3>
+<p>Opens a popup with the specified str_id and flags.</p>
+<h3 id="imguibegin_popupstr_id-flags"><a class="header" href="#imguibegin_popupstr_id-flags"><code>imgui.begin_popup(str_id, flags)</code></a></h3>
+<p>Begins a new popup with the specified str_id and flags.</p>
+<h3 id="imguibegin_popup_context_itemstr_id-flags"><a class="header" href="#imguibegin_popup_context_itemstr_id-flags"><code>imgui.begin_popup_context_item(str_id, flags)</code></a></h3>
+<p>Begins a new popup with the specified str_id and flags, anchored to the last item or group. Automatically handles right click activation.
+ex:</p>
+<pre><code class="language-lua">local text = &quot;blah blah blah&quot;
+local text2 = &quot;copy me too&quot;
+imgui.begin_rect()
+imgui.text(text)
+imgui.text(text2)
+imgui.end_rect()
+if imgui.begin_popup_context_item(&quot;Context&quot;) then
+    if imgui.menu_item(&quot;Copy text&quot;) then
+        imgui.set_clipboard(text..text2)
+        imgui.close_current_popup()
+    end
+    imgui.end_popup()
+end
+</code></pre>
+<h3 id="imguiend_popup"><a class="header" href="#imguiend_popup"><code>imgui.end_popup()</code></a></h3>
+<p>Ends the current popup window.</p>
+<h3 id="imguiclose_current_popup"><a class="header" href="#imguiclose_current_popup"><code>imgui.close_current_popup()</code></a></h3>
+<p>Closes the current popup window.</p>
+<h3 id="imguiis_popup_openstr_id"><a class="header" href="#imguiis_popup_openstr_id"><code>imgui.is_popup_open(str_id)</code></a></h3>
+<p>Returns true if the popup with the specified str_id is open.</p>
+<h3 id="imguicalc_text_sizetext"><a class="header" href="#imguicalc_text_sizetext"><code>imgui.calc_text_size(text)</code></a></h3>
+<p>Calculates and returns the size of the specified text as a Vector2f.</p>
+<h3 id="imguiget_window_size"><a class="header" href="#imguiget_window_size"><code>imgui.get_window_size()</code></a></h3>
+<p>Returns the size of the current window as a Vector2f.</p>
+<h3 id="imguiget_window_pos"><a class="header" href="#imguiget_window_pos"><code>imgui.get_window_pos()</code></a></h3>
+<p>Returns the position of the current window as a Vector2f.</p>
+<h3 id="imguiset_next_item_openis_open-condition"><a class="header" href="#imguiset_next_item_openis_open-condition"><code>imgui.set_next_item_open(is_open, condition)</code></a></h3>
+<p>Sets the open state of the next collapsing header or tree node to <code>is_open</code> based on the specified <code>condition</code>.</p>
+<h3 id="imguibegin_list_boxlabel-size"><a class="header" href="#imguibegin_list_boxlabel-size"><code>imgui.begin_list_box(label, size)</code></a></h3>
+<p>Begins a new list box with the specified label and size.</p>
+<h3 id="imguiend_list_box"><a class="header" href="#imguiend_list_box"><code>imgui.end_list_box()</code></a></h3>
+<p>Ends the current list box.</p>
+<h3 id="imguibegin_menu_bar"><a class="header" href="#imguibegin_menu_bar"><code>imgui.begin_menu_bar()</code></a></h3>
+<p>Begins a new menu bar. Windows and child windows can be created with a flag to draw a space for menu bars. Unlike window and child window begin and end calls this must be handled with an <code>if then end</code> block or you will crash</p>
+<h3 id="imguiend_menu_bar"><a class="header" href="#imguiend_menu_bar"><code>imgui.end_menu_bar()</code></a></h3>
+<p>Ends the current menu bar.</p>
+<h3 id="imguibegin_main_menu_bar"><a class="header" href="#imguibegin_main_menu_bar"><code>imgui.begin_main_menu_bar()</code></a></h3>
+<p>Begins a menu bar at the top of the main viewport. Does not require a new window to draw on, however it is best to have an invisible window flagged to ignore inputs and focus so that menus don't lose focus as easily.</p>
+<h3 id="imguiend_main_menu_bar"><a class="header" href="#imguiend_main_menu_bar"><code>imgui.end_main_menu_bar()</code></a></h3>
+<p>Ends the main menu bar.</p>
+<h3 id="imguibegin_menulabel-enabled"><a class="header" href="#imguibegin_menulabel-enabled"><code>imgui.begin_menu(label, enabled)</code></a></h3>
+<p>Begins a new menu with the specified label. The menu will be disabled if enabled is false but enabling a menu does not force it to open. Unlike window and child window begin and end calls this must be handled with an <code>if then end</code> block or you will crash. </p>
+<p>Menus do not require a menu bar and can be added to normal windows. When doing so they will stack vertically instead of horizontally and will open immediately outside the window on whichever side is available. To account for this you can draw the menu inside a child window.</p>
+<p>Menus can be nested with additional menus, have great support for controllers, and can host any ImGui widget, not just menu items. They are probably the ideal structure for UEVR.</p>
+<p>ex:</p>
+<pre><code class="language-lua"> imgui.begin_window(&quot;TEST###test&quot;)
+ imgui.begin_child_window(&quot;child&quot;,  imgui.get_window_size() * 0.5, true)
+ if imgui.begin_menu(&quot;menu&quot;, true) then
+    if imgui.menu_item(&quot;I do nothing&quot;) then donothing() end
+    local c, nv = imgui.slider_float(&quot;Float Slider&quot;, float_value, 0.01, 3.0)
+    if c and float_value ~= tempscalar then float_value = nv end
+    local c, nt, selection_start, selection_end = imgui.input_text_multiline(&quot;InputText&quot;, text_buffer, Vector2f.new(200, 200))
+    if c then text_buffer = nt end
+    imgui.begin_group()
+    local c, nv = imgui.checkbox(&quot;Checkbox&quot;, checked)
+    if c then checked = nv end
+    imgui.same_line()
+    imgui.text(checked and &quot;Doing thing!&quot; or &quot;Do thing?&quot;)
+    imgui.end_group()
+    imgui.end_menu()
+
+ end
+ if imgui.begin_menu(&quot;menu2&quot;) then
+    imgui.text(&quot;hi&quot;)
+  imgui.end_menu()
+
+ end
+ imgui.end_child_window()
+ imgui.end_window()
+</code></pre>
+<h3 id="imguiend_menu"><a class="header" href="#imguiend_menu"><code>imgui.end_menu()</code></a></h3>
+<p>Ends the current menu.</p>
+<h3 id="imguimenu_itemlabel-shortcut-selected-enabled"><a class="header" href="#imguimenu_itemlabel-shortcut-selected-enabled"><code>imgui.menu_item(label, shortcut, selected, enabled)</code></a></h3>
+<p>Adds a menu item with the specified label, shortcut, selected state, and enabled state. Shortcuts do NOT work, they are only there for display purposes (this is an ImGui issue)</p>
+<h3 id="imguiget_display_size"><a class="header" href="#imguiget_display_size"><code>imgui.get_display_size()</code></a></h3>
+<p>Returns the size of the display as a <code>Vector2f.</code></p>
+<h3 id="imguipush_item_widthitem_width"><a class="header" href="#imguipush_item_widthitem_width"><code>imgui.push_item_width(item_width)</code></a></h3>
+<p>Pushes the width of the next item to <code>item_width</code> pixels.</p>
+<h3 id="imguipop_item_width"><a class="header" href="#imguipop_item_width"><code>imgui.pop_item_width()</code></a></h3>
+<p>Pops the last item width off the stack.</p>
+<h3 id="imguiset_next_item_widthitem_width"><a class="header" href="#imguiset_next_item_widthitem_width"><code>imgui.set_next_item_width(item_width)</code></a></h3>
+<p>Sets the width of the next item to <code>item_width</code> pixels.</p>
+<h3 id="imguicalc_item_width"><a class="header" href="#imguicalc_item_width"><code>imgui.calc_item_width()</code></a></h3>
+<p>Calculates and returns the current item width.</p>
+<h3 id="imguipush_style_colorstyle_color-color"><a class="header" href="#imguipush_style_colorstyle_color-color"><code>imgui.push_style_color(style_color, color)</code></a></h3>
+<p>Pushes a new style color onto the style stack. Color should be in ARGB int format. Make sure to track your pushes correctly. Extra pops will cause crashes. Unpopped pushes will carry over to the next frame and if unhandled will eventually crash due to memory leakage.</p>
+<h3 id="imguipop_style_colorcount"><a class="header" href="#imguipop_style_colorcount"><code>imgui.pop_style_color(count)</code></a></h3>
+<p>Pops count style colors off the style stack.</p>
+<h3 id="imguipush_style_varidx-value"><a class="header" href="#imguipush_style_varidx-value"><code>imgui.push_style_var(idx, value)</code></a></h3>
+<p>Pushes a new style variable onto the style stack. Make sure to track your pushes correctly. Extra pops will cause crashes. Unpopped pushes will carry over to the next frame and if unhandled will eventually crash due to memory leakage.</p>
+<h3 id="imguipop_style_varcount"><a class="header" href="#imguipop_style_varcount"><code>imgui.pop_style_var(count)</code></a></h3>
+<p>Pops count style variables off the style stack.</p>
+<h3 id="imguiget_cursor_pos"><a class="header" href="#imguiget_cursor_pos"><code>imgui.get_cursor_pos()</code></a></h3>
+<p>Returns the current cursor position as a <code>Vector2f</code>.</p>
+<h3 id="imguiset_cursor_pospos"><a class="header" href="#imguiset_cursor_pospos"><code>imgui.set_cursor_pos(pos)</code></a></h3>
+<p>Sets the current cursor position to <code>pos</code>. The cursor refers to the position of the drawing cursor to position elements, not the mouse cursor. If needed you can set the mouse position using the PlayerController class in Unreal Engine.</p>
+<h3 id="imguiget_cursor_start_pos"><a class="header" href="#imguiget_cursor_start_pos"><code>imgui.get_cursor_start_pos()</code></a></h3>
+<p>Returns the initial cursor position as a <code>Vector2f</code>.</p>
+<h3 id="imguiget_cursor_screen_pos"><a class="header" href="#imguiget_cursor_screen_pos"><code>imgui.get_cursor_screen_pos()</code></a></h3>
+<p>Returns the current cursor position in screen coordinates as a <code>Vector2f</code>. The cursor refers to the position of the drawing cursor to position elements, not the mouse cursor. If needed you can set the mouse position using the PlayerController class in Unreal Engine.</p>
+<h3 id="imguiset_cursor_screen_pospos"><a class="header" href="#imguiset_cursor_screen_pospos"><code>imgui.set_cursor_screen_pos(pos)</code></a></h3>
+<p>Sets the current cursor position in screen coordinates to <code>pos</code>.</p>
+<h3 id="imguiset_item_default_focus"><a class="header" href="#imguiset_item_default_focus"><code>imgui.set_item_default_focus()</code></a></h3>
+<p>Sets the default focus to the next widget.</p>
+<h2 id="scroll-apis"><a class="header" href="#scroll-apis">Scroll APIs</a></h2>
+<h3 id="imguiget_scroll_x"><a class="header" href="#imguiget_scroll_x"><code>imgui.get_scroll_x()</code></a></h3>
+<p>Returns the horizontal scroll position.</p>
+<h3 id="imguiget_scroll_y"><a class="header" href="#imguiget_scroll_y"><code>imgui.get_scroll_y()</code></a></h3>
+<p>Returns the vertical scroll position.</p>
+<h3 id="imguiset_scroll_xscroll_x"><a class="header" href="#imguiset_scroll_xscroll_x"><code>imgui.set_scroll_x(scroll_x)</code></a></h3>
+<p>Sets the horizontal scroll position to <code>scroll_x</code>.</p>
+<h3 id="imguiset_scroll_yscroll_y"><a class="header" href="#imguiset_scroll_yscroll_y"><code>imgui.set_scroll_y(scroll_y)</code></a></h3>
+<p>Sets the vertical scroll position to <code>scroll_y</code>.</p>
+<h3 id="imguiget_scroll_max_x"><a class="header" href="#imguiget_scroll_max_x"><code>imgui.get_scroll_max_x()</code></a></h3>
+<p>Returns the maximum horizontal scroll position.</p>
+<h3 id="imguiget_scroll_max_y"><a class="header" href="#imguiget_scroll_max_y"><code>imgui.get_scroll_max_y()</code></a></h3>
+<p>Returns the maximum vertical scroll position.</p>
+<h3 id="imguiset_scroll_here_xcenter_x_ratio"><a class="header" href="#imguiset_scroll_here_xcenter_x_ratio"><code>imgui.set_scroll_here_x(center_x_ratio)</code></a></h3>
+<p>Centers the horizontal scroll position.</p>
+<h3 id="imguiset_scroll_here_ycenter_y_ratio"><a class="header" href="#imguiset_scroll_here_ycenter_y_ratio"><code>imgui.set_scroll_here_y(center_y_ratio)</code></a></h3>
+<p>Centers the vertical scroll position.</p>
+<h3 id="imguiset_scroll_from_pos_xlocal_x-center_x_ratio"><a class="header" href="#imguiset_scroll_from_pos_xlocal_x-center_x_ratio"><code>imgui.set_scroll_from_pos_x(local_x, center_x_ratio)</code></a></h3>
+<p>Sets the horizontal scroll position from the specified <code>local_x</code> and <code>center_x_ratio</code>.</p>
+<h3 id="imguiset_scroll_from_pos_ylocal_y-center_y_ratio"><a class="header" href="#imguiset_scroll_from_pos_ylocal_y-center_y_ratio"><code>imgui.set_scroll_from_pos_y(local_y, center_y_ratio)</code></a></h3>
+<p>Sets the vertical scroll position from the specified <code>local_y</code> and <code>center_y_ratio</code>.</p>
+<h2 id="table-api"><a class="header" href="#table-api">Table API</a></h2>
+<h3 id="imguibegin_tablestr_id-column-flags-outer_size-inner_width"><a class="header" href="#imguibegin_tablestr_id-column-flags-outer_size-inner_width"><code>imgui.begin_table(str_id, column, flags, outer_size, inner_width)</code></a></h3>
+<p>Begins a new table with the specified <code>str_id</code>, <code>column</code> count, <code>flags</code>, <code>outer_size</code>, and <code>inner_width</code>.</p>
+<ul>
+<li><code>str_id</code> is a string.</li>
+<li><code>column</code> is an integer.</li>
+<li><code>flags</code> is an optional <code>ImGuiTableFlags</code> enum.</li>
+<li><code>outer_size</code> is a <code>Vector2f</code> or a size 2 array.</li>
+<li><code>inner_width</code> is an optional float.</li>
+</ul>
+<p>Tables can be difficult to construct effectively and may cause crashes. Once mastered they are one of the most powerful structures in ImGui. Here's a minimal setup example:</p>
+<pre><code class="language-lua">  if imgui.begin_table(label, 2, flags) then
+    imgui.table_setup_column(&quot;Name&quot;, column_flags)
+    imgui.table_setup_column(&quot;Value&quot;, column_flags)
+    imgui.indent()
+    for k, v in pairs(data) do
+        imgui.table_next_row()
+        imgui.table_set_column_index(0)
+        imgui.text(k)
+        imgui.table_next_column()
+        imgui.push_id(k)
+        imgui.text(v)
+        imgui.pop_id()
+    end
+    imgui.unindent()
+    imgui.end_table()
+    end
+</code></pre>
+<h3 id="imguiend_table"><a class="header" href="#imguiend_table"><code>imgui.end_table()</code></a></h3>
+<p>Ends the current table.</p>
+<h3 id="imguitable_next_rowrow_flags-min_row_height"><a class="header" href="#imguitable_next_rowrow_flags-min_row_height"><code>imgui.table_next_row(row_flags, min_row_height)</code></a></h3>
+<p>Begins a new row in the current table with the specified <code>row_flags</code> and <code>min_row_height</code>.</p>
+<ul>
+<li><code>row_flags</code> is an optional <code>ImGuiTableRowFlags</code> enum.</li>
+<li><code>min_row_height</code> is an optional float.</li>
+</ul>
+<h3 id="imguitable_next_column"><a class="header" href="#imguitable_next_column"><code>imgui.table_next_column()</code></a></h3>
+<p>Advances to the next column in the current table.</p>
+<h3 id="imguitable_set_column_indexcolumn_index"><a class="header" href="#imguitable_set_column_indexcolumn_index"><code>imgui.table_set_column_index(column_index)</code></a></h3>
+<p>Sets the current column index to column_index.</p>
+<h3 id="imguitable_setup_columnlabel-flags-init_width_or_weight-user_id"><a class="header" href="#imguitable_setup_columnlabel-flags-init_width_or_weight-user_id"><code>imgui.table_setup_column(label, flags, init_width_or_weight, user_id)</code></a></h3>
+<p>Sets up a column in the current table with the specified label, flags, init_width_or_weight, and user_id.</p>
+<h3 id="imguitable_setup_scroll_freezecols-rows"><a class="header" href="#imguitable_setup_scroll_freezecols-rows"><code>imgui.table_setup_scroll_freeze(cols, rows)</code></a></h3>
+<p>Sets up a scrolling region in the current table with cols columns and rows rows frozen.</p>
+<h3 id="imguitable_headers_row"><a class="header" href="#imguitable_headers_row"><code>imgui.table_headers_row()</code></a></h3>
+<p>Submits a header row in the current table.</p>
+<h3 id="imguitable_headerlabel"><a class="header" href="#imguitable_headerlabel"><code>imgui.table_header(label)</code></a></h3>
+<p>Submits a header cell with the specified label in the current table.</p>
+<h3 id="imguitable_get_sort_specs"><a class="header" href="#imguitable_get_sort_specs"><code>imgui.table_get_sort_specs()</code></a></h3>
+<p>Returns the sort specifications for the current table.</p>
+<h3 id="imguitable_get_column_count"><a class="header" href="#imguitable_get_column_count"><code>imgui.table_get_column_count()</code></a></h3>
+<p>Returns the number of columns in the current table.</p>
+<h3 id="imguitable_get_column_index"><a class="header" href="#imguitable_get_column_index"><code>imgui.table_get_column_index()</code></a></h3>
+<p>Returns the current column index.</p>
+<h3 id="imguitable_get_row_index"><a class="header" href="#imguitable_get_row_index"><code>imgui.table_get_row_index()</code></a></h3>
+<p>Returns the current row index.</p>
+<h3 id="imguitable_get_column_namecolumn"><a class="header" href="#imguitable_get_column_namecolumn"><code>imgui.table_get_column_name(column)</code></a></h3>
+<p>Returns the name of the specified <code>column</code> in the current table.</p>
+<h3 id="imguitable_get_column_flagscolumn"><a class="header" href="#imguitable_get_column_flagscolumn"><code>imgui.table_get_column_flags(column)</code></a></h3>
+<p>Returns the flags of the specified <code>column</code> in the current table.</p>
+<h3 id="imguitable_set_bg_colortarget-color-column"><a class="header" href="#imguitable_set_bg_colortarget-color-column"><code>imgui.table_set_bg_color(target, color, column)</code></a></h3>
+<p>Sets the background color of the specified <code>target</code> in the current table with the given <code>color</code> and <code>column</code> index.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="json"><a class="header" href="#json">json</a></h1>
+<p>Functions for converting Lua values to/from JSON. Useful for saving configuration setting tables, importing data that users are intended to edit externally, and storing large data structures outside your Lua code.</p>
+<p>The <code>indent</code> parameter is an integer specifying the number of spaces to indent with when dumping tables. 0 disables indentation, and -1 also disables line breaks.</p>
+<p>Supports Lua's boolean, number, string, and table (see warning below) types. Other types will be converted to <code>nil</code>, stored as JSON <code>null</code>s. Due to JSON limitations, non-string table keys will be converted to strings (if numbers) or an empty string (if another type), unless the table is a sequence (consecutive integer keys, starting at 1; see the <a href="https://www.lua.org/manual/5.4/manual.html#3.4.7">lua manual</a> for more details). Sequences are stored as JSON arrays.</p>
+<p><strong>WARNING:</strong> Care should be taken when storing non-sequence tables with numeric keys, as those keys will be converted to strings. Extra work must be done to convert those keys back into numbers.</p>
+<p>The following are examples of tables that won't change when converted to and back from JSON:</p>
+<pre><code class="language-lua">{1, 3, 2, &quot;this is a sequence&quot;}
+{foo=&quot;bar&quot;, baz=42}
+{table1={1,2,3}, table2={foo=1,bar=2}}
+</code></pre>
+<p>The following are examples of tables that <strong>will</strong> change when converted to and back from JSON:</p>
+<pre><code class="language-lua">{9, 8, nil, 6, 5} -- Sequence with a &quot;hole&quot;, becomes {[&quot;1&quot;]=9,[&quot;2&quot;]=8,[&quot;4&quot;]=6,[&quot;5&quot;]=5}
+{[0]=0,[1]=1,[2]=2} -- Sequence doesn't start at 1, becomes {[&quot;0&quot;]=0,[&quot;1&quot;]=1,[&quot;2&quot;]=2}
+{&quot;foo&quot;, &quot;bar&quot;, baz=17} -- Becomes {[&quot;1&quot;]=&quot;foo&quot;, [&quot;2&quot;]=&quot;bar&quot;, baz=17}
+local function f() end
+{[f]=&quot;function key&quot;, funcval=f} -- Becomes {[&quot;&quot;]=&quot;function key&quot;}
+</code></pre>
+<h2 id="methods-2"><a class="header" href="#methods-2">Methods</a></h2>
+<h3 id="jsonload_stringjson_str"><a class="header" href="#jsonload_stringjson_str"><code>json.load_string(json_str)</code></a></h3>
+<p>Takes a JSON string and turns it into a Lua value (usually a table). Returns <code>nil</code> on error.</p>
+<h3 id="jsondump_stringvalue-indent"><a class="header" href="#jsondump_stringvalue-indent"><code>json.dump_string(value, [indent])</code></a></h3>
+<p>Takes a Lua value (usually a table) and turns it into a JSON string. Returns an empty string on error. If unspecified, <code>indent</code> will default to -1.</p>
+<h3 id="jsonload_filefilepath"><a class="header" href="#jsonload_filefilepath"><code>json.load_file(filepath)</code></a></h3>
+<p>Loads a JSON file identified by <code>filepath</code> relative to the <code>UnrealVRMod/GameName/data</code> subdirectory and returns it as a Lua value (usually a table). Returns <code>nil</code> if the file does not exist.</p>
+<h3 id="jsondump_filefilepath-value-indent"><a class="header" href="#jsondump_filefilepath-value-indent"><code>json.dump_file(filepath, value, [indent])</code></a></h3>
+<p>Takes a Lua value (usually a table), and turns it into a JSON file identified as <code>filepath</code> relative to the <code>UnrealVRMod/GameName/data</code> subdirectory.  Returns <code>true</code> if the dump was successful, <code>false</code> otherwise. If unspecified, <code>indent</code> will default to 4</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fs"><a class="header" href="#fs">fs</a></h1>
+<p>This is the filesystem API. this API focuses specifically on the <code>UnrealVRMod/GameName/data</code> subdirectory.</p>
+<p>In newer builds of UEVR, the <code>io</code> API is fully supported, but it can only access the <code>UnrealVRMod/GameName/data</code> directory and the stdout/in/err streams. <code>io.popen</code> is also removed.</p>
+<p>The <code>io</code> APIs have access to the <code>scripts</code> directory via the <code>$scripts</code> token passed at the start of the filepath string for any of the functions.</p>
+<h2 id="methods-3"><a class="header" href="#methods-3">Methods</a></h2>
+<h3 id="fsglobfilter"><a class="header" href="#fsglobfilter"><code>fs.glob(filter)</code></a></h3>
+<p>Returns a table of file paths that match the <code>filter</code>. <code>filter</code> should be a regex string for the files you wish to match.</p>
+<h4 id="example-2"><a class="header" href="#example-2">Example</a></h4>
+<pre><code class="language-lua">-- Get my mods JSON files.
+local json_files = fs.glob([[my-cool-mod\\.*json]])
+
+-- Iterate over them.
+for k, v in ipairs(json_files) do
+    -- v will be something like `my-cool-mod\config-file-1.json` 
+end
+</code></pre>
+<h3 id="fsreadfilename"><a class="header" href="#fsreadfilename"><code>fs.read(filename)</code></a></h3>
+<p>Reads <code>filename</code> and returns the data as a string.</p>
+<h3 id="fswritefilename-data"><a class="header" href="#fswritefilename-data"><code>fs.write(filename, data)</code></a></h3>
+<p>Writes <code>data</code> to <code>filename</code>. <code>data</code> is a string.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>

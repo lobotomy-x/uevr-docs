@@ -1,0 +1,482 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Lua API - UEVR Documentation</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/css/custom.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Usage</li><li class="chapter-item expanded "><a href="../usage/overview.html"><strong aria-hidden="true">1.</strong> Detailed overview</a></li><li class="chapter-item expanded "><a href="../usage/vr_controller_bindings.html"><strong aria-hidden="true">2.</strong> VR Controller Bindings</a></li><li class="chapter-item expanded "><a href="../usage/adding_6dof.html"><strong aria-hidden="true">3.</strong> Adding 6DoF with UObjectHook</a></li><li class="chapter-item expanded affix "><li class="part-title">Plugin Development</li><li class="chapter-item expanded "><a href="../plugins/getting_started.html"><strong aria-hidden="true">4.</strong> C/C++ API</a></li><li class="chapter-item expanded "><a href="../plugins/blueprint.html"><strong aria-hidden="true">5.</strong> Blueprint API</a></li><li class="chapter-item expanded "><a href="../plugins/lua.html" class="active"><strong aria-hidden="true">6.</strong> Lua API</a></li><li class="chapter-item expanded affix "><li class="part-title">Lua Scripting Reference</li><li class="chapter-item expanded "><a href="../plugins/lua/params.html"><strong aria-hidden="true">7.</strong> params</a></li><li class="chapter-item expanded "><a href="../plugins/lua/api.html"><strong aria-hidden="true">8.</strong> api</a></li><li class="chapter-item expanded "><a href="../plugins/lua/callbacks.html"><strong aria-hidden="true">9.</strong> callbacks</a></li><li class="chapter-item expanded "><a href="../plugins/lua/lua.html"><strong aria-hidden="true">10.</strong> lua</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types.html"><strong aria-hidden="true">11.</strong> types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../plugins/lua/types/UObject.html"><strong aria-hidden="true">11.1.</strong> UObject</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/UStruct.html"><strong aria-hidden="true">11.2.</strong> UStruct</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/UClass.html"><strong aria-hidden="true">11.3.</strong> UClass</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/UFunction.html"><strong aria-hidden="true">11.4.</strong> UFunction</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/FName.html"><strong aria-hidden="true">11.5.</strong> FName</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/FField.html"><strong aria-hidden="true">11.6.</strong> FField</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/FFieldClass.html"><strong aria-hidden="true">11.7.</strong> FFieldClass</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/FUObjectArray.html"><strong aria-hidden="true">11.8.</strong> FUObjectArray</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/FConsoleManager.html"><strong aria-hidden="true">11.9.</strong> FConsoleManager</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/IConsoleObject.html"><strong aria-hidden="true">11.10.</strong> IConsoleObject</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/IConsoleVariable.html"><strong aria-hidden="true">11.11.</strong> IConsoleVariable</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/IConsoleCommand.html"><strong aria-hidden="true">11.12.</strong> IConsoleCommand</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/UObjectHook.html"><strong aria-hidden="true">11.13.</strong> UObjectHook</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/MotionControllerState.html"><strong aria-hidden="true">11.14.</strong> MotionControllerState</a></li><li class="chapter-item expanded "><a href="../plugins/lua/types/StructObject.html"><strong aria-hidden="true">11.15.</strong> StructObject</a></li></ol></li><li class="chapter-item expanded "><a href="../plugins/lua/c_wrapper_types.html"><strong aria-hidden="true">12.</strong> C Wrapper Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../plugins/lua/cwrappers/UEVR_VRData.html"><strong aria-hidden="true">12.1.</strong> UEVR_VRData</a></li><li class="chapter-item expanded "><a href="../plugins/lua/cwrappers/UEVR_PluginInitializeParam.html"><strong aria-hidden="true">12.2.</strong> UEVR_PluginInitializeParam</a></li><li class="chapter-item expanded "><a href="../plugins/lua/cwrappers/UEVR_PluginFunctions.html"><strong aria-hidden="true">12.3.</strong> UEVR_PluginFunctions</a></li></ol></li><li class="chapter-item expanded "><a href="../plugins/lua/thirdparty.html"><strong aria-hidden="true">13.</strong> Third Party</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../plugins/lua/thirdparty/XInput.html"><strong aria-hidden="true">13.1.</strong> XInput</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../plugins/lua/thirdparty/XINPUT_STATE.html"><strong aria-hidden="true">13.1.1.</strong> XINPUT_STATE</a></li><li class="chapter-item expanded "><a href="../plugins/lua/thirdparty/XINPUT_VIBRATION.html"><strong aria-hidden="true">13.1.2.</strong> XINPUT_VIBRATION</a></li><li class="chapter-item expanded "><a href="../plugins/lua/thirdparty/XINPUT_GAMEPAD.html"><strong aria-hidden="true">13.1.3.</strong> XINPUT_GAMEPAD</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../plugins/lua/additional-bindings.html"><strong aria-hidden="true">14.</strong> Additional APIs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../plugins/lua/additional-bindings/imgui.html"><strong aria-hidden="true">14.1.</strong> imgui</a></li><li class="chapter-item expanded "><a href="../plugins/lua/additional-bindings/json.html"><strong aria-hidden="true">14.2.</strong> json</a></li><li class="chapter-item expanded "><a href="../plugins/lua/additional-bindings/fs.html"><strong aria-hidden="true">14.3.</strong> fs</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">UEVR Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/praydog/uuvr-docs" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/praydog/uuvr-docs/edit/main/src/plugins/lua.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="uevr-lua-api"><a class="header" href="#uevr-lua-api">UEVR: Lua API</a></h1>
+<p>UEVR provides a Lua API that can be used to create plugins.</p>
+<p>Scripts can be loaded under LuaLoader, and are automatically loaded from <code>&lt;game config folder&gt;/scripts/*.lua</code>.</p>
+<p>The Lua API can also be loaded in different environments, like UE4SS. UEVR comes with a LuaVR.dll for this purpose.</p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<pre><code class="language-lua">print(&quot;Initializing hello_world.lua&quot;)
+
+UEVR_UObjectHook.activate()
+
+local api = uevr.api;
+local uobjects = uevr.types.FUObjectArray.get()
+
+print(&quot;Printing first 5 UObjects&quot;)
+for i=0, 5 do
+    local uobject = uobjects:get_object(i)
+
+    if uobject ~= nil then
+        print(uobject:get_full_name())
+    end
+end
+
+local once = true
+local last_world = nil
+local last_level = nil
+
+uevr.sdk.callbacks.on_post_engine_tick(function(engine, delta)
+
+end)
+
+local spawn_once = true
+
+uevr.sdk.callbacks.on_pre_engine_tick(function(engine, delta)
+    --[[if spawn_once then
+        local cheat_manager_c = api:find_uobject(&quot;Class /Script/Engine.CheatManager&quot;)
+        local cheat_manager = UEVR_UObjectHook.get_first_object_by_class(cheat_manager_c)
+
+        print(tostring(cheat_manager_c))
+
+        cheat_manager:Summon(&quot;Something_C&quot;)
+
+        spawn_once = false
+    end]]
+
+    local game_engine_class = api:find_uobject(&quot;Class /Script/Engine.GameEngine&quot;)
+    local game_engine = UEVR_UObjectHook.get_first_object_by_class(game_engine_class)
+
+    local viewport = game_engine.GameViewport
+    if viewport == nil then
+        print(&quot;Viewport is nil&quot;)
+        return
+    end
+    local world = viewport.World
+
+    if world == nil then
+        print(&quot;World is nil&quot;)
+        return
+    end
+
+    if world ~= last_world then
+        print(&quot;World changed&quot;)
+    end
+
+    last_world = world
+
+    local level = world.PersistentLevel
+
+    if level == nil then
+        print(&quot;Level is nil&quot;)
+        return
+    end
+
+    if level ~= last_level then
+        print(&quot;Level changed&quot;)
+        print(&quot;Level name: &quot; .. level:get_full_name())
+
+        local game_instance = game_engine.GameInstance
+
+        if game_instance == nil then
+            print(&quot;GameInstance is nil&quot;)
+            return
+        end
+
+        local local_players = game_instance.LocalPlayers
+
+        for i in ipairs(local_players) do
+            local player = local_players[i]
+            local player_controller = player.PlayerController
+            local pawn = player_controller.Pawn
+    
+            if pawn ~= nil then
+                print(&quot;Pawn: &quot; .. pawn:get_full_name())
+                --pawn.BaseEyeHeight = 0.0
+                --pawn.bActorEnableCollision = not pawn.bActorEnableCollision
+
+                local actor_component_c = api:find_uobject(&quot;Class /Script/Engine.ActorComponent&quot;);
+                print(&quot;actor_component_c class: &quot; .. tostring(actor_component_c))
+                local test_component = pawn:GetComponentByClass(actor_component_c)
+
+                print(&quot;TestComponent: &quot; .. tostring(test_component))
+
+                local controller = pawn.Controller
+
+                if controller ~= nil then
+                    print(&quot;Controller: &quot; .. controller:get_full_name())
+
+                    local velocity = controller:GetVelocity()
+                    print(&quot;Velocity: &quot; .. tostring(velocity.x) .. &quot;, &quot; .. tostring(velocity.y) .. &quot;, &quot; .. tostring(velocity.z))
+
+                    local test = Vector3d.new(1.337, 1.0, 1.0)
+                    print(&quot;Test: &quot; .. tostring(test.x) .. &quot;, &quot; .. tostring(test.y) .. &quot;, &quot; .. tostring(test.z))
+
+                    controller:SetActorScale3D(Vector3d.new(1.337, 1.0, 1.0))
+
+                    local actor_scale_3d = controller:GetActorScale3D()
+                    print(&quot;ActorScale3D: &quot; .. tostring(actor_scale_3d.x) .. &quot;, &quot; .. tostring(actor_scale_3d.y) .. &quot;, &quot; .. tostring(actor_scale_3d.z))
+
+                    
+                    local control_rotation = controller:GetControlRotation()
+
+                    print(&quot;ControlRotation: &quot; .. tostring(control_rotation.Pitch) .. &quot;, &quot; .. tostring(control_rotation.Yaw) .. &quot;, &quot; .. tostring(control_rotation.Roll))
+                    control_rotation.Pitch = 1.337
+
+                    controller:SetControlRotation(control_rotation)
+                    control_rotation = controller:GetControlRotation()
+
+                    print(&quot;New ControlRotation: &quot; .. tostring(control_rotation.Pitch) .. &quot;, &quot; .. tostring(control_rotation.Yaw) .. &quot;, &quot; .. tostring(control_rotation.Roll))
+                end
+
+                local primary_actor_tick = pawn.PrimaryActorTick
+
+                if primary_actor_tick ~= nil then
+                    print(&quot;PrimaryActorTick: &quot; .. tostring(primary_actor_tick))
+
+                    -- Print various properties, this is testing of StructProperty as PrimaryActorTick is a struct
+                    local tick_interval = primary_actor_tick.TickInterval
+                    print(&quot;TickInterval: &quot; .. tostring(tick_interval))
+
+                    print(&quot;bAllowTickOnDedicatedServer: &quot; .. tostring(primary_actor_tick.bAllowTickOnDedicatedServer))
+                    print(&quot;bCanEverTick: &quot; .. tostring(primary_actor_tick.bCanEverTick))
+                    print(&quot;bStartWithTickEnabled: &quot; .. tostring(primary_actor_tick.bStartWithTickEnabled))
+                    print(&quot;bTickEvenWhenPaused: &quot; .. tostring(primary_actor_tick.bTickEvenWhenPaused))
+                else
+                    print(&quot;PrimaryActorTick is nil&quot;)
+                end
+
+                local control_input_vector = pawn.ControlInputVector
+                pawn.ControlInputVector.x = 1.337
+
+                print(&quot;ControlInputVector: &quot; .. tostring(control_input_vector.x) .. &quot;, &quot; .. tostring(control_input_vector.y) .. &quot;, &quot; .. tostring(control_input_vector.z))
+
+                local is_actor_tick_enabled = pawn:IsActorTickEnabled()
+                print(&quot;IsActorTickEnabled: &quot; .. tostring(is_actor_tick_enabled))
+
+                pawn:SetActorTickEnabled(not is_actor_tick_enabled)
+                is_actor_tick_enabled = pawn:IsActorTickEnabled()
+                print(&quot;New IsActorTickEnabled: &quot; .. tostring(is_actor_tick_enabled))
+
+                pawn:SetActorTickEnabled(not is_actor_tick_enabled) -- resets it back to default
+
+                local life_span = pawn:GetLifeSpan()
+                local og_life_span = life_span
+                print(&quot;LifeSpan: &quot; .. tostring(life_span))
+
+                pawn:SetLifeSpan(10.0)
+                life_span = pawn:GetLifeSpan()
+
+                print(&quot;New LifeSpan: &quot; .. tostring(life_span))
+                pawn:SetLifeSpan(og_life_span) -- resets it back to default
+
+                local net_driver_name = pawn.NetDriverName:to_string()
+
+                print(&quot;NetDriverName: &quot; .. net_driver_name)
+            end
+    
+            if player_controller ~= nil then
+                print(&quot;PlayerController: &quot; .. player_controller:get_full_name())
+            end
+        end
+
+        print(&quot;Local players: &quot; .. tostring(local_players))
+    end
+
+    last_level = level
+
+    if once then
+        print(&quot;executing stat fps&quot;)
+        uevr.api:execute_command(&quot;stat fps&quot;)
+        once = false
+
+        print(&quot;executing stat unit&quot;)
+        uevr.api:execute_command(&quot;stat unit&quot;)
+
+        print(&quot;GameEngine class: &quot; .. game_engine_class:get_full_name())
+        print(&quot;GameEngine object: &quot; .. game_engine:get_full_name())
+    end
+end)
+
+uevr.sdk.callbacks.on_script_reset(function()
+    print(&quot;Resetting hello_world.lua&quot;)
+end)
+</code></pre>
+<h2 id="example-when-integrated-into-an-environment-like-ue4ss"><a class="header" href="#example-when-integrated-into-an-environment-like-ue4ss">Example (when integrated into an environment like UE4SS)</a></h2>
+<pre><code class="language-lua">local LuaVR = require(&quot;LuaVR&quot;)
+
+local function vr_print(text)
+    print(&quot;[LuaVR Script] &quot; .. text .. &quot;\n&quot;)
+end
+
+local params = LuaVR.params
+local callbacks = params.sdk.callbacks
+
+local total_t = 0.0
+
+-- Example usage of callbacks
+callbacks.on_pre_engine_tick(function(engine, delta)
+    total_t = total_t + delta
+end)
+
+-- Modifies the camera position
+callbacks.on_post_calculate_stereo_view_offset(function(device, view_index, world_to_meters, position, rotation, is_double)
+    position.z = position.z + 100.0
+    position.y = position.y - 100.0
+end)
+
+
+
+-- UEVR_PluginInitializeParam
+
+-- UEVR_PluginVersion
+vr_print(&quot;Major: &quot; .. tostring(params.version.major))
+vr_print(&quot;Minor: &quot; .. tostring(params.version.minor))
+vr_print(&quot;Patch: &quot; .. tostring(params.version.patch))
+
+-- UEVR_PluginFunctions
+vr_print(&quot;Is drawing ui: &quot; .. tostring(params.functions.is_drawing_ui()))
+params.functions.log_info(&quot;Hello from LuaVR!&quot;)
+params.functions.log_warn(&quot;Hello from LuaVR!&quot;)
+params.functions.log_error(&quot;Hello from LuaVR!&quot;)
+
+-- UEVR_VRData
+vr_print(&quot;Runtime ready state: &quot; .. tostring(params.vr.is_runtime_ready()))
+vr_print(&quot;Is OpenVR: &quot; .. tostring(params.vr.is_openvr()))
+vr_print(&quot;Is OpenXR: &quot; .. tostring(params.vr.is_openxr()))
+vr_print(&quot;Is HMD Active: &quot; .. tostring(params.vr.is_hmd_active()))
+
+local standing_origin = UEVR_Vector3f.new()
+params.vr.get_standing_origin(standing_origin)
+vr_print(&quot;Standing Origin: &quot; .. tostring(standing_origin.x) .. &quot;, &quot; .. tostring(standing_origin.y) .. &quot;, &quot; .. tostring(standing_origin.z))
+
+local rotation_offset = UEVR_Vector3f.new()
+params.vr.get_rotation_offset(rotation_offset)
+vr_print(&quot;Rotation Offset: &quot; .. tostring(rotation_offset.x) .. &quot;, &quot; .. tostring(rotation_offset.y) .. &quot;, &quot; .. tostring(rotation_offset.z))
+
+local hmd_index = params.vr.get_hmd_index()
+vr_print(&quot;HMD Index: &quot; .. tostring(hmd_index))
+
+local left_controller_index = params.vr.get_left_controller_index()
+vr_print(&quot;Left Controller Index: &quot; .. tostring(left_controller_index))
+
+local right_controller_index = params.vr.get_right_controller_index()
+vr_print(&quot;Right Controller Index: &quot; .. tostring(right_controller_index))
+
+local hmd_position = UEVR_Vector3f.new()
+local hmd_rotation = UEVR_Quaternionf.new()
+params.vr.get_pose(hmd_index, hmd_position, hmd_rotation)
+
+vr_print(&quot;HMD Position: &quot; .. tostring(hmd_position.x) .. &quot;, &quot; .. tostring(hmd_position.y) .. &quot;, &quot; .. tostring(hmd_position.z))
+vr_print(&quot;HMD Rotation: &quot; .. tostring(hmd_rotation.x) .. &quot;, &quot; .. tostring(hmd_rotation.y) .. &quot;, &quot; .. tostring(hmd_rotation.z) .. &quot;, &quot; .. tostring(hmd_rotation.w))
+
+if left_controller_index ~= -1 then
+    local left_controller_position = UEVR_Vector3f.new()
+    local left_controller_rotation = UEVR_Quaternionf.new()
+    params.vr.get_pose(left_controller_index, left_controller_position, left_controller_rotation)
+
+    vr_print(&quot;Left Controller Position: &quot; .. tostring(left_controller_position.x) .. &quot;, &quot; .. tostring(left_controller_position.y) .. &quot;, &quot; .. tostring(left_controller_position.z))
+    vr_print(&quot;Left Controller Rotation: &quot; .. tostring(left_controller_rotation.x) .. &quot;, &quot; .. tostring(left_controller_rotation.y) .. &quot;, &quot; .. tostring(left_controller_rotation.z) .. &quot;, &quot; .. tostring(left_controller_rotation.w))        
+end
+
+if right_controller_index ~= -1 then
+    local right_controller_position = UEVR_Vector3f.new()
+    local right_controller_rotation = UEVR_Quaternionf.new()
+    params.vr.get_pose(right_controller_index, right_controller_position, right_controller_rotation)
+
+    vr_print(&quot;Right Controller Position: &quot; .. tostring(right_controller_position.x) .. &quot;, &quot; .. tostring(right_controller_position.y) .. &quot;, &quot; .. tostring(right_controller_position.z))
+    vr_print(&quot;Right Controller Rotation: &quot; .. tostring(right_controller_rotation.x) .. &quot;, &quot; .. tostring(right_controller_rotation.y) .. &quot;, &quot; .. tostring(right_controller_rotation.z) .. &quot;, &quot; .. tostring(right_controller_rotation.w))        
+end
+
+local left_eye_offset = UEVR_Vector3f.new()
+local right_eye_offset = UEVR_Vector3f.new()
+
+params.vr.get_eye_offset(0, left_eye_offset)
+params.vr.get_eye_offset(1, right_eye_offset)
+
+vr_print(&quot;Left Eye Offset: &quot; .. tostring(left_eye_offset.x) .. &quot;, &quot; .. tostring(left_eye_offset.y) .. &quot;, &quot; .. tostring(left_eye_offset.z))
+vr_print(&quot;Right Eye Offset: &quot; .. tostring(right_eye_offset.x) .. &quot;, &quot; .. tostring(right_eye_offset.y) .. &quot;, &quot; .. tostring(right_eye_offset.z))
+
+local is_using_controllers = params.vr.is_using_controllers()
+vr_print(&quot;Is Using Controllers: &quot; .. tostring(is_using_controllers))
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../plugins/blueprint.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../plugins/lua/params.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../plugins/blueprint.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../plugins/lua/params.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

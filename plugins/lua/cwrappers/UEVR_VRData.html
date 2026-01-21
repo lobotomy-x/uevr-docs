@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>UEVR_VRData - UEVR Documentation</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/css/custom.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Usage</li><li class="chapter-item expanded "><a href="../../../usage/overview.html"><strong aria-hidden="true">1.</strong> Detailed overview</a></li><li class="chapter-item expanded "><a href="../../../usage/vr_controller_bindings.html"><strong aria-hidden="true">2.</strong> VR Controller Bindings</a></li><li class="chapter-item expanded "><a href="../../../usage/adding_6dof.html"><strong aria-hidden="true">3.</strong> Adding 6DoF with UObjectHook</a></li><li class="chapter-item expanded affix "><li class="part-title">Plugin Development</li><li class="chapter-item expanded "><a href="../../../plugins/getting_started.html"><strong aria-hidden="true">4.</strong> C/C++ API</a></li><li class="chapter-item expanded "><a href="../../../plugins/blueprint.html"><strong aria-hidden="true">5.</strong> Blueprint API</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua.html"><strong aria-hidden="true">6.</strong> Lua API</a></li><li class="chapter-item expanded affix "><li class="part-title">Lua Scripting Reference</li><li class="chapter-item expanded "><a href="../../../plugins/lua/params.html"><strong aria-hidden="true">7.</strong> params</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/api.html"><strong aria-hidden="true">8.</strong> api</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/callbacks.html"><strong aria-hidden="true">9.</strong> callbacks</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/lua.html"><strong aria-hidden="true">10.</strong> lua</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types.html"><strong aria-hidden="true">11.</strong> types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../plugins/lua/types/UObject.html"><strong aria-hidden="true">11.1.</strong> UObject</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/UStruct.html"><strong aria-hidden="true">11.2.</strong> UStruct</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/UClass.html"><strong aria-hidden="true">11.3.</strong> UClass</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/UFunction.html"><strong aria-hidden="true">11.4.</strong> UFunction</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/FName.html"><strong aria-hidden="true">11.5.</strong> FName</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/FField.html"><strong aria-hidden="true">11.6.</strong> FField</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/FFieldClass.html"><strong aria-hidden="true">11.7.</strong> FFieldClass</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/FUObjectArray.html"><strong aria-hidden="true">11.8.</strong> FUObjectArray</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/FConsoleManager.html"><strong aria-hidden="true">11.9.</strong> FConsoleManager</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/IConsoleObject.html"><strong aria-hidden="true">11.10.</strong> IConsoleObject</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/IConsoleVariable.html"><strong aria-hidden="true">11.11.</strong> IConsoleVariable</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/IConsoleCommand.html"><strong aria-hidden="true">11.12.</strong> IConsoleCommand</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/UObjectHook.html"><strong aria-hidden="true">11.13.</strong> UObjectHook</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/MotionControllerState.html"><strong aria-hidden="true">11.14.</strong> MotionControllerState</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/types/StructObject.html"><strong aria-hidden="true">11.15.</strong> StructObject</a></li></ol></li><li class="chapter-item expanded "><a href="../../../plugins/lua/c_wrapper_types.html"><strong aria-hidden="true">12.</strong> C Wrapper Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../plugins/lua/cwrappers/UEVR_VRData.html" class="active"><strong aria-hidden="true">12.1.</strong> UEVR_VRData</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/cwrappers/UEVR_PluginInitializeParam.html"><strong aria-hidden="true">12.2.</strong> UEVR_PluginInitializeParam</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/cwrappers/UEVR_PluginFunctions.html"><strong aria-hidden="true">12.3.</strong> UEVR_PluginFunctions</a></li></ol></li><li class="chapter-item expanded "><a href="../../../plugins/lua/thirdparty.html"><strong aria-hidden="true">13.</strong> Third Party</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../plugins/lua/thirdparty/XInput.html"><strong aria-hidden="true">13.1.</strong> XInput</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../plugins/lua/thirdparty/XINPUT_STATE.html"><strong aria-hidden="true">13.1.1.</strong> XINPUT_STATE</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/thirdparty/XINPUT_VIBRATION.html"><strong aria-hidden="true">13.1.2.</strong> XINPUT_VIBRATION</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/thirdparty/XINPUT_GAMEPAD.html"><strong aria-hidden="true">13.1.3.</strong> XINPUT_GAMEPAD</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../plugins/lua/additional-bindings.html"><strong aria-hidden="true">14.</strong> Additional APIs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../plugins/lua/additional-bindings/imgui.html"><strong aria-hidden="true">14.1.</strong> imgui</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/additional-bindings/json.html"><strong aria-hidden="true">14.2.</strong> json</a></li><li class="chapter-item expanded "><a href="../../../plugins/lua/additional-bindings/fs.html"><strong aria-hidden="true">14.3.</strong> fs</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">UEVR Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/praydog/uuvr-docs" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/praydog/uuvr-docs/edit/main/src/plugins/lua/cwrappers/UEVR_VRData.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="uevr_vrdata"><a class="header" href="#uevr_vrdata">UEVR_VRData</a></h1>
+<p>Accessed with <code>uevr.params.vr</code></p>
+<p>Static functions. Use <code>.</code> operator. Exception is <code>vr:get_mod_value</code></p>
+<h2 id="functions"><a class="header" href="#functions">Functions</a></h2>
+<h3 id="vris_runtime_ready"><a class="header" href="#vris_runtime_ready"><code>vr.is_runtime_ready()</code></a></h3>
+<p>Returns true if the VR runtime is ready.</p>
+<h3 id="vris_openvr"><a class="header" href="#vris_openvr"><code>vr.is_openvr()</code></a></h3>
+<p>Returns true if the VR runtime is OpenVR.</p>
+<h3 id="vris_openxr"><a class="header" href="#vris_openxr"><code>vr.is_openxr()</code></a></h3>
+<p>Returns true if the VR runtime is OpenXR.</p>
+<h3 id="vris_hmd_active"><a class="header" href="#vris_hmd_active"><code>vr.is_hmd_active()</code></a></h3>
+<p>Returns true if the HMD is active. Usually meaning the headset is on and tracking.</p>
+<h3 id="vrget_standing_originout-standing_origin-uevr_vector3f"><a class="header" href="#vrget_standing_originout-standing_origin-uevr_vector3f"><code>vr.get_standing_origin(out standing_origin: UEVR_Vector3f)</code></a></h3>
+<p>Returns the standing origin of the HMD.</p>
+<h3 id="vrget_rotation_offsetout-rotation_offset-uevr_quaternionf"><a class="header" href="#vrget_rotation_offsetout-rotation_offset-uevr_quaternionf"><code>vr.get_rotation_offset(out rotation_offset: UEVR_Quaternionf)</code></a></h3>
+<p>Returns the rotation offset of the HMD.</p>
+<h3 id="vrset_standing_originstanding_origin-uevr_vector3f"><a class="header" href="#vrset_standing_originstanding_origin-uevr_vector3f"><code>vr.set_standing_origin(standing_origin: UEVR_Vector3f)</code></a></h3>
+<p>Sets the standing origin of the HMD.</p>
+<h3 id="vrset_rotation_offsetrotation_offset-uevr_quaternionf"><a class="header" href="#vrset_rotation_offsetrotation_offset-uevr_quaternionf"><code>vr.set_rotation_offset(rotation_offset: UEVR_Quaternionf)</code></a></h3>
+<p>Sets the rotation offset of the HMD.</p>
+<h3 id="vrget_hmd_index"><a class="header" href="#vrget_hmd_index"><code>vr.get_hmd_index()</code></a></h3>
+<p>Returns the index of the HMD.</p>
+<h3 id="vrget_left_controller_index"><a class="header" href="#vrget_left_controller_index"><code>vr.get_left_controller_index()</code></a></h3>
+<p>Returns the index of the left controller.</p>
+<h3 id="vrget_right_controller_index"><a class="header" href="#vrget_right_controller_index"><code>vr.get_right_controller_index()</code></a></h3>
+<p>Returns the index of the right controller.</p>
+<h3 id="vrget_poseindex-number-out-position-uevr_vector3f-out-rotation-uevr_quaternionf"><a class="header" href="#vrget_poseindex-number-out-position-uevr_vector3f-out-rotation-uevr_quaternionf"><code>vr.get_pose(index: number, out position: UEVR_Vector3f, out rotation: UEVR_Quaternionf)</code></a></h3>
+<p>Returns the pose of the specified device.</p>
+<h3 id="vrget_transformindex-number-out-transform-uevr_transform"><a class="header" href="#vrget_transformindex-number-out-transform-uevr_transform"><code>vr.get_transform(index: number, out transform: UEVR_Transform)</code></a></h3>
+<p>Returns the transform of the specified device.</p>
+<h3 id="vrget_eye_offsetindex-number-out-eye_offset-uevr_vector3f"><a class="header" href="#vrget_eye_offsetindex-number-out-eye_offset-uevr_vector3f"><code>vr.get_eye_offset(index: number, out eye_offset: UEVR_Vector3f)</code></a></h3>
+<p>Returns the eye offset of the specified eye.</p>
+<h3 id="vrget_ue_projection_matrixindex-number-out-projection_matrix-uevr_matrix4f"><a class="header" href="#vrget_ue_projection_matrixindex-number-out-projection_matrix-uevr_matrix4f"><code>vr.get_ue_projection_matrix(index: number, out projection_matrix: UEVR_Matrix4f)</code></a></h3>
+<p>Returns the projection matrix of the specified eye.</p>
+<h3 id="vrget_left_joystick_source"><a class="header" href="#vrget_left_joystick_source"><code>vr.get_left_joystick_source()</code></a></h3>
+<p>Returns the source handle of the left joystick.</p>
+<h3 id="vrget_right_joystick_source"><a class="header" href="#vrget_right_joystick_source"><code>vr.get_right_joystick_source()</code></a></h3>
+<p>Returns the source handle of the right joystick.</p>
+<h3 id="vrget_action_handleaction_name-string"><a class="header" href="#vrget_action_handleaction_name-string"><code>vr.get_action_handle(action_name: string)</code></a></h3>
+<p>Returns the handle of the specified action.</p>
+<h3 id="vris_action_activeaction_handle-uevr_actionhandle-source-uevr_inputsourcehandle"><a class="header" href="#vris_action_activeaction_handle-uevr_actionhandle-source-uevr_inputsourcehandle"><code>vr.is_action_active(action_handle: UEVR_ActionHandle, source: UEVR_InputSourceHandle)</code></a></h3>
+<p>Returns true if the specified action is active.</p>
+<h3 id="vris_action_active_any_joystickaction_handle-uevr_actionhandle"><a class="header" href="#vris_action_active_any_joystickaction_handle-uevr_actionhandle"><code>vr.is_action_active_any_joystick(action_handle: UEVR_ActionHandle)</code></a></h3>
+<p>Returns true if the specified action is active.</p>
+<h3 id="vrget_joystick_axisindex-number-out-axis-uevr_vector2f"><a class="header" href="#vrget_joystick_axisindex-number-out-axis-uevr_vector2f"><code>vr.get_joystick_axis(index: number, out axis: UEVR_Vector2f)</code></a></h3>
+<p>Returns the axis of the specified joystick.</p>
+<h3 id="vrtrigger_haptic_vibrationseconds_from_now-number-duration-number-frequency-number-amplitude-number-source_handle-number"><a class="header" href="#vrtrigger_haptic_vibrationseconds_from_now-number-duration-number-frequency-number-amplitude-number-source_handle-number"><code>vr.trigger_haptic_vibration(seconds_from_now: number, duration: number, frequency: number, amplitude: number, source_handle: number)</code></a></h3>
+<p>Triggers haptic vibration on the specified device.</p>
+<h3 id="vris_using_controllers"><a class="header" href="#vris_using_controllers"><code>vr.is_using_controllers()</code></a></h3>
+<p>Returns true if the VR system is using controllers within the past 30 seconds.</p>
+<h3 id="vrget_lowest_xinput_index"><a class="header" href="#vrget_lowest_xinput_index"><code>vr.get_lowest_xinput_index()</code></a></h3>
+<h3 id="vrrecenter_view"><a class="header" href="#vrrecenter_view"><code>vr.recenter_view()</code></a></h3>
+<p>Recenters the view.</p>
+<h3 id="vrrecenter_horizon"><a class="header" href="#vrrecenter_horizon"><code>vr.recenter_horizon()</code></a></h3>
+<p>Recenters the horizon.</p>
+<h3 id="vrget_aim_method"><a class="header" href="#vrget_aim_method"><code>vr.get_aim_method()</code></a></h3>
+<p>Returns the aim method as an integer.</p>
+<h3 id="vrset_aim_methodaim_method-number"><a class="header" href="#vrset_aim_methodaim_method-number"><code>vr.set_aim_method(aim_method: number)</code></a></h3>
+<p>Sets the aim method.</p>
+<h3 id="vris_aim_allowed"><a class="header" href="#vris_aim_allowed"><code>vr.is_aim_allowed()</code></a></h3>
+<p>Returns true if aiming is allowed.</p>
+<h3 id="vrset_aim_allowedaim_allowed-bool"><a class="header" href="#vrset_aim_allowedaim_allowed-bool"><code>vr.set_aim_allowed(aim_allowed: bool)</code></a></h3>
+<p>Sets whether aiming is allowed.</p>
+<h3 id="vrget_hmd_width"><a class="header" href="#vrget_hmd_width"><code>vr.get_hmd_width()</code></a></h3>
+<p>Returns the render width of the HMD.</p>
+<h3 id="vrget_hmd_height"><a class="header" href="#vrget_hmd_height"><code>vr.get_hmd_height()</code></a></h3>
+<p>Returns the render height of the HMD.</p>
+<h3 id="vrget_ui_width"><a class="header" href="#vrget_ui_width"><code>vr.get_ui_width()</code></a></h3>
+<p>Returns the render width of the UI.</p>
+<h3 id="vrget_ui_height"><a class="header" href="#vrget_ui_height"><code>vr.get_ui_height()</code></a></h3>
+<p>Returns the render height of the UI.</p>
+<h3 id="vris_snap_turn_enabled"><a class="header" href="#vris_snap_turn_enabled"><code>vr.is_snap_turn_enabled()</code></a></h3>
+<p>Returns true if snap turning is enabled.</p>
+<h3 id="vrset_snap_turn_enabledsnap_turn_enabled-bool"><a class="header" href="#vrset_snap_turn_enabledsnap_turn_enabled-bool"><code>vr.set_snap_turn_enabled(snap_turn_enabled: bool)</code></a></h3>
+<p>Sets whether snap turning is enabled.</p>
+<h3 id="vrset_decoupled_pitch_enableddecoupled_pitch_enabled-bool"><a class="header" href="#vrset_decoupled_pitch_enableddecoupled_pitch_enabled-bool"><code>vr.set_decoupled_pitch_enabled(decoupled_pitch_enabled: bool)</code></a></h3>
+<p>Sets whether decoupled pitch is enabled.</p>
+<h3 id="vrset_mod_valuename-string-value-string"><a class="header" href="#vrset_mod_valuename-string-value-string"><code>vr.set_mod_value(name: string, value: string)</code></a></h3>
+<p>Sets the value of the specified mod.</p>
+<h3 id="vrget_mod_valuename-string"><a class="header" href="#vrget_mod_valuename-string"><code>vr:get_mod_value(name: string)</code></a></h3>
+<p>Returns the value of the specified mod as a Lua string.</p>
+<p>This is a special function that requires use of <code>:</code> instead of <code>.</code> because it uses a custom function, not the original function.</p>
+<h3 id="vrsave_config"><a class="header" href="#vrsave_config"><code>vr.save_config()</code></a></h3>
+<p>Saves the configuration.</p>
+<h3 id="vrreload_config"><a class="header" href="#vrreload_config"><code>vr.reload_config()</code></a></h3>
+<p>Reloads the configuration.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../plugins/lua/c_wrapper_types.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../../plugins/lua/cwrappers/UEVR_PluginInitializeParam.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../plugins/lua/c_wrapper_types.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../../plugins/lua/cwrappers/UEVR_PluginInitializeParam.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
