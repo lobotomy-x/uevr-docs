@@ -1,4 +1,30 @@
 # uevr.sdk.callbacks
+Each use of a callback function adds the inner function to a global array to be batch executed. Callbacks can occur multiple times in one script and can be called from within an outer function defining conditional logic. Local variables defined within a function body that wraps a callback will persist as upvalues when the callback fires but remain scoped to the outer function. 
+ex:
+```lua
+function post_tick(interval, fn)
+    local pt = 0
+    uevr.sdk.callbacks.on_post_engine_tick(function(engine, delta)
+       pt = pt + 1
+       if pt == interval or pt % interval == 0 then
+            if type(fn) == "function" then
+                fn(engine, delta)
+             end
+        end
+        if pt > math.max(2000, interval) then pt = 0 end
+    end)
+end
+-- Prints the engine address every 50 ticks
+post_tick(50, function(engine, delta)
+    print("50 ticks")
+end)
+
+-- If pt was defined outside of post_tick this would make both calls fire at 20 ticks
+post_tick(20, function(engine, delta)
+    print("20 ticks")
+end)
+
+```
 
 ## Functions
 
