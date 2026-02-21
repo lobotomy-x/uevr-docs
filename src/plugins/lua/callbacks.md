@@ -1,5 +1,5 @@
-# uevr.sdk.callbacks
-Each use of a callback function adds the inner function to a global array to be batch executed. Callbacks can occur multiple times in one script and can be called from within an outer function defining conditional logic. Local variables defined within a function body that wraps a callback will persist as upvalues when the callback fires but remain scoped to the outer function. 
+# uevr.sdk.callbacks 
+These functions all take an inner function as a parameter and may pass a specific set of variables to that function. Each use of a callback function the inner function to a global array to be batch executed. Callbacks can occur multiple times in one script and can be called from within an outer function defining conditional logic. Be careful when calling `require` to import script modules as doing so will both import the script and run it. Since UEVR shares a singular state you should be able to retrieve modules from the global table as long as they return the functions you need. If you prefer to require then scripts that are meant to be required should avoid using sdk callbacks in their main scope to prevent doubling calls, especially with script panels or imgui calls. You can avoid the issue by using a main script with centralized callbacks or you can instead embed the callbacks within your functions to prevent immediate usage. When done this way you can even declare local variables within a local function and create an upvalue for the callback function.
 ex:
 ```lua
 function post_tick(interval, fn)
