@@ -199,16 +199,21 @@ function draw.spinner(center, radius, color, thickness)
     imgui.draw_list_path_stroke(color, false, thickness)
 end
 ```
-See [Lobotomy's script repository](https://github.com/lobotomy-x/Unreal-Lua-Library/blob/main/Docs/UEVR/DrawAPI.md) for many more advanced examples of draw API.
+See [Lobotomy's script repository](https://github.com/lobotomy-x/Unreal-Lua-Library/blob/main/Docs/UEVR/DrawAPI.md) for some advanced examples of draw API.
 
 # Methods
 
-## draw.text(text, x, y, color)
-## draw.filled_rect(x, y, w, h, color)
-## draw.outline_rect(x, y, w, h, color)
+### draw.text(text, x, y, color)
+Uses the default font and scale for UEVR. You should probably instead use a window with no background and set cursor screen pos.
+
 ## draw.line(x1, y1, x2, y2, color)
-No way to set thickness, better to use a rect or use path_line_to
-## draw.outline_circle(x, y, radius, color, num_segments)
-## draw.filled_circle(x, y, radius, color, num_segments)
-## draw.outline_quad(x1, y1, x2, y2, x3, y3, x4, y4, color)
-## draw.filled_quad(x1, y1, x2, y2, x3, y3, x4, y4, color)
+No way to set thickness, better to use a rect or use `path_line_to.` The only advantage over `path_line_to` is that each line segment here can be a different color/opacity while only one color can be used per frame with path stroke.
+
+### draw.filled_rect(x, y, w, h, color) / draw.outline_rect(x, y, w, h, color) 
+Use this if you don't need to apply rotation. Winding direction is handled automatically. x and y define the top left origin point.
+
+## draw.filled_circle(x, y, radius, color, num_segments) / draw.outline_circle(x, y, radius, color, num_segments)
+num_segments is optional and defaults to 12
+
+## draw.filled_quad(x1, y1, x2, y2, x3, y3, x4, y4, color) / draw.outline_quad(x1, y1, x2, y2, x3, y3, x4, y4, color)
+Use quads if you want to apply rotation. Quad corners must be submitted in clockwise winding order or there will be visible aliasing. 
