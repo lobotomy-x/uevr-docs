@@ -2,7 +2,7 @@
 
 ## What are Quaternions?
 
-Quaternions represent rotations in 4 axes. All rotations in Unreal are internally calculated using quaternions as they avoid issues inherent to Euler angles. Look up "Gimbal Lock" for more information.
+Quaternions represent rotations in 3 axes (vector components) with a 4th (scalar) component representing the amount of rotation. All rotations in Unreal are internally calculated using quaternions as they avoid issues inherent to Euler angles. Look up "Gimbal Lock" for more information.
 
 Quaternions in UEVR are represented in three different ways, `UEVR_Quaternionf` represents rotations managed by the UEVR API, e.g. for motion controller states, while `Quaternionf`, `Quaterniond` provide bindings for GLM quaternions depending on game engine version. Unreal Engine 5 uses `double` precision floating point numbers so you must use `Quaterniond`  or you will lose precision. UE4 uses `float` numbers so you use `Quaternionf` and `UEVR_Quaternionf`. For the sake of simplicity `f` will be used for the remaining text. If you were to only use one type it needs to be the `float` variant as this will only lose precision while `double` versions can cause crashes.
 
