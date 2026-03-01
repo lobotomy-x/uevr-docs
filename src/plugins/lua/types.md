@@ -10,6 +10,8 @@
 
 ### `uevr.types.UFunction`
 
+### `uevr.types.FProperty`
+
 ### `uevr.types.FField`
 
 ### `uevr.types.FFieldClass`
