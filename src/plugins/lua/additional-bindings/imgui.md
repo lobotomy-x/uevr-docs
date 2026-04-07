@@ -34,26 +34,26 @@ end)
 
 
 ### ID Methods
-Correct usage of ImGui's ID system is crucial to success and can alleviate many common errors. IDs are automatically generated based on window context but this is generally not sufficient when multiple widgets of the same type are present and it prevents use of features like appending to windows. Context for any widget can manually be set by preceding the calls with `push_id` and following with `pop_id`. Many widgets with labels will use the provided label as their ID. In those cases it is possible to hide the label and still specify an ID without using `push_id` by prefixing your desired ID with `"###"`. The actual effect is that anything before the `"###"` is ignored by the ID system therefore allowing different display names without affecting ID.
+Correct usage of ImGui's ID system is crucial to success and can alleviate many common errors. IDs are automatically generated based on window context but this is generally not sufficient when multiple widgets of the same type are present and it prevents use of features like appending to windows. Context for any widget can manually be set by preceding the calls with `push_id` and following with `pop_id`. Many widgets with labels will use the provided label as their ID. In those cases it is possible to hide the label and still specify an ID without using `push_id` by prefixing your desired ID with `"##"`. The actual effect is that anything before the `"##"` is ignored by the ID system therefore allowing different display names without affecting ID.
 ex:
 ```lua
 -- this will create a window without any visible label
-imgui.begin_window("###test_window")
+imgui.begin_window("##test_window")
 imgui.text("test1")
 imgui.end_window()
 
 -- this will append to the above window. Since its called afterwards the title cannot be changed 
-imgui.begin_window("TEST###test_window")
+imgui.begin_window("TEST##test_window")
 imgui.text("test2")
 imgui.end_window()
 
 -- this will create the window with the visible name TEST
-imgui.begin_window("TEST###test_window2")
+imgui.begin_window("TEST##test_window2")
 imgui.text("test3")
 imgui.end_window()
 
 -- this will append to the second window without changing the name 
-imgui.begin_window("DIFFERENT NAME###test_window2")
+imgui.begin_window("DIFFERENT NAME##test_window2")
 imgui.text("test2")
 imgui.end_window()
 
