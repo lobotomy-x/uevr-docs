@@ -146,7 +146,7 @@ local vec = Vector3f.new(1.0, 0.0, 0.0)
 local vec2 = vec:clone()
 ```
 
-# MetaMethods
+# Metamethods
 
 ### `Vector2f`, `Vector2d`, `Vector3f`, `Vector3d`, `Vector4f`, `Vector4d`
 
@@ -282,32 +282,3 @@ Performs LERP (linear interpolation) on two vectors by the factor of `t`. Order 
 
 **Unused**
 UEVR_Vector4f, UEVR_Vector3d, UEVR_Rotatord, Vector4d
-
-### Rotator Gotchas
-
-Note that while rotations are internally calculated using [Quaternions](Quaternion.md) the engine already converts and caches Scene component rotations as `Rotators` for easy access, this is not a UEVR specific feature. The one notable exception to this is with `Transform` structs which always have a [Quaternion](Quaternion.md) for Rotation.
-
-While you should always stick to the GLM bindings, if for some reason you are trying to handle things as tables or by accessing components directly you may occasionally run into cases where capitalization is inconsistent, e.g. "roll" instead of "Roll". If you look in the UEVR GUI or an SDK dump you will see the actual naming, but because rotators are recieved as `Vector3f` objects you will never actually be able to test for this result. However when submitting a table this will be directly converted to the expected struct so case does need to match. While this is rare, its impossible to handle automatically with tables.
- 
-Another important thing to consider is that UE uses degrees for rotation but glm and UEVR typically use radians. You can use math.deg() or math.rad() to convert as needed. There is no specific handling in UEVR for rotations looping around so consider it when lerping
-
-
-## Functions
-
-### UEVR_MotionControllerState:set_position_offset
-
-This function can take rotation input as  `UEVR_Vector3f`, or `Vector3f`/`Vector3d`.
-
-### `UEVR_Vector3f.new()`
-
-Constructs a new `UEVR_Vector3f`. Do not directly set the components, instead create the vecernion and then set them individually if needed. You rarely need to do so as the main usage of `UEVR_Quaternion` is to receive VR data and it wil automatically be created with 0 assigned to each component.
-
-### `UEVR_Vector3f:as_full_binding()`
-
-Casts the struct to a `Vector3f` GLM variant. You should always cast for any non-trivial work as this is the only function available with UEVR variants. 
-ex:
-`local right_controller_rotation = UEVR_Vector3f.new()
- params.vr.get_pose(1, right_controller_position, right_controller_rotation)
- local r_vec = right_controller_rotation:as_full_binding()
- `
-
