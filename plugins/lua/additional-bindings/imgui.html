@@ -165,25 +165,25 @@ end)
 <h3 id="imguiimguikey"><a class="header" href="#imguiimguikey"><code>imgui.ImGuiKey</code></a></h3>
 <h3 id="imguiimguistylevar"><a class="header" href="#imguiimguistylevar"><code>imgui.ImGuiStyleVar</code></a></h3>
 <h3 id="id-methods"><a class="header" href="#id-methods">ID Methods</a></h3>
-<p>Correct usage of ImGui's ID system is crucial to success and can alleviate many common errors. IDs are automatically generated based on window context but this is generally not sufficient when multiple widgets of the same type are present and it prevents use of features like appending to windows. Context for any widget can manually be set by preceding the calls with <code>push_id</code> and following with <code>pop_id</code>. Many widgets with labels will use the provided label as their ID. In those cases it is possible to hide the label and still specify an ID without using <code>push_id</code> by prefixing your desired ID with <code>&quot;###&quot;</code>. The actual effect is that anything before the <code>&quot;###&quot;</code> is ignored by the ID system therefore allowing different display names without affecting ID.
+<p>Correct usage of ImGui's ID system is crucial to success and can alleviate many common errors. IDs are automatically generated based on window context but this is generally not sufficient when multiple widgets of the same type are present and it prevents use of features like appending to windows. Context for any widget can manually be set by preceding the calls with <code>push_id</code> and following with <code>pop_id</code>. Many widgets with labels will use the provided label as their ID. In those cases it is possible to hide the label and still specify an ID without using <code>push_id</code> by prefixing your desired ID with <code>&quot;##&quot;</code>. The actual effect is that anything before the <code>&quot;##&quot;</code> is ignored by the ID system therefore allowing different display names without affecting ID.
 ex:</p>
 <pre><code class="language-lua">-- this will create a window without any visible label
-imgui.begin_window(&quot;###test_window&quot;)
+imgui.begin_window(&quot;##test_window&quot;)
 imgui.text(&quot;test1&quot;)
 imgui.end_window()
 
 -- this will append to the above window. Since its called afterwards the title cannot be changed 
-imgui.begin_window(&quot;TEST###test_window&quot;)
+imgui.begin_window(&quot;TEST##test_window&quot;)
 imgui.text(&quot;test2&quot;)
 imgui.end_window()
 
 -- this will create the window with the visible name TEST
-imgui.begin_window(&quot;TEST###test_window2&quot;)
+imgui.begin_window(&quot;TEST##test_window2&quot;)
 imgui.text(&quot;test3&quot;)
 imgui.end_window()
 
 -- this will append to the second window without changing the name 
-imgui.begin_window(&quot;DIFFERENT NAME###test_window2&quot;)
+imgui.begin_window(&quot;DIFFERENT NAME##test_window2&quot;)
 imgui.text(&quot;test2&quot;)
 imgui.end_window()
 
