@@ -1,4 +1,5 @@
 # UEVR_FProperty
+These cannot be directly called from [UField/FField](types/FField.md) objects. Instead retrieve them by calling `find_property` on the corresponding struct.
 
 ## Functions
 
