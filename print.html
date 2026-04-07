@@ -1242,6 +1242,7 @@ Individual values can be checked for by testing <code>function:get_function_flag
 <div style="break-before: page; page-break-before: always;"></div><h1 id="uevr_ffield"><a class="header" href="#uevr_ffield">UEVR_FField</a></h1>
 <h2 id="what-is-ffield"><a class="header" href="#what-is-ffield">What is FField?</a></h2>
 <p>FField is a struct that represents a field in Unreal Engine. UEVR_FField is an interface representing either an FField or a UObject-derived UField. Unreal Engine version 4.25 introduced FField but older versions can still use UEVR_FField methods thanks to this abstraction.</p>
+<p>You may wish to get the <a href="plugins/lua/types/FProperty.html">FProperty</a> equivalent version of an FField to get more useful information. To do so call <code>find_property(field:get_fname():to_string())</code> on the parent struct or function.</p>
 <h2 id="functions-7"><a class="header" href="#functions-7">Functions</a></h2>
 <h3 id="fieldget_next"><a class="header" href="#fieldget_next"><code>field:get_next()</code></a></h3>
 <p>Returns the next <a href="plugins/lua/types/FField.html">UEVR_FField*</a> object in the linked list of fields.</p>
