@@ -1,5 +1,21 @@
 # uevr.sdk.callbacks 
-These functions all take an inner function as a parameter and may pass a specific set of variables to that function. Each use of a callback function the inner function to a global array to be batch executed. Callbacks can occur multiple times in one script and can be called from within an outer function defining conditional logic. Be careful when calling `require` to import script modules as doing so will both import the script and run it. Since UEVR shares a singular state you should be able to retrieve modules from the global table as long as they return the functions you need. If you prefer to require then scripts that are meant to be required should avoid using sdk callbacks in their main scope to prevent doubling calls, especially with script panels or imgui calls. You can avoid the issue by using a main script with centralized callbacks or you can instead embed the callbacks within your functions to prevent immediate usage. When done this way you can even declare local variables within the function and create a local upvalue for the callback.
+
+These take an inner function as a parameter which is added to a global array to be batch executed. Callbacks can occur multiple times in one script and can be called from within an outer function defining conditional logic. 
+
+### Avoiding Extra Calls
+**Be careful when calling `require` to import script modules as doing so will both import the script and run it which can cause duplicated callback function usage, e.g. multiple instances of a script panel** 
+You can avoid the issue by simply not using `require` and instead accessing scripts through `_G` since UEVR uses a single state but that can have issues with load order.
+
+Alternatively you can avoid the issue by using a main script with centralized callbacks that loads any additional scripts and executes their functions within the central callback.
+ex:
+```lua
+local Module1 = require("Lib.Module1")
+uevr.sdk.callbacks.on_frame(function()
+    Module1.on_frame()
+end
+```
+
+Or you can embed the callbacks within your functions to prevent immediate usage. When done this way you can even declare local variables within the function and create a local upvalue for the callback.
 ex:
 ```lua
 function post_tick(interval, fn)
@@ -17,11 +33,6 @@ end
 -- Prints the engine address every 50 ticks
 post_tick(50, function(engine, delta)
     print("50 ticks")
-end)
-
--- If pt was defined outside of post_tick this would make both calls fire at 20 ticks
-post_tick(20, function(engine, delta)
-    print("20 ticks")
 end)
 
 ```
