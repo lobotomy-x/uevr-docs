@@ -20,6 +20,15 @@ Returns the default [UEVR_UObject*](UObject.md) object for the class.
 
 Returns an array of [UEVR_UObject*](UObject.md) objects that are instances of the class. If `allow_default` is true, default objects are included in the array.
 
+ex:
+```lua
+  -- print the full name of all classes
+  local uclass = uevr.api:find_uobject("Class /Script/CoreUObject.Class")
+  for i, class in ipairs(uclass:get_objects_matching(false)) do
+    print(class:get_full_name())
+  end
+```
+
 ### `class:get_first_object_matching(allow_default: bool)`
 
 Returns the first [UEVR_UObject*](UObject.md) object that is an instance of the class. If `allow_default` is true, default objects are included in the search.
