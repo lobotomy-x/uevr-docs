@@ -9,25 +9,32 @@ You can avoid the issue by simply not using `require` and instead accessing scri
 Alternatively you can avoid the issue by using a main script with centralized callbacks that loads any additional scripts and executes their functions within the central callback.
 ex:
 ```lua
-local Module1 = require("Lib.Module1")
-uevr.sdk.callbacks.on_frame(function()
-    Module1.on_frame()
+-- /Scripts/Lib/Module1.lua
+local M = {}
+function M.on_frame()
+    dostuff()
 end
+return M
+
+-- /Scripts/Main.lua
+local Module1 = require("Lib.Module1")
+uevr.sdk.callbacks.on_frame(Module1.on_frame)
 ```
 
 Or you can embed the callbacks within your functions to prevent immediate usage. When done this way you can even declare local variables within the function and create a local upvalue for the callback.
 ex:
 ```lua
 function post_tick(interval, fn)
+    -- declaring within the post_tick function ensures unique counters for each call
     local pt = 0
     uevr.sdk.callbacks.on_post_engine_tick(function(engine, delta)
-       pt = pt + 1
-       if pt == interval or pt % interval == 0 then
+       if pt >= interval then
+            pt = 0
             if type(fn) == "function" then
                 fn(engine, delta)
              end
         end
-        if pt > math.max(2000, interval) then pt = 0 end
+        pt = pt + 1
     end)
 end
 -- Prints the engine address every 50 ticks
@@ -35,7 +42,7 @@ post_tick(50, function(engine, delta)
     print("50 ticks")
 end)
 
-```
+``` 
 
 ## Functions
 
